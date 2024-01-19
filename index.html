@@ -4,18 +4,65 @@
     <link href="style.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="fonts.googleapis.com/css2?family=Montserrata" rel="stylesheet">
+    <link href="fonts.googleapis.com/css2?family=Montserrat:wght@400;700" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+        </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <div>
-        <h1>This one is the sub-section or
-            widget title</h1>
-        <h2>Тестовый текст, проверка возможностей</h2>
-        <h3>Тестовый текст, проверка возможностей</h3>
-        <p>Тестовый текст, проверка возможностей</p>
+    <div class="wrapper">
+        <header class="header_logged-out">
+            <a href="path-to-landing" class="logo">
+                <img src="svg/Logo.svg" alt="" class="logo__image">
+            </a>
+            <nav class="navbar">
+                <ul class="list">
+                    <li class="list__item">
+                        <a href="" class="list__link">О нас</a>
+                    </li>
+                    <ul class="list__item sublist">
+                        <a href="" class="list__link">Услуги</a>
+                        <li class="sublist__item"></li>
+                        <li class="sublist__item"></li>
+                        <li class="sublist__item"></li>
+                        <li class="sublist__item"></li>
+                        <li class="sublist__item"></li>
+                    </ul>
+                    <li class="list__item">
+                        <a href="" class="list__link">Вакансии</a>
+                    </li>
+                    <li class="list__item">
+                        <a href="" class="list__link">Новости</a>
+                    </li>
+                    <ul class="list__item sublist">
+                        <a href="" class="list__link">Соглашения</a>
+                        <li class="sublist__item"></li>
+                        <li class="sublist__item"></li>
+                        <li class="sublist__item"></li>
+                        <li class="sublist__item"></li>
+                        <li class="sublist__item"></li>
+                    </ul>
+                </ul>
+            </nav>
+            <div class="auth">
+                <div class="auth__button auth__button-sign-in ">
+                    <a class="auth__button-text">Войти</a>
+                </div>
+                <div class="auth__button auth__button-register">
+                    <a class="auth__button-text">Зарегистрироваться</a>
+                </div>
+            </div>
+        </header>
+        <header class="header_logged-in">
+
+        </header>
+
+        <section class="landing-content"></section>
+        <footer class="footer"></footer>
+        
     </div>
 </body>
 </html>

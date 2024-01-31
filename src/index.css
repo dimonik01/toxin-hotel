@@ -1,3 +1,6 @@
+@import 'fonts/fonts.css';
+@import '../blocks/wrapper/page-container/header/_logged-out/header_logged-out.css';
+
 :root{
     --dark-shade-100: #1F2041;
     --dark-shade-75: #1F204175;
@@ -47,7 +50,7 @@ h3{
 a{
     font-family: 'Montserrat', sans-serif;
     color: var(--dark-shade-50);
-    font-family: Montserrat;
+    font-family: 'Montserrat';
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -83,6 +86,7 @@ button{
 .wrapper{
     width: 100%;
     height: auto;
+    
 }
 
 .page-container{
@@ -95,14 +99,14 @@ button{
 
 
 
-.header_logged-out{
+/*.header_logged-out{
     display: grid;
     grid-template-columns: 391px 440px 329px;
     width: 100%;
     height: 70px;
     background-color:#FFFFFF;
     ;
-}
+}*/
 
 .header_logged-in{
     display: none;

@@ -38,6 +38,13 @@ module.exports = (env) => {
                 devMode ? 'style-loader': MiniCssExtractPlugin.loader,
                'css-loader'
                 ],
+            },
+            {
+              test: /\.woff2?$/i,
+              type: 'asset/resource', 
+              generator:{
+                filename: 'fonts/[name].[ext]'
+              }
             }
           ]
         }   

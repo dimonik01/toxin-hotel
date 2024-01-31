@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Montserrat Italic';
+    src:
+      url(Montserrat-Italic-VariableFont_wght.woff2) format(woff2),
+      url(Montserrat-Italic-VariableFont_wght.woff) format(woff);
+      font-weight: 700;
+    }
+@font-face{
+    font-family: 'Montserrat';
+    src: 
+      url(Montserrat-VariableFont_wght.woff2) format(woff2),
+      url(Montserrat-VariableFont_wght.woff) format(woff);
+    }
+

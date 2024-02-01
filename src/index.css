@@ -1,5 +1,6 @@
 @import 'fonts/fonts.css';
 @import '../blocks/wrapper/page-container/header/_logged-out/header_logged-out.css';
+@import 'index.scss';
 
 :root{
     --dark-shade-100: #1F2041;

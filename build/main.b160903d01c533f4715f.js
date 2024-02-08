@@ -2,10 +2,10 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./src/index.css":
-/*!*************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./src/index.css ***!
-  \*************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/index.scss":
+/*!*****************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*****************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -16,186 +16,288 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_fonts_fonts_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! -!../node_modules/css-loader/dist/cjs.js!./fonts/fonts.css */ "./node_modules/css-loader/dist/cjs.js!./src/fonts/fonts.css");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_blocks_wrapper_page_container_header_logged_out_header_logged_out_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! -!../node_modules/css-loader/dist/cjs.js!./blocks/wrapper/page-container/header/_logged-out/header_logged-out.css */ "./node_modules/css-loader/dist/cjs.js!./src/blocks/wrapper/page-container/header/_logged-out/header_logged-out.css");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_4__);
+// Imports
+
+
+
+
+
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! svg/Logo.svg */ "./src/svg/Logo.svg"), __webpack_require__.b);
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_fonts_fonts_css__WEBPACK_IMPORTED_MODULE_2__["default"]);
+___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_blocks_wrapper_page_container_header_logged_out_header_logged_out_css__WEBPACK_IMPORTED_MODULE_3__["default"]);
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_4___default()(___CSS_LOADER_URL_IMPORT_0___);
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, `:root {
+  --dark-shade-100: #1F2041;
+  --dark-shade-75: #1F204175;
+  --dark-shade-50: #1F204150;
+  --dark-shade-25: #1F204125;
+  --dark-shade-5: #1F204105;
+  --purple: #BC9CFF;
+  --green: #6FCF97;
+}
+
+:root {
+  --dark-shade-100: #1F2041;
+  --dark-shade-75: #1F204175;
+  --dark-shade-50: #1F204150;
+  --dark-shade-25: #1F204125;
+  --dark-shade-5: #1F204105;
+  --purple: #BC9CFF;
+  --green: #6FCF97;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+html, body {
+  min-height: 100%;
+  height: 100%;
+  width: 100%;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29.26px;
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 23.16px;
+}
+
+h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 14.63px;
+}
+
+a {
+  font-family: "Montserrat", sans-serif;
+  color: rgba(31, 32, 65, 0.3137254902);
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+}
+
+body p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+li {
+  list-style-type: none;
+  text-decoration: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+ul {
+  list-style-type: none;
+  text-decoration: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+button {
+  border: 0px;
+  background-color: transparent;
+}
+
+.wrapper {
+  width: 100%;
+  height: auto;
+}
+
+.page-container {
+  width: 1160px;
+  height: inherit;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header_logged-out {
+  display: grid;
+  grid-template-columns: 391px 440px 329px;
+  width: 100%;
+  height: 70px;
+  background-color: #FFFFFF;
+}
+
+.header_logged-in {
+  display: none;
+}
+
+.navbar {
+  position: relative;
+  width: 100%;
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.list__item {
+  margin-top: 26px;
+  margin-bottom: 26px;
+  flex-shrink: 0;
+  /* margin-left: 5px;
+   margin-right: 5px;*/
+}
+
+.list__icon::after {
+  content: "expand_more";
+  color: rgba(31, 32, 65, 0.3137254902);
+  text-align: center;
+  font-family: "Material Icons";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1px; /* 20.4px */
+  position: relative;
+  top: 7px;
+}
+
+.logo__image {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_0___});
+}
+
+.auth {
+  display: flex;
+}
+
+.auth__button {
+  background-color: transparent;
+  margin-left: 20px;
+}
+
+.auth__button-text {
+  margin-top: 27px;
+  margin-bottom: 28px;
+}
+
+.auth__button-text {
+  margin-top: 27px;
+  margin-bottom: 28px;
+}
+
+.auth__svg {
+  z-index: 0;
+}
+
+.auth__button-text {
+  z-index: 1;
+  position: relative;
+}`, "",{"version":3,"sources":["webpack://./src/scss/variables.scss","webpack://./src/index.scss"],"names":[],"mappings":"AAAA;EACI,yBAAA;EACA,0BAAA;EACA,0BAAA;EACA,0BAAA;EACA,yBAAA;EACA,iBAAA;EACA,gBAAA;ACGJ;;AALA;EACI,yBAAA;EACA,0BAAA;EACA,0BAAA;EACA,0BAAA;EACA,yBAAA;EACA,iBAAA;EACA,gBAAA;AAQJ;;AANA;EACI,WAAA;EACA,YAAA;EACA,sBAAA;AASJ;;AANA;EACI,mBAAA;AASJ;;AANA;EACI,gBAAA;EACA,YAAA;EACA,WAAA;AASJ;;AANA;EACI,qCAAA;EACA,eAAA;EACA,gBAAA;EACA,oBAAA;AASJ;;AANA;EACI,qCAAA;EACA,eAAA;EACA,gBAAA;EACA,oBAAA;AASJ;;AANA;EACI,qCAAA;EACA,eAAA;EACA,gBAAA;EACA,oBAAA;AASJ;;AANA;EACI,qCAAA;EACA,qCDzCY;EC0CZ,yBAAA;EACA,eAAA;EACA,kBAAA;EACA,gBAAA;EACA,mBAAA;EACA,qBAAA;AASJ;;AANA;EACI,qCAAA;EACA,eAAA;EACA,gBAAA;EACA,iBAAA;AASJ;;AANA;EACI,qBAAA;EACA,qBAAA;EACA,WAAA;EACA,YAAA;AASJ;;AAPA;EACI,qBAAA;EACA,qBAAA;EACA,WAAA;EACA,YAAA;AAUJ;;AAPA;EACI,WAAA;EACA,6BAAA;AAUJ;;AAPA;EACI,WAAA;EACA,YAAA;AAUJ;;AANA;EACI,aAAA;EACA,eAAA;EACA,iBAAA;EACA,kBAAA;AASJ;;AAHA;EACI,aAAA;EACA,wCAAA;EACA,WAAA;EACA,YAAA;EACA,yBAAA;AAMJ;;AAFA;EACI,aAAA;AAKJ;;AAFA;EACI,kBAAA;EACA,WAAA;AAKJ;;AAHA;EACI,aAAA;EACA,8BAAA;AAMJ;;AAHA;EACI,gBAAA;EACA,mBAAA;EACA,cAAA;EACD;sBAAA;AAOH;;AAHA;EACI,sBAAA;EACA,qCD3HY;EC4HZ,kBAAA;EACA,6BAAA;EACA,eAAA;EACA,kBAAA;EACA,gBAAA;EACA,gBAAA,EAAA,WAAA;EACA,kBAAA;EACA,QAAA;AAMJ;;AAHA;EACI,gBAAA;EACA,mBAAA;EACA,yDAAA;AAMJ;;AAHA;EACI,aAAA;AAMJ;;AAHA;EACI,6BAAA;EACA,iBAAA;AAMJ;;AAHA;EACI,gBAAA;EACA,mBAAA;AAMJ;;AAHA;EACI,gBAAA;EACA,mBAAA;AAMJ;;AAHA;EACI,UAAA;AAMJ;;AAFA;EACI,UAAA;EACA,kBAAA;AAKJ","sourcesContent":[":root{\r\n    --dark-shade-100: #1F2041;\r\n    --dark-shade-75: #1F204175;\r\n    --dark-shade-50: #1F204150;\r\n    --dark-shade-25: #1F204125;\r\n    --dark-shade-5: #1F204105;\r\n    --purple: #BC9CFF;\r\n    --green: #6FCF97;\r\n}\r\n\r\n$dark-shade-100: #1F2041;\r\n$dark-shade-75: #1F204175;\r\n$dark-shade-50: #1F204150;\r\n$dark-shade-25: #1F204125;\r\n$dark-shade-5: #1F204105;\r\n$purple: #BC9CFF;\r\n$green: #6FCF97;\r\n\r\n","@import 'fonts/fonts.css';\r\n@import 'blocks/wrapper/page-container/header/_logged-out/header_logged-out.css';\r\n@import 'scss/variables.scss';\r\n\r\n\r\n:root{\r\n    --dark-shade-100: #1F2041;\r\n    --dark-shade-75: #1F204175;\r\n    --dark-shade-50: #1F204150;\r\n    --dark-shade-25: #1F204125;\r\n    --dark-shade-5: #1F204105;\r\n    --purple: #BC9CFF;\r\n    --green: #6FCF97;\r\n}\r\n*{\r\n    margin: 0px;\r\n    padding: 0px;\r\n    box-sizing: border-box;\r\n}\r\n\r\n*, *::before, *::after{\r\n    box-sizing: inherit;\r\n}\r\n\r\nhtml, body{\r\n    min-height: 100%;\r\n    height: 100%;\r\n    width: 100%;\r\n}\r\n\r\nh1{\r\n    font-family: 'Montserrat', sans-serif;\r\n    font-size: 24px;\r\n    font-weight: 700;\r\n    line-height: 29.26px;\r\n}\r\n\r\nh2{\r\n    font-family: 'Montserrat', sans-serif;\r\n    font-size: 19px;\r\n    font-weight: 700;\r\n    line-height: 23.16px;\r\n}\r\n\r\nh3{\r\n    font-family: 'Montserrat', sans-serif;\r\n    font-size: 12px;\r\n    font-weight: 700;\r\n    line-height: 14.63px;\r\n}\r\n\r\na{\r\n    font-family: 'Montserrat', sans-serif;\r\n    color: $dark-shade-50;\r\n    font-family: 'Montserrat';\r\n    font-size: 14px;\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    line-height: normal;\r\n    text-decoration: none;\r\n}\r\n\r\nbody p {\r\n    font-family: 'Montserrat', sans-serif;\r\n    font-size: 14px;\r\n    font-weight: 400;\r\n    line-height: 24px;\r\n}\r\n\r\nli{\r\n    list-style-type: none;\r\n    text-decoration: none;\r\n    margin: 0px;\r\n    padding: 0px;\r\n}\r\nul{\r\n    list-style-type: none;\r\n    text-decoration: none;\r\n    margin: 0px;\r\n    padding: 0px;\r\n}\r\n\r\nbutton{\r\n    border: 0px;\r\n    background-color: transparent;\r\n}\r\n\r\n.wrapper{\r\n    width: 100%;\r\n    height: auto;\r\n    \r\n}\r\n\r\n.page-container{\r\n    width: 1160px;\r\n    height: inherit;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n}\r\n\r\n\r\n\r\n\r\n.header_logged-out{\r\n    display: grid;\r\n    grid-template-columns: 391px 440px 329px;\r\n    width: 100%;\r\n    height: 70px;\r\n    background-color:#FFFFFF;\r\n    ;\r\n}\r\n\r\n.header_logged-in{\r\n    display: none;\r\n}\r\n\r\n.navbar{\r\n    position: relative;\r\n    width: 100%;\r\n}\r\n.list{\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n\r\n.list__item{\r\n    margin-top: 26px;\r\n    margin-bottom: 26px;\r\n    flex-shrink: 0;\r\n   /* margin-left: 5px;\r\n    margin-right: 5px;*/\r\n}\r\n\r\n.list__icon::after{\r\n    content: \"expand_more\";\r\n    color: $dark-shade-50/*var(--dark-50, rgba(31, 32, 65, 0.50))*/;\r\n    text-align: center;\r\n    font-family: \"Material Icons\";\r\n    font-size: 24px;\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    line-height: 1px; /* 20.4px */\r\n    position: relative;\r\n    top: 7px;\r\n}\r\n\r\n.logo__image{\r\n    margin-top: 15px;\r\n    margin-bottom: 15px;\r\n    background-image: url(svg/Logo.svg);\r\n}\r\n \r\n.auth{\r\n    display: flex;\r\n}\r\n\r\n.auth__button{\r\n    background-color: transparent;\r\n    margin-left: 20px;\r\n}\r\n\r\n.auth__button-text{\r\n    margin-top: 27px;\r\n    margin-bottom: 28px;\r\n}\r\n\r\n.auth__button-text{\r\n    margin-top: 27px;\r\n    margin-bottom: 28px;\r\n}\r\n\r\n.auth__svg{\r\n    z-index: 0;\r\n\r\n}\r\n\r\n.auth__button-text{\r\n    z-index: 1;\r\n    position: relative;\r\n}\r\n"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/blocks/wrapper/page-container/header/_logged-out/header_logged-out.css":
+/*!**************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/blocks/wrapper/page-container/header/_logged-out/header_logged-out.css ***!
+  \**************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
 // Imports
 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `:root{
-    --dark-shade-100: #1F2041;
-    --dark-shade-75: #1F204175;
-    --dark-shade-50: #1F204150;
-    --dark-shade-25: #1F204125;
-    --dark-shade-5: #1F204105;
-    --purple: #BC9CFF;
-    --green: #6FCF97;
-}
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
-
-*, *::before, *::after{
-    box-sizing: inherit;
-}
-
-html, body{
-    min-height: 100%;
-    height: 100%;
-    width: 100%;
-}
-
-h1{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 29.26px;
-}
-
-h2{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 19px;
-    font-weight: 700;
-    line-height: 23.16px;
-}
-
-h3{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 14.63px;
-}
-
-a{
-    font-family: 'Montserrat', sans-serif;
-    color: var(--dark-shade-50);
-    font-family: 'Montserrat';
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-decoration: none;
-}
-
-body p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 24px;
-}
-
-li{
-    list-style-type: none;
-    text-decoration: none;
-    margin: 0px;
-    padding: 0px;
-}
-ul{
-    list-style-type: none;
-    text-decoration: none;
-    margin: 0px;
-    padding: 0px;
-}
-
-button{
-    border: 0px;
-    background-color: transparent;
-}
-
-.wrapper{
-    width: 100%;
-    height: auto;
-    
-}
-
-.page-container{
-    width: 1160px;
-    height: inherit;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
-
-
-.header_logged-out{
+___CSS_LOADER_EXPORT___.push([module.id, `.header_logged-out{
     display: grid;
     grid-template-columns: 391px 440px 329px;
     width: 100%;
     height: 70px;
     background-color:#FFFFFF;
     ;
-}
+}`, "",{"version":3,"sources":["webpack://./src/blocks/wrapper/page-container/header/_logged-out/header_logged-out.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,wCAAwC;IACxC,WAAW;IACX,YAAY;IACZ,wBAAwB;;AAE5B","sourcesContent":[".header_logged-out{\r\n    display: grid;\r\n    grid-template-columns: 391px 440px 329px;\r\n    width: 100%;\r\n    height: 70px;\r\n    background-color:#FFFFFF;\r\n    ;\r\n}"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
-.header_logged-in{
-    display: none;
-}
 
-.navbar{
-    position: relative;
-    width: 100%;
-}
-.list{
-    display: flex;
-    justify-content: space-between;
-}
+/***/ }),
 
-.list__item{
-    margin-top: 26px;
-    margin-bottom: 26px;
-    flex-shrink: 0;
-   /* margin-left: 5px;
-    margin-right: 5px;*/
-}
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/fonts/fonts.css":
+/*!*******************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/fonts/fonts.css ***!
+  \*******************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-.list__icon::after{
-    content: "expand_more";
-    color: var(--dark-50, rgba(31, 32, 65, 0.50));
-    text-align: center;
-    font-family: "Material Icons";
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1px; /* 20.4px */
-    position: relative;
-    top: 7px;
-}
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
+// Imports
 
-.logo__image{
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
- 
-.auth{
-    display: flex;
-}
 
-.auth__button{
-    background-color: transparent;
-    margin-left: 20px;
-}
 
-.auth__button-text{
-    margin-top: 27px;
-    margin-bottom: 28px;
-}
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! Montserrat-Italic-VariableFont_wght.woff2 */ "./src/fonts/Montserrat-Italic-VariableFont_wght.woff2"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! Montserrat-Italic-VariableFont_wght.woff */ "./src/fonts/Montserrat-Italic-VariableFont_wght.woff"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_2___ = new URL(/* asset import */ __webpack_require__(/*! Montserrat-VariableFont_wght.woff2 */ "./src/fonts/Montserrat-VariableFont_wght.woff2"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_3___ = new URL(/* asset import */ __webpack_require__(/*! Montserrat-VariableFont_wght.woff */ "./src/fonts/Montserrat-VariableFont_wght.woff"), __webpack_require__.b);
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
+var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_1___);
+var ___CSS_LOADER_URL_REPLACEMENT_2___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_2___);
+var ___CSS_LOADER_URL_REPLACEMENT_3___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_3___);
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, `@font-face {
+    font-family: 'Montserrat Italic';
+    src:
+      url(${___CSS_LOADER_URL_REPLACEMENT_0___}) format(woff2),
+      url(${___CSS_LOADER_URL_REPLACEMENT_1___}) format(woff);
+      font-weight: 700;
+    }
+@font-face{
+    font-family: 'Montserrat';
+    src: 
+      url(${___CSS_LOADER_URL_REPLACEMENT_2___}) format(woff2),
+      url(${___CSS_LOADER_URL_REPLACEMENT_3___}) format(woff);
+    }
 
-.auth__button-text{
-    margin-top: 27px;
-    margin-bottom: 28px;
-}
-
-.auth__svg{
-    z-index: 0;
-
-}
-
-.auth__button-text{
-    z-index: 1;
-    position: relative;
-}
-`, "",{"version":3,"sources":["webpack://./src/index.css"],"names":[],"mappings":"AAAA;IACI,yBAAyB;IACzB,0BAA0B;IAC1B,0BAA0B;IAC1B,0BAA0B;IAC1B,yBAAyB;IACzB,iBAAiB;IACjB,gBAAgB;AACpB;AACA;IACI,WAAW;IACX,YAAY;IACZ,sBAAsB;AAC1B;;AAEA;IACI,mBAAmB;AACvB;;AAEA;IACI,gBAAgB;IAChB,YAAY;IACZ,WAAW;AACf;;AAEA;IACI,qCAAqC;IACrC,eAAe;IACf,gBAAgB;IAChB,oBAAoB;AACxB;;AAEA;IACI,qCAAqC;IACrC,eAAe;IACf,gBAAgB;IAChB,oBAAoB;AACxB;;AAEA;IACI,qCAAqC;IACrC,eAAe;IACf,gBAAgB;IAChB,oBAAoB;AACxB;;AAEA;IACI,qCAAqC;IACrC,2BAA2B;IAC3B,yBAAyB;IACzB,eAAe;IACf,kBAAkB;IAClB,gBAAgB;IAChB,mBAAmB;IACnB,qBAAqB;AACzB;;AAEA;IACI,qCAAqC;IACrC,eAAe;IACf,gBAAgB;IAChB,iBAAiB;AACrB;;AAEA;IACI,qBAAqB;IACrB,qBAAqB;IACrB,WAAW;IACX,YAAY;AAChB;AACA;IACI,qBAAqB;IACrB,qBAAqB;IACrB,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,WAAW;IACX,6BAA6B;AACjC;;AAEA;IACI,WAAW;IACX,YAAY;;AAEhB;;AAEA;IACI,aAAa;IACb,eAAe;IACf,iBAAiB;IACjB,kBAAkB;AACtB;;;;;AAKA;IACI,aAAa;IACb,wCAAwC;IACxC,WAAW;IACX,YAAY;IACZ,wBAAwB;;AAE5B;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,kBAAkB;IAClB,WAAW;AACf;AACA;IACI,aAAa;IACb,8BAA8B;AAClC;;AAEA;IACI,gBAAgB;IAChB,mBAAmB;IACnB,cAAc;GACf;uBACoB;AACvB;;AAEA;IACI,sBAAsB;IACtB,6CAA6C;IAC7C,kBAAkB;IAClB,6BAA6B;IAC7B,eAAe;IACf,kBAAkB;IAClB,gBAAgB;IAChB,gBAAgB,EAAE,WAAW;IAC7B,kBAAkB;IAClB,QAAQ;AACZ;;AAEA;IACI,gBAAgB;IAChB,mBAAmB;AACvB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,6BAA6B;IAC7B,iBAAiB;AACrB;;AAEA;IACI,gBAAgB;IAChB,mBAAmB;AACvB;;AAEA;IACI,gBAAgB;IAChB,mBAAmB;AACvB;;AAEA;IACI,UAAU;;AAEd;;AAEA;IACI,UAAU;IACV,kBAAkB;AACtB","sourcesContent":[":root{\r\n    --dark-shade-100: #1F2041;\r\n    --dark-shade-75: #1F204175;\r\n    --dark-shade-50: #1F204150;\r\n    --dark-shade-25: #1F204125;\r\n    --dark-shade-5: #1F204105;\r\n    --purple: #BC9CFF;\r\n    --green: #6FCF97;\r\n}\r\n*{\r\n    margin: 0px;\r\n    padding: 0px;\r\n    box-sizing: border-box;\r\n}\r\n\r\n*, *::before, *::after{\r\n    box-sizing: inherit;\r\n}\r\n\r\nhtml, body{\r\n    min-height: 100%;\r\n    height: 100%;\r\n    width: 100%;\r\n}\r\n\r\nh1{\r\n    font-family: 'Montserrat', sans-serif;\r\n    font-size: 24px;\r\n    font-weight: 700;\r\n    line-height: 29.26px;\r\n}\r\n\r\nh2{\r\n    font-family: 'Montserrat', sans-serif;\r\n    font-size: 19px;\r\n    font-weight: 700;\r\n    line-height: 23.16px;\r\n}\r\n\r\nh3{\r\n    font-family: 'Montserrat', sans-serif;\r\n    font-size: 12px;\r\n    font-weight: 700;\r\n    line-height: 14.63px;\r\n}\r\n\r\na{\r\n    font-family: 'Montserrat', sans-serif;\r\n    color: var(--dark-shade-50);\r\n    font-family: 'Montserrat';\r\n    font-size: 14px;\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    line-height: normal;\r\n    text-decoration: none;\r\n}\r\n\r\nbody p {\r\n    font-family: 'Montserrat', sans-serif;\r\n    font-size: 14px;\r\n    font-weight: 400;\r\n    line-height: 24px;\r\n}\r\n\r\nli{\r\n    list-style-type: none;\r\n    text-decoration: none;\r\n    margin: 0px;\r\n    padding: 0px;\r\n}\r\nul{\r\n    list-style-type: none;\r\n    text-decoration: none;\r\n    margin: 0px;\r\n    padding: 0px;\r\n}\r\n\r\nbutton{\r\n    border: 0px;\r\n    background-color: transparent;\r\n}\r\n\r\n.wrapper{\r\n    width: 100%;\r\n    height: auto;\r\n    \r\n}\r\n\r\n.page-container{\r\n    width: 1160px;\r\n    height: inherit;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n}\r\n\r\n\r\n\r\n\r\n.header_logged-out{\r\n    display: grid;\r\n    grid-template-columns: 391px 440px 329px;\r\n    width: 100%;\r\n    height: 70px;\r\n    background-color:#FFFFFF;\r\n    ;\r\n}\r\n\r\n.header_logged-in{\r\n    display: none;\r\n}\r\n\r\n.navbar{\r\n    position: relative;\r\n    width: 100%;\r\n}\r\n.list{\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n\r\n.list__item{\r\n    margin-top: 26px;\r\n    margin-bottom: 26px;\r\n    flex-shrink: 0;\r\n   /* margin-left: 5px;\r\n    margin-right: 5px;*/\r\n}\r\n\r\n.list__icon::after{\r\n    content: \"expand_more\";\r\n    color: var(--dark-50, rgba(31, 32, 65, 0.50));\r\n    text-align: center;\r\n    font-family: \"Material Icons\";\r\n    font-size: 24px;\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    line-height: 1px; /* 20.4px */\r\n    position: relative;\r\n    top: 7px;\r\n}\r\n\r\n.logo__image{\r\n    margin-top: 15px;\r\n    margin-bottom: 15px;\r\n}\r\n \r\n.auth{\r\n    display: flex;\r\n}\r\n\r\n.auth__button{\r\n    background-color: transparent;\r\n    margin-left: 20px;\r\n}\r\n\r\n.auth__button-text{\r\n    margin-top: 27px;\r\n    margin-bottom: 28px;\r\n}\r\n\r\n.auth__button-text{\r\n    margin-top: 27px;\r\n    margin-bottom: 28px;\r\n}\r\n\r\n.auth__svg{\r\n    z-index: 0;\r\n\r\n}\r\n\r\n.auth__button-text{\r\n    z-index: 1;\r\n    position: relative;\r\n}\r\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/fonts/fonts.css"],"names":[],"mappings":"AAAA;IACI,gCAAgC;IAChC;;0DAE4D;MAC1D,gBAAgB;IAClB;AACJ;IACI,yBAAyB;IACzB;;0DAEqD;IACrD","sourcesContent":["@font-face {\r\n    font-family: 'Montserrat Italic';\r\n    src:\r\n      url(Montserrat-Italic-VariableFont_wght.woff2) format(woff2),\r\n      url(Montserrat-Italic-VariableFont_wght.woff) format(woff);\r\n      font-weight: 700;\r\n    }\r\n@font-face{\r\n    font-family: 'Montserrat';\r\n    src: \r\n      url(Montserrat-VariableFont_wght.woff2) format(woff2),\r\n      url(Montserrat-VariableFont_wght.woff) format(woff);\r\n    }\r\n\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -296,6 +398,41 @@ module.exports = function (cssWithMappingToString) {
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
+/*!********************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
+  \********************************************************/
+/***/ ((module) => {
+
+
+
+module.exports = function (url, options) {
+  if (!options) {
+    options = {};
+  }
+  if (!url) {
+    return url;
+  }
+  url = String(url.__esModule ? url.default : url);
+
+  // If url is already wrapped in quotes, remove them
+  if (/^['"].*['"]$/.test(url)) {
+    url = url.slice(1, -1);
+  }
+  if (options.hash) {
+    url += options.hash;
+  }
+
+  // Should url be wrapped?
+  // See https://drafts.csswg.org/css-values-3/#urls
+  if (/["'() \t\n]|(%20)/.test(url) || options.needQuotes) {
+    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, "\\n"), "\"");
+  }
+  return url;
+};
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/runtime/sourceMaps.js":
 /*!************************************************************!*\
   !*** ./node_modules/css-loader/dist/runtime/sourceMaps.js ***!
@@ -335,7 +472,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0__);
 // Imports
 
-var ___HTML_LOADER_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ./index.css */ "./src/index.css?a524"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ./index.scss */ "./src/index.scss?1887"), __webpack_require__.b);
 var ___HTML_LOADER_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! ./svg/Logo.svg */ "./src/svg/Logo.svg"), __webpack_require__.b);
 // Module
 var ___HTML_LOADER_REPLACEMENT_0___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_0___);
@@ -377,10 +514,10 @@ module.exports = function (url, options) {
 
 /***/ }),
 
-/***/ "./src/index.css?cfe4":
-/*!***********************!*\
-  !*** ./src/index.css ***!
-  \***********************/
+/***/ "./src/index.scss?7223":
+/*!************************!*\
+  !*** ./src/index.scss ***!
+  \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -399,7 +536,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_index_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../node_modules/css-loader/dist/cjs.js!./index.css */ "./node_modules/css-loader/dist/cjs.js!./src/index.css");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_index_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./index.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/index.scss");
 
       
       
@@ -421,12 +558,12 @@ options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWi
 options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
 options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
 
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_index_css__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_index_scss__WEBPACK_IMPORTED_MODULE_6__["default"], options);
 
 
 
 
-       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_index_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_index_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_index_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_index_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_index_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_index_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
 
 
 /***/ }),
@@ -698,23 +835,63 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ "./src/index.scss?1887":
+/*!************************!*\
+  !*** ./src/index.scss ***!
+  \************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "142ca687d04e87086127.scss";
+
+/***/ }),
+
+/***/ "./src/fonts/Montserrat-Italic-VariableFont_wght.woff":
+/*!************************************************************!*\
+  !*** ./src/fonts/Montserrat-Italic-VariableFont_wght.woff ***!
+  \************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "fonts/Montserrat-Italic-VariableFont_wght..woff";
+
+/***/ }),
+
+/***/ "./src/fonts/Montserrat-Italic-VariableFont_wght.woff2":
+/*!*************************************************************!*\
+  !*** ./src/fonts/Montserrat-Italic-VariableFont_wght.woff2 ***!
+  \*************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "fonts/Montserrat-Italic-VariableFont_wght..woff2";
+
+/***/ }),
+
+/***/ "./src/fonts/Montserrat-VariableFont_wght.woff":
+/*!*****************************************************!*\
+  !*** ./src/fonts/Montserrat-VariableFont_wght.woff ***!
+  \*****************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "fonts/Montserrat-VariableFont_wght..woff";
+
+/***/ }),
+
+/***/ "./src/fonts/Montserrat-VariableFont_wght.woff2":
+/*!******************************************************!*\
+  !*** ./src/fonts/Montserrat-VariableFont_wght.woff2 ***!
+  \******************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "fonts/Montserrat-VariableFont_wght..woff2";
+
+/***/ }),
+
 /***/ "./src/svg/Logo.svg":
 /*!**************************!*\
   !*** ./src/svg/Logo.svg ***!
   \**************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "03990b132621d083b150.svg";
-
-/***/ }),
-
-/***/ "./src/index.css?a524":
-/*!***********************!*\
-  !*** ./src/index.css ***!
-  \***********************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-module.exports = __webpack_require__.p + "4e0bb5dbaec7a4cef225.css";
+module.exports = __webpack_require__.p + "ac88cb0fd69232c0759f.svg";
 
 /***/ })
 
@@ -863,12 +1040,13 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _index_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.html */ "./src/index.html");
-/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.css */ "./src/index.css?cfe4");
+/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.scss */ "./src/index.scss?7223");
+/* harmony import */ var _svg_Logo_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./svg/Logo.svg */ "./src/svg/Logo.svg");
 
 
-console.log(2+5);
+
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=main.55dc6d839d6be32726fd.js.map
+//# sourceMappingURL=main.b160903d01c533f4715f.js.map

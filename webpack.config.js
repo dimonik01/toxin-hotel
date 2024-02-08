@@ -29,8 +29,9 @@ module.exports = (env) => {
               loader: 'html-loader',
             },
             {
-              test: /\.svg$/,
-              use: "file-loader",
+              test: /\.(jpe?g|png|gif|svg)$/i, 
+              type: 'asset/resource',
+              
             },
             {
               test: /\.(c|sa|sc)ss$/i,

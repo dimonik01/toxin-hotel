@@ -17,11 +17,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _node_modules_css_loader_dist_cjs_js_fonts_fonts_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! -!../node_modules/css-loader/dist/cjs.js!./fonts/fonts.css */ "./node_modules/css-loader/dist/cjs.js!./src/fonts/fonts.css");
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_blocks_wrapper_page_container_header_logged_out_header_logged_out_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! -!../node_modules/css-loader/dist/cjs.js!./blocks/wrapper/page-container/header/_logged-out/header_logged-out.css */ "./node_modules/css-loader/dist/cjs.js!./src/blocks/wrapper/page-container/header/_logged-out/header_logged-out.css");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_3__);
 // Imports
-
 
 
 
@@ -29,27 +27,41 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! svg/Logo.svg */ "./src/svg/Logo.svg"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_fonts_fonts_css__WEBPACK_IMPORTED_MODULE_2__["default"]);
-___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_blocks_wrapper_page_container_header_logged_out_header_logged_out_css__WEBPACK_IMPORTED_MODULE_3__["default"]);
-var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_4___default()(___CSS_LOADER_URL_IMPORT_0___);
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_3___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `:root {
-  --dark-shade-100: #1F2041;
-  --dark-shade-75: #1F204175;
-  --dark-shade-50: #1F204150;
-  --dark-shade-25: #1F204125;
-  --dark-shade-5: #1F204105;
-  --purple: #BC9CFF;
-  --green: #6FCF97;
+___CSS_LOADER_EXPORT___.push([module.id, `.wrapper {
+  width: 100%;
+  height: auto;
 }
 
-:root {
-  --dark-shade-100: #1F2041;
-  --dark-shade-75: #1F204175;
-  --dark-shade-50: #1F204150;
-  --dark-shade-25: #1F204125;
-  --dark-shade-5: #1F204105;
-  --purple: #BC9CFF;
-  --green: #6FCF97;
+.page-container {
+  width: 1160px;
+  height: inherit;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header_logged-out {
+  display: grid;
+  grid-template-columns: 391px 440px 329px;
+  width: 100%;
+  height: 70px;
+  background-color: #FFFFFF;
+}
+
+.header_logged-in {
+  display: none;
+}
+
+.header {
+  width: 100%;
+  height: 70px;
+  background-color: #ffffff;
+}
+
+.navbar {
+  position: relative;
+  width: 100%;
 }
 
 * {
@@ -126,35 +138,6 @@ button {
   background-color: transparent;
 }
 
-.wrapper {
-  width: 100%;
-  height: auto;
-}
-
-.page-container {
-  width: 1160px;
-  height: inherit;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.header_logged-out {
-  display: grid;
-  grid-template-columns: 391px 440px 329px;
-  width: 100%;
-  height: 70px;
-  background-color: #FFFFFF;
-}
-
-.header_logged-in {
-  display: none;
-}
-
-.navbar {
-  position: relative;
-  width: 100%;
-}
-
 .list {
   display: flex;
   justify-content: space-between;
@@ -185,6 +168,8 @@ button {
   margin-top: 15px;
   margin-bottom: 15px;
   background-image: url(${___CSS_LOADER_URL_REPLACEMENT_0___});
+  height: 40px;
+  width: 106px;
 }
 
 .auth {
@@ -213,40 +198,7 @@ button {
 .auth__button-text {
   z-index: 1;
   position: relative;
-}`, "",{"version":3,"sources":["webpack://./src/scss/variables.scss","webpack://./src/index.scss"],"names":[],"mappings":"AAAA;EACI,yBAAA;EACA,0BAAA;EACA,0BAAA;EACA,0BAAA;EACA,yBAAA;EACA,iBAAA;EACA,gBAAA;ACGJ;;AALA;EACI,yBAAA;EACA,0BAAA;EACA,0BAAA;EACA,0BAAA;EACA,yBAAA;EACA,iBAAA;EACA,gBAAA;AAQJ;;AANA;EACI,WAAA;EACA,YAAA;EACA,sBAAA;AASJ;;AANA;EACI,mBAAA;AASJ;;AANA;EACI,gBAAA;EACA,YAAA;EACA,WAAA;AASJ;;AANA;EACI,qCAAA;EACA,eAAA;EACA,gBAAA;EACA,oBAAA;AASJ;;AANA;EACI,qCAAA;EACA,eAAA;EACA,gBAAA;EACA,oBAAA;AASJ;;AANA;EACI,qCAAA;EACA,eAAA;EACA,gBAAA;EACA,oBAAA;AASJ;;AANA;EACI,qCAAA;EACA,qCDzCY;EC0CZ,yBAAA;EACA,eAAA;EACA,kBAAA;EACA,gBAAA;EACA,mBAAA;EACA,qBAAA;AASJ;;AANA;EACI,qCAAA;EACA,eAAA;EACA,gBAAA;EACA,iBAAA;AASJ;;AANA;EACI,qBAAA;EACA,qBAAA;EACA,WAAA;EACA,YAAA;AASJ;;AAPA;EACI,qBAAA;EACA,qBAAA;EACA,WAAA;EACA,YAAA;AAUJ;;AAPA;EACI,WAAA;EACA,6BAAA;AAUJ;;AAPA;EACI,WAAA;EACA,YAAA;AAUJ;;AANA;EACI,aAAA;EACA,eAAA;EACA,iBAAA;EACA,kBAAA;AASJ;;AAHA;EACI,aAAA;EACA,wCAAA;EACA,WAAA;EACA,YAAA;EACA,yBAAA;AAMJ;;AAFA;EACI,aAAA;AAKJ;;AAFA;EACI,kBAAA;EACA,WAAA;AAKJ;;AAHA;EACI,aAAA;EACA,8BAAA;AAMJ;;AAHA;EACI,gBAAA;EACA,mBAAA;EACA,cAAA;EACD;sBAAA;AAOH;;AAHA;EACI,sBAAA;EACA,qCD3HY;EC4HZ,kBAAA;EACA,6BAAA;EACA,eAAA;EACA,kBAAA;EACA,gBAAA;EACA,gBAAA,EAAA,WAAA;EACA,kBAAA;EACA,QAAA;AAMJ;;AAHA;EACI,gBAAA;EACA,mBAAA;EACA,yDAAA;AAMJ;;AAHA;EACI,aAAA;AAMJ;;AAHA;EACI,6BAAA;EACA,iBAAA;AAMJ;;AAHA;EACI,gBAAA;EACA,mBAAA;AAMJ;;AAHA;EACI,gBAAA;EACA,mBAAA;AAMJ;;AAHA;EACI,UAAA;AAMJ;;AAFA;EACI,UAAA;EACA,kBAAA;AAKJ","sourcesContent":[":root{\r\n    --dark-shade-100: #1F2041;\r\n    --dark-shade-75: #1F204175;\r\n    --dark-shade-50: #1F204150;\r\n    --dark-shade-25: #1F204125;\r\n    --dark-shade-5: #1F204105;\r\n    --purple: #BC9CFF;\r\n    --green: #6FCF97;\r\n}\r\n\r\n$dark-shade-100: #1F2041;\r\n$dark-shade-75: #1F204175;\r\n$dark-shade-50: #1F204150;\r\n$dark-shade-25: #1F204125;\r\n$dark-shade-5: #1F204105;\r\n$purple: #BC9CFF;\r\n$green: #6FCF97;\r\n\r\n","@import 'fonts/fonts.css';\r\n@import 'blocks/wrapper/page-container/header/_logged-out/header_logged-out.css';\r\n@import 'scss/variables.scss';\r\n\r\n\r\n:root{\r\n    --dark-shade-100: #1F2041;\r\n    --dark-shade-75: #1F204175;\r\n    --dark-shade-50: #1F204150;\r\n    --dark-shade-25: #1F204125;\r\n    --dark-shade-5: #1F204105;\r\n    --purple: #BC9CFF;\r\n    --green: #6FCF97;\r\n}\r\n*{\r\n    margin: 0px;\r\n    padding: 0px;\r\n    box-sizing: border-box;\r\n}\r\n\r\n*, *::before, *::after{\r\n    box-sizing: inherit;\r\n}\r\n\r\nhtml, body{\r\n    min-height: 100%;\r\n    height: 100%;\r\n    width: 100%;\r\n}\r\n\r\nh1{\r\n    font-family: 'Montserrat', sans-serif;\r\n    font-size: 24px;\r\n    font-weight: 700;\r\n    line-height: 29.26px;\r\n}\r\n\r\nh2{\r\n    font-family: 'Montserrat', sans-serif;\r\n    font-size: 19px;\r\n    font-weight: 700;\r\n    line-height: 23.16px;\r\n}\r\n\r\nh3{\r\n    font-family: 'Montserrat', sans-serif;\r\n    font-size: 12px;\r\n    font-weight: 700;\r\n    line-height: 14.63px;\r\n}\r\n\r\na{\r\n    font-family: 'Montserrat', sans-serif;\r\n    color: $dark-shade-50;\r\n    font-family: 'Montserrat';\r\n    font-size: 14px;\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    line-height: normal;\r\n    text-decoration: none;\r\n}\r\n\r\nbody p {\r\n    font-family: 'Montserrat', sans-serif;\r\n    font-size: 14px;\r\n    font-weight: 400;\r\n    line-height: 24px;\r\n}\r\n\r\nli{\r\n    list-style-type: none;\r\n    text-decoration: none;\r\n    margin: 0px;\r\n    padding: 0px;\r\n}\r\nul{\r\n    list-style-type: none;\r\n    text-decoration: none;\r\n    margin: 0px;\r\n    padding: 0px;\r\n}\r\n\r\nbutton{\r\n    border: 0px;\r\n    background-color: transparent;\r\n}\r\n\r\n.wrapper{\r\n    width: 100%;\r\n    height: auto;\r\n    \r\n}\r\n\r\n.page-container{\r\n    width: 1160px;\r\n    height: inherit;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n}\r\n\r\n\r\n\r\n\r\n.header_logged-out{\r\n    display: grid;\r\n    grid-template-columns: 391px 440px 329px;\r\n    width: 100%;\r\n    height: 70px;\r\n    background-color:#FFFFFF;\r\n    ;\r\n}\r\n\r\n.header_logged-in{\r\n    display: none;\r\n}\r\n\r\n.navbar{\r\n    position: relative;\r\n    width: 100%;\r\n}\r\n.list{\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n\r\n.list__item{\r\n    margin-top: 26px;\r\n    margin-bottom: 26px;\r\n    flex-shrink: 0;\r\n   /* margin-left: 5px;\r\n    margin-right: 5px;*/\r\n}\r\n\r\n.list__icon::after{\r\n    content: \"expand_more\";\r\n    color: $dark-shade-50/*var(--dark-50, rgba(31, 32, 65, 0.50))*/;\r\n    text-align: center;\r\n    font-family: \"Material Icons\";\r\n    font-size: 24px;\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    line-height: 1px; /* 20.4px */\r\n    position: relative;\r\n    top: 7px;\r\n}\r\n\r\n.logo__image{\r\n    margin-top: 15px;\r\n    margin-bottom: 15px;\r\n    background-image: url(svg/Logo.svg);\r\n}\r\n \r\n.auth{\r\n    display: flex;\r\n}\r\n\r\n.auth__button{\r\n    background-color: transparent;\r\n    margin-left: 20px;\r\n}\r\n\r\n.auth__button-text{\r\n    margin-top: 27px;\r\n    margin-bottom: 28px;\r\n}\r\n\r\n.auth__button-text{\r\n    margin-top: 27px;\r\n    margin-bottom: 28px;\r\n}\r\n\r\n.auth__svg{\r\n    z-index: 0;\r\n\r\n}\r\n\r\n.auth__button-text{\r\n    z-index: 1;\r\n    position: relative;\r\n}\r\n"],"sourceRoot":""}]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js!./src/blocks/wrapper/page-container/header/_logged-out/header_logged-out.css":
-/*!**************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./src/blocks/wrapper/page-container/header/_logged-out/header_logged-out.css ***!
-  \**************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-// Imports
-
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, `.header_logged-out{
-    display: grid;
-    grid-template-columns: 391px 440px 329px;
-    width: 100%;
-    height: 70px;
-    background-color:#FFFFFF;
-    ;
-}`, "",{"version":3,"sources":["webpack://./src/blocks/wrapper/page-container/header/_logged-out/header_logged-out.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,wCAAwC;IACxC,WAAW;IACX,YAAY;IACZ,wBAAwB;;AAE5B","sourcesContent":[".header_logged-out{\r\n    display: grid;\r\n    grid-template-columns: 391px 440px 329px;\r\n    width: 100%;\r\n    height: 70px;\r\n    background-color:#FFFFFF;\r\n    ;\r\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/blocks/wrapper/_wrapper.scss","webpack://./src/index.scss","webpack://./src/blocks/wrapper/page-container/_page-container.scss","webpack://./src/blocks/wrapper/page-container/header/_logged-out/_header_logged-out.scss","webpack://./src/blocks/wrapper/page-container/header/_logged-in/_header_logged-in.scss","webpack://./src/blocks/wrapper/page-container/header/_header.scss","webpack://./src/blocks/wrapper/page-container/header/navbar/_navbar.scss","webpack://./src/scss/global/_boilerplate.scss","webpack://./src/scss/global/_typography.scss","webpack://./src/scss/_variables.scss"],"names":[],"mappings":"AAAA;EACI,WAAA;EACA,YAAA;ACEJ;;ACJA;EACI,aAAA;EACA,eAAA;EACA,iBAAA;EACA,kBAAA;ADOJ;;AEXA;EACI,aAAA;EACA,wCAAA;EACA,WAAA;EACA,YAAA;EACA,yBAAA;AFcJ;;AGnBA;EACI,aAAA;AHsBJ;;AIvBA;EACI,WAAA;EACA,YAAA;EACA,yBAAA;AJ0BJ;;AK7BA;EACI,kBAAA;EACA,WAAA;ALgCJ;;AMlCA;EACI,WAAA;EACA,YAAA;EACA,sBAAA;ANqCJ;;AMlCA;EACI,mBAAA;ANqCJ;;AO5CA;EACI,gBAAA;EACA,YAAA;EACA,WAAA;AP+CJ;;AO5CA;EACI,qCAAA;EACA,eAAA;EACA,gBAAA;EACA,oBAAA;AP+CJ;;AO5CA;EACI,qCAAA;EACA,eAAA;EACA,gBAAA;EACA,oBAAA;AP+CJ;;AO5CA;EACI,qCAAA;EACA,eAAA;EACA,gBAAA;EACA,oBAAA;AP+CJ;;AO5CA;EACI,qCAAA;EACA,qCC1BY;ED2BZ,yBAAA;EACA,eAAA;EACA,kBAAA;EACA,gBAAA;EACA,mBAAA;EACA,qBAAA;AP+CJ;;AO5CA;EACI,qCAAA;EACA,eAAA;EACA,gBAAA;EACA,iBAAA;AP+CJ;;AO5CA;EACI,qBAAA;EACA,qBAAA;EACA,WAAA;EACA,YAAA;AP+CJ;;AO7CA;EACI,qBAAA;EACA,qBAAA;EACA,WAAA;EACA,YAAA;APgDJ;;AO7CA;EACI,WAAA;EACA,6BAAA;APgDJ;;AAlFA;EACI,aAAA;EACA,8BAAA;AAqFJ;;AAlFA;EACI,gBAAA;EACA,mBAAA;EACA,cAAA;EACD;sBAAA;AAsFH;;AAlFA;EACI,sBAAA;EACA,qCQtCY;ERuCZ,kBAAA;EACA,6BAAA;EACA,eAAA;EACA,kBAAA;EACA,gBAAA;EACA,gBAAA,EAAA,WAAA;EACA,kBAAA;EACA,QAAA;AAqFJ;;AAlFA;EACI,gBAAA;EACA,mBAAA;EACA,yDAAA;EACA,YAAA;EACA,YAAA;AAqFJ;;AAlFA;EACI,aAAA;AAqFJ;;AAlFA;EACI,6BAAA;EACA,iBAAA;AAqFJ;;AAlFA;EACI,gBAAA;EACA,mBAAA;AAqFJ;;AAlFA;EACI,gBAAA;EACA,mBAAA;AAqFJ;;AAlFA;EACI,UAAA;AAqFJ;;AAjFA;EACI,UAAA;EACA,kBAAA;AAoFJ","sourcesContent":[".wrapper{\r\n    width: 100%;\r\n    height: auto;\r\n    \r\n}","@import 'fonts/fonts.css';\r\n@import 'blocks/wrapper/_wrapper.scss';\r\n@import 'blocks/wrapper/page-container/_page-container.scss';\r\n@import 'blocks/wrapper/page-container/header/_logged-out/_header_logged-out.scss';\r\n@import 'blocks/wrapper/page-container/header/_logged-in/_header_logged-in.scss';\r\n@import 'blocks/wrapper/page-container/header/_header.scss';\r\n@import 'blocks/wrapper/page-container/header/navbar/_navbar.scss';\r\n@import 'scss/_variables.scss';\r\n@import 'scss/global/_boilerplate.scss';\r\n@import 'scss/global/_typography.scss';\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n.list{\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n\r\n.list__item{\r\n    margin-top: 26px;\r\n    margin-bottom: 26px;\r\n    flex-shrink: 0;\r\n   /* margin-left: 5px;\r\n    margin-right: 5px;*/\r\n}\r\n\r\n.list__icon::after{\r\n    content: \"expand_more\";\r\n    color: $dark-shade-50/*var(--dark-50, rgba(31, 32, 65, 0.50))*/;\r\n    text-align: center;\r\n    font-family: \"Material Icons\";\r\n    font-size: 24px;\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    line-height: 1px; /* 20.4px */\r\n    position: relative;\r\n    top: 7px;\r\n}\r\n\r\n.logo__image{\r\n    margin-top: 15px;\r\n    margin-bottom: 15px;\r\n    background-image: url(svg/Logo.svg);\r\n    height: 40px;\r\n    width: 106px;\r\n}\r\n \r\n.auth{\r\n    display: flex;\r\n}\r\n\r\n.auth__button{\r\n    background-color: transparent;\r\n    margin-left: 20px;\r\n}\r\n\r\n.auth__button-text{\r\n    margin-top: 27px;\r\n    margin-bottom: 28px;\r\n}\r\n\r\n.auth__button-text{\r\n    margin-top: 27px;\r\n    margin-bottom: 28px;\r\n}\r\n\r\n.auth__svg{\r\n    z-index: 0;\r\n\r\n}\r\n\r\n.auth__button-text{\r\n    z-index: 1;\r\n    position: relative;\r\n}\r\n",".page-container{\r\n    width: 1160px;\r\n    height: inherit;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n}",".header_logged-out{\r\n    display: grid;\r\n    grid-template-columns: 391px 440px 329px;\r\n    width: 100%;\r\n    height: 70px;\r\n    background-color:#FFFFFF;\r\n    ;\r\n}",".header_logged-in{\r\n    display: none;\r\n}",".header{\r\n    width: 100%;\r\n    height: 70px;\r\n    background-color: #ffffff;\r\n}",".navbar{\r\n    position: relative;\r\n    width: 100%;\r\n}","*{\r\n    margin: 0px;\r\n    padding: 0px;\r\n    box-sizing: border-box;\r\n}\r\n\r\n*, *::before, *::after{\r\n    box-sizing: inherit;\r\n}\r\n","html, body{\r\n    min-height: 100%;\r\n    height: 100%;\r\n    width: 100%;\r\n}\r\n\r\nh1{\r\n    font-family: 'Montserrat', sans-serif;\r\n    font-size: 24px;\r\n    font-weight: 700;\r\n    line-height: 29.26px;\r\n}\r\n\r\nh2{\r\n    font-family: 'Montserrat', sans-serif;\r\n    font-size: 19px;\r\n    font-weight: 700;\r\n    line-height: 23.16px;\r\n}\r\n\r\nh3{\r\n    font-family: 'Montserrat', sans-serif;\r\n    font-size: 12px;\r\n    font-weight: 700;\r\n    line-height: 14.63px;\r\n}\r\n\r\na{\r\n    font-family: 'Montserrat', sans-serif;\r\n    color: $dark-shade-50;\r\n    font-family: 'Montserrat';\r\n    font-size: 14px;\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    line-height: normal;\r\n    text-decoration: none;\r\n}\r\n\r\nbody p {\r\n    font-family: 'Montserrat', sans-serif;\r\n    font-size: 14px;\r\n    font-weight: 400;\r\n    line-height: 24px;\r\n}\r\n\r\nli{\r\n    list-style-type: none;\r\n    text-decoration: none;\r\n    margin: 0px;\r\n    padding: 0px;\r\n}\r\nul{\r\n    list-style-type: none;\r\n    text-decoration: none;\r\n    margin: 0px;\r\n    padding: 0px;\r\n}\r\n\r\nbutton{\r\n    border: 0px;\r\n    background-color: transparent;\r\n}","\r\n$dark-shade-100: #1F2041;\r\n$dark-shade-75: #1F204175;\r\n$dark-shade-50: #1F204150;\r\n$dark-shade-25: #1F204125;\r\n$dark-shade-5: #1F204105;\r\n$purple: #BC9CFF;\r\n$green: #6FCF97;\r\n\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -477,7 +429,7 @@ var ___HTML_LOADER_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(
 // Module
 var ___HTML_LOADER_REPLACEMENT_0___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_0___);
 var ___HTML_LOADER_REPLACEMENT_1___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_1___);
-var code = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <link href=\"" + ___HTML_LOADER_REPLACEMENT_0___ + "\" rel=\"stylesheet\" />\r\n    <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title>Document</title>\r\n</head>\r\n<body>\r\n    <div class=\"wrapper\">\r\n        <div class=\"page-container\">\r\n            <header class=\"header header_logged-out\">\r\n                <a href=\"path-to-landing\" class=\"logo\">\r\n                    <img src=\"" + ___HTML_LOADER_REPLACEMENT_1___ + "\" alt=\"\" class=\"logo__image\">\r\n                </a>\r\n                <nav class=\"navbar\">\r\n                    <ul class=\"list\">\r\n                        <li class=\"list__item\">\r\n                            <a href=\"\" class=\"list__link\">О нас</a>\r\n                        </li>\r\n                        <ul class=\"list__item sublist\">\r\n                            <a href=\"\" class=\"list__link list__icon\">\r\n                                Услуги\r\n                            </a>\r\n                            <li class=\"sublist__item\"></li>\r\n                            <li class=\"sublist__item\"></li>\r\n                            <li class=\"sublist__item\"></li>\r\n                            <li class=\"sublist__item\"></li>\r\n                            <li class=\"sublist__item\"></li>\r\n                        </ul>\r\n                        <li class=\"list__item\">\r\n                            <a href=\"\" class=\"list__link\">Вакансии</a>\r\n                        </li>\r\n                        <li class=\"list__item\">\r\n                            <a href=\"\" class=\"list__link\">Новости</a>\r\n                        </li>\r\n                        <ul class=\"list__item sublist\">\r\n                            <a href=\"\" class=\"list__link list__icon\">\r\n                                Соглашения            \r\n                            </a>\r\n                            <li class=\"sublist__item\"></li>\r\n                            <li class=\"sublist__item\"></li>\r\n                            <li class=\"sublist__item\"></li>\r\n                            <li class=\"sublist__item\"></li>\r\n                            <li class=\"sublist__item\"></li>\r\n                        </ul>\r\n                    </ul>\r\n                </nav>\r\n                <div class=\"auth\">\r\n                    <button class=\"auth__button auth__button-sign-in\" type=\"button\">\r\n                        <svg class=\"auth__svg\" width=\"87\" height=\"34\" viewBox=\"0 0 87 34\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                            <path id=\"Rectangle 2\" d=\"M17 1H70C78.8365 1 86 8.16344 86 17C86 25.8366 78.8366 33 70 33H17C8.16345 33 1 25.8366 1 17C1 8.16344 8.16344 1 17 1Z\" stroke=\"url(#paint0_linear_18370_50)\" stroke-width=\"2\"/>           \r\n                            <defs>\r\n                            <linearGradient id=\"paint0_linear_18370_50\" x1=\"43.5\" y1=\"0\" x2=\"43.5\" y2=\"34\" gradientUnits=\"userSpaceOnUse\">\r\n                            <stop stop-color=\"#BC9CFF\"/>\r\n                            <stop offset=\"1\" stop-color=\"#8BA4F9\"/>\r\n                            </linearGradient>\r\n                            </defs>\r\n                            <text x=\"20\" y=\"21\" font-family=\"Montserrat\" font-weight=\"bold\" text-transform=\"uppercase\" y=\"14\" font-size=\"12\" margin=\"auto\"  fill=\"#BB9BFF\">\r\n                                ВОЙТИ\r\n                            </text>     \r\n                        </svg>\r\n                    </button>\r\n                    <button class=\"auth__button auth__button-register\">\r\n                        <svg class=\"auth__svg\" width=\"196\" height=\"34\" viewBox=\"0 0 196 34\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                            <path id=\"Rectangle 2\" d=\"M0 17C0 7.61116 7.61116 0 17 0H179C188.389 0 196 7.61116 196 17C196 26.3888 188.389 34 179 34H17C7.61116 34 0 26.3888 0 17Z\" fill=\"url(#paint0_linear_18370_47)\"/>\r\n                            <defs>\r\n                            <linearGradient id=\"paint0_linear_18370_47\" x1=\"98\" y1=\"0\" x2=\"98\" y2=\"34\" gradientUnits=\"userSpaceOnUse\">\r\n                            <stop stop-color=\"#BC9CFF\"/>\r\n                            <stop offset=\"1\" stop-color=\"#8BA4F9\"/>\r\n                            </linearGradient>\r\n                            </defs>\r\n                            <text x=\"20\" y=\"21\" font-family=\"Montserrat\" font-weight=\"bold\" text-transform=\"uppercase\" y=\"14\" font-size=\"12\" fill=\"#FFFFFF\">\r\n                                ЗАРЕГИСТРИРОВАТЬСЯ\r\n                            </text>\r\n                            </svg>\r\n                            \r\n                               \r\n                    </button>\r\n                </div>\r\n            </header>\r\n            <header class=\"header header_logged-in\">\r\n\r\n            </header>\r\n\r\n            <section class=\"section\"></section>\r\n            <footer class=\"footer\"></footer>\r\n        </div>    \r\n    </div>\r\n</body>\r\n</html>";
+var code = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <link href=\"" + ___HTML_LOADER_REPLACEMENT_0___ + "\" rel=\"stylesheet\" />\r\n    <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title>Document</title>\r\n</head>\r\n<body>\r\n    <div class=\"wrapper\">\r\n        <div class=\"page-container\">\r\n            <header class=\"header header_logged-out\">\r\n                <a href=\"path-to-landing\" class=\"logo\">\r\n                    <img alt=\"\" src=\"" + ___HTML_LOADER_REPLACEMENT_1___ + "\" class=\"logo__image\">\r\n                </a>\r\n                <nav class=\"navbar\">\r\n                    <ul class=\"list\">\r\n                        <li class=\"list__item\">\r\n                            <a href=\"\" class=\"list__link\">О нас</a>\r\n                        </li>\r\n                        <ul class=\"list__item sublist\">\r\n                            <a href=\"\" class=\"list__link list__icon\">\r\n                                Услуги\r\n                            </a>\r\n                            <li class=\"sublist__item\"></li>\r\n                            <li class=\"sublist__item\"></li>\r\n                            <li class=\"sublist__item\"></li>\r\n                            <li class=\"sublist__item\"></li>\r\n                            <li class=\"sublist__item\"></li>\r\n                        </ul>\r\n                        <li class=\"list__item\">\r\n                            <a href=\"\" class=\"list__link\">Вакансии</a>\r\n                        </li>\r\n                        <li class=\"list__item\">\r\n                            <a href=\"\" class=\"list__link\">Новости</a>\r\n                        </li>\r\n                        <ul class=\"list__item sublist\">\r\n                            <a href=\"\" class=\"list__link list__icon\">\r\n                                Соглашения            \r\n                            </a>\r\n                            <li class=\"sublist__item\"></li>\r\n                            <li class=\"sublist__item\"></li>\r\n                            <li class=\"sublist__item\"></li>\r\n                            <li class=\"sublist__item\"></li>\r\n                            <li class=\"sublist__item\"></li>\r\n                        </ul>\r\n                    </ul>\r\n                </nav>\r\n                <div class=\"auth\">\r\n                    <button class=\"auth__button auth__button-sign-in\" type=\"button\">\r\n                        <svg class=\"auth__svg\" width=\"87\" height=\"34\" viewBox=\"0 0 87 34\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                            <path id=\"Rectangle 2\" d=\"M17 1H70C78.8365 1 86 8.16344 86 17C86 25.8366 78.8366 33 70 33H17C8.16345 33 1 25.8366 1 17C1 8.16344 8.16344 1 17 1Z\" stroke=\"url(#paint0_linear_18370_50)\" stroke-width=\"2\"/>           \r\n                            <defs>\r\n                            <linearGradient id=\"paint0_linear_18370_50\" x1=\"43.5\" y1=\"0\" x2=\"43.5\" y2=\"34\" gradientUnits=\"userSpaceOnUse\">\r\n                            <stop stop-color=\"#BC9CFF\"/>\r\n                            <stop offset=\"1\" stop-color=\"#8BA4F9\"/>\r\n                            </linearGradient>\r\n                            </defs>\r\n                            <text x=\"20\" y=\"21\" font-family=\"Montserrat\" font-weight=\"bold\" text-transform=\"uppercase\" y=\"14\" font-size=\"12\" margin=\"auto\"  fill=\"#BB9BFF\">\r\n                                ВОЙТИ\r\n                            </text>     \r\n                        </svg>\r\n                    </button>\r\n                    <button class=\"auth__button auth__button-register\">\r\n                        <svg class=\"auth__svg\" width=\"196\" height=\"34\" viewBox=\"0 0 196 34\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                            <path id=\"Rectangle 2\" d=\"M0 17C0 7.61116 7.61116 0 17 0H179C188.389 0 196 7.61116 196 17C196 26.3888 188.389 34 179 34H17C7.61116 34 0 26.3888 0 17Z\" fill=\"url(#paint0_linear_18370_47)\"/>\r\n                            <defs>\r\n                            <linearGradient id=\"paint0_linear_18370_47\" x1=\"98\" y1=\"0\" x2=\"98\" y2=\"34\" gradientUnits=\"userSpaceOnUse\">\r\n                            <stop stop-color=\"#BC9CFF\"/>\r\n                            <stop offset=\"1\" stop-color=\"#8BA4F9\"/>\r\n                            </linearGradient>\r\n                            </defs>\r\n                            <text x=\"20\" y=\"21\" font-family=\"Montserrat\" font-weight=\"bold\" text-transform=\"uppercase\" y=\"14\" font-size=\"12\" fill=\"#FFFFFF\">\r\n                                ЗАРЕГИСТРИРОВАТЬСЯ\r\n                            </text>\r\n                            </svg>\r\n                            \r\n                               \r\n                    </button>\r\n                </div>\r\n            </header>\r\n            <header class=\"header header_logged-in\">\r\n\r\n            </header>\r\n\r\n            <section class=\"section\"></section>\r\n            <footer class=\"footer\"></footer>\r\n        </div>    \r\n    </div>\r\n</body>\r\n</html>";
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (code);
 
@@ -1049,4 +1001,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=main.b160903d01c533f4715f.js.map
+//# sourceMappingURL=main.4de97b2f8572a216e93e.js.map

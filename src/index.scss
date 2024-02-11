@@ -1,5 +1,6 @@
 @import 'fonts/fonts.css';
 @import 'scss/_variables.scss';
+@import 'scss/global/_mixins.scss' ;
 @import 'scss/global/_boilerplate.scss';
 @import 'scss/global/_typography.scss';
 @import 'blocks/wrapper/_wrapper.scss';
@@ -8,6 +9,7 @@
 @import 'blocks/wrapper/page-container/footer/_footer.scss';
 @import 'blocks/wrapper/page-container/header/_header.scss';
 @import 'blocks/wrapper/page-container/header/_logged-out/_header_logged-out.scss';
+@import 'blocks/wrapper/page-container/header/_logged-in/user/_user.scss';
 @import 'blocks/wrapper/page-container/header/_logged-in/_header_logged-in.scss';
 @import 'blocks/wrapper/page-container/header/logo/__image/_logo__image.scss';
 @import 'blocks/wrapper/page-container/header/auth/_auth.scss';

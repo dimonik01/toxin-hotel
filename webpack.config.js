@@ -5,6 +5,7 @@ const devMode = mode === 'development';
 const target = devMode ? 'web': 'browserslist';
 const devtool = devMode ? 'source-map' : undefined;
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const PugPlugin = require('pug-plugin');
 
 module.exports = (env) => {
     return {
@@ -12,26 +13,46 @@ module.exports = (env) => {
         target,
         devtool,
         mode: env.mode ?? 'development',
-        entry: path.resolve(__dirname, 'src', 'index.js'),
+        entry: {
+          index: 'src/pages/starting-page/starting-page.pug',
+          //path.resolve(__dirname, 'src', 'index.js'),
+        },
         output: {
-            path: path.resolve(__dirname, 'build'),
-            filename: '[name].[contenthash].js',
+            path: path.join(__dirname, 'build'),
+            publicPath: '/',
+            //path: path.resolve(__dirname, 'build'),
+            //filename: '[name].[contenthash].js',
             clean: true
         },
         plugins: [
-            new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'src', 'index.html') }),
-            new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' })
+            //new PugPlugin({ template: path.resolve(__dirname, 'src/pages', 'starting-page.pug'), filename: 'index.html' }),
+            new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
+            new PugPlugin({
+              pretty: true, // formatting HTML, useful for development mode
+              js: {
+                // output filename of extracted JS file from source script
+                filename: 'assets/js/[name].[contenthash:8].js',
+              },
+              css: {
+                // output filename of extracted CSS file from source style
+                filename: 'assets/css/[name].[contenthash:8].css',
+              },
+            }),
           ],
         module: {
           rules: [
-            {
+            /*{
               test: /\.html$/i,
               loader: 'html-loader',
-            },
+            },*/
             {
               test: /\.(jpe?g|png|gif|svg)$/i, 
               type: 'asset/resource',
               
+            },
+            { 
+                test: /\.pug$/,
+                loader: PugPlugin.loader, 
             },
             {
               test: /\.(c|sa|sc)ss$/i,

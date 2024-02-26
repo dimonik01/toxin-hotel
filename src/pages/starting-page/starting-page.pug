@@ -1,0 +1,12 @@
+link(href=require('../../components/logo/logo.scss') rel='stylesheet')
+script(src=require('../../components/logo/logo.js') defer='defer')
+include ../../components/logo/logo.pug
+doctype html 
+html 
+    head
+    body 
+        header
+        .content 
+            p test help me
+        +logo 
+        footer

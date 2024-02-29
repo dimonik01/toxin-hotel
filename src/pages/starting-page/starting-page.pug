@@ -1,6 +1,8 @@
 link(href=require('../../components/logo/logo.scss') rel='stylesheet')
+link(href=require('../../scss/_variables.scss') rel='stylesheet')
 script(src=require('../../components/logo/logo.js') defer='defer')
 include ../../components/logo/logo.pug
+include ../../components/navbar/navbar.pug
 doctype html 
 html 
     head
@@ -8,5 +10,7 @@ html
         header
         .content 
             p test help me
-        +logo 
+            a(href="../test-page/test-page.html") test
+        +logo
+        +navbar
         footer

@@ -1,0 +1,23 @@
+link(href=require('navbar.scss') rel='stylesheet')
+mixin navbar
+    - let classes = ["list__item", "list__link", "list__icon", "sublist", "sublist__item"]
+    nav.navbar
+        ul.list
+            li(class = classes[0])         
+                a(href="" class=classes[1]) О нас
+            ul(class = classes[0] + ' ' + classes[3])
+                a(href="" class = classes[1] + ' ' + classes[2]) Услуги
+                - for (let x = 0; x < 5; x++)
+                    li(class = classes[4])
+            li(class = classes[0])
+                a(class = classes[1] href="") Вакансии
+            li(class = classes[0])
+                a(class = classes[1] href="") Новости
+            ul(class = classes[0] + ' ' + classes[3])
+                a(href="" class = classes[1] + ' ' + classes[2]) Соглашения
+                - for (let x = 0; x < 5; x++)
+                    li(class = classes[4])
+                
+                
+                    
+                        

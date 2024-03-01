@@ -1,6 +1,7 @@
 link(href=require('../../components/logo/logo.scss') rel='stylesheet')
 link(href=require('../../scss/_variables.scss') rel='stylesheet')
-script(src=require('../../components/logo/logo.js') defer='defer')
+link(href=require('../../index.scss') rel='stylesheet')
+script(src=require('../../index.js') defer='defer')
 include ../../components/logo/logo.pug
 include ../../components/navbar/navbar.pug
 doctype html 
@@ -9,8 +10,6 @@ html
     body 
         header
         .content 
-            p test help me
-            a(href="../test-page/test-page.html") test
-        +logo
-        +navbar
+            a(href="./test.html") UI-Kit
+            a(href="./test.html") Toxin
         footer

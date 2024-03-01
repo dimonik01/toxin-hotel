@@ -1,28 +1,7 @@
-@import 'fonts/fonts.css';
+@import 'fonts/fonts.scss';
 @import 'scss/_variables.scss';
 @import 'scss/global/_mixins.scss' ;
 @import 'scss/global/_boilerplate.scss';
 @import 'scss/global/_typography.scss';
-@import 'blocks/wrapper/_wrapper.scss';
-@import 'blocks/wrapper/page-container/_page-container.scss';
-@import 'blocks/wrapper/page-container/section/_section.scss';
-@import 'blocks/wrapper/page-container/footer/_footer.scss';
-@import 'blocks/wrapper/page-container/header/_header.scss';
-@import 'blocks/wrapper/page-container/header/_logged-out/_header_logged-out.scss';
-@import 'blocks/wrapper/page-container/header/_logged-in/user/_user.scss';
-@import 'blocks/wrapper/page-container/header/_logged-in/_header_logged-in.scss';
-@import 'blocks/wrapper/page-container/header/logo/__image/_logo__image.scss';
-@import 'blocks/wrapper/page-container/header/auth/_auth.scss';
-@import 'blocks/wrapper/page-container/header/auth/__button/auth__button.scss';
-@import 'blocks/wrapper/page-container/header/auth/__svg/_auth__svg.scss';
-@import 'blocks/wrapper/page-container/header/auth/__button-text/auth__button-text.scss';
-@import 'blocks/wrapper/page-container/header/auth/__button-sign-in/auth__button-sign-in.scss';
-@import 'blocks/wrapper/page-container/header/auth/__button-register/auth__button-register.scss';
-@import 'blocks/wrapper/page-container/header/navbar/_navbar.scss';
-@import 'blocks/wrapper/page-container/header/navbar/list/_list.scss';
-@import 'blocks/wrapper/page-container/header/navbar/list/__item/_list__item.scss';
-@import 'blocks/wrapper/page-container/header/navbar/list/__link/_list__link.scss';
-@import 'blocks/wrapper/page-container/header/navbar/list/__icon/_list__icon.scss';
-@import 'blocks/wrapper/page-container/header/navbar/list/sublist/_sublist.scss';
-@import 'blocks/wrapper/page-container/header/navbar/list/sublist/__item/_sublist__item.scss';
+
 

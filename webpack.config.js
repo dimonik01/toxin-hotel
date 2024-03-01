@@ -15,7 +15,8 @@ module.exports = (env) => {
         mode: env.mode ?? 'development',
         entry: {
           index: 'src/pages/starting-page/starting-page.pug',
-          test: 'src/pages/test-page/test-page.pug'
+          test: 'src/pages/test-page/test-page.pug',
+          uikit: 'src/pages/ui-kit/ui-kit.pug'
           //path.resolve(__dirname, 'src', 'index.js'),
         },
         output: {

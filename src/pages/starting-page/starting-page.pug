@@ -1,15 +1,7 @@
-link(href=require('../../components/logo/logo.scss') rel='stylesheet')
-link(href=require('../../scss/_variables.scss') rel='stylesheet')
-link(href=require('../../index.scss') rel='stylesheet')
-script(src=require('../../index.js') defer='defer')
-include ../../components/logo/logo.pug
-include ../../components/navbar/navbar.pug
-doctype html 
-html 
-    head
-    body 
-        header
-        .content 
-            a(href="./test.html") UI-Kit
-            a(href="./test.html") Toxin
-        footer
+extends ../../layouts/ui-kit-layout.pug
+block scripts 
+    link(href=require('./starting-page.scss') rel='stylesheet')  
+block header
+    .content 
+        a(class="content__link" href="./uikit.html") UI-Kit
+        a(class="content__link" href="./test.html") Toxin

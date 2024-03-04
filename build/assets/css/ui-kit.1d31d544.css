@@ -1,0 +1,14 @@
+.router {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.router__link {
+  margin-top: 20px;
+  font-size: 40px;
+}
+.router_first {
+  margin-top: 200px;
+}
+/*# sourceMappingURL=ui-kit.1d31d544.css.map */

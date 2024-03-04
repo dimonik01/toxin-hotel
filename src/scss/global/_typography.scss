@@ -2,6 +2,7 @@ html, body{
     min-height: 100%;
     height: 100%;
     width: 100%;
+    margin: 0px;
 }
 
 h1{
@@ -28,7 +29,6 @@ h3{
 a{
     font-family: 'Montserrat', sans-serif;
     color: $dark-shade-75;
-    font-family: 'Montserrat';
     font-size: 14px;
     font-style: normal;
     font-weight: 400;

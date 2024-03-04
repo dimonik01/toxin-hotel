@@ -1,16 +1,11 @@
 doctype html 
 html 
     head
-    block scripts
-        link(href=require('../../scss/_variables.scss') rel='stylesheet')
-        link(href=require('../../scss/global/_boilerplate.scss') rel='stylesheet')
-        link(href=require('../../scss/global/_mixins.scss') rel='stylesheet')
-        link(href=require('../../scss/global/_typography.scss') rel='stylesheet')
-        link(href=require('../../index.scss') rel='stylesheet')
-        script(src=require('../../index.js') defer='defer')
-
+        block default-scripts
+            link(href=require('../index.scss') rel='stylesheet')
+        block scripts
     body 
-        block header              
+        block header            
         block content
         block footer
 

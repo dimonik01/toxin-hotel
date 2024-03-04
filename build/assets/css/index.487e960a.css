@@ -1,7 +1,27 @@
+@font-face {
+  font-family: "Montserrat Italic";
+  src: url(/fonts/Montserrat-Italic-VariableFont_wght..woff2) format(woff2), url(/fonts/Montserrat-Italic-VariableFont_wght..woff) format(woff);
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url(/fonts/Montserrat-VariableFont_wght..woff2) format(woff2), url(/fonts/Montserrat-VariableFont_wght..woff) format(woff);
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
 html, body {
   min-height: 100%;
   height: 100%;
   width: 100%;
+  margin: 0px;
 }
 
 h1 {
@@ -28,7 +48,6 @@ h3 {
 a {
   font-family: "Montserrat", sans-serif;
   color: rgba(31, 32, 65, 0.4588235294);
-  font-family: "Montserrat";
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -61,31 +80,4 @@ button {
   border: 0px;
   background-color: transparent;
 }
-
-.navbar {
-  position: relative;
-  width: 100%;
-}
-
-.list {
-  display: flex;
-  justify-content: space-between;
-}
-.list__icon::after {
-  content: "expand_more";
-  color: rgba(31, 32, 65, 0.3137254902);
-  text-align: center;
-  font-family: "Material Icons";
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1px; /* 20.4px */
-  position: relative;
-  top: 7px;
-}
-.listlist__item {
-  margin-top: 26px;
-  margin-bottom: 26px;
-  flex-shrink: 0;
-}
-/*# sourceMappingURL=navbar.8a1b8da8.css.map */
+/*# sourceMappingURL=index.487e960a.css.map */

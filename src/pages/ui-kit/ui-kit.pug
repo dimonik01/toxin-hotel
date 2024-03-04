@@ -1,1 +1,9 @@
-extends ../layouts/ui-kit-layout
+extends ../../layouts/ui-kit-layout.pug
+block scripts 
+    link(href=require('./ui-kit.scss') rel='stylesheet')
+block content
+    .router
+        a(class="router__link router_first" href="./colorsAndType.html") Colors and Type
+        a(class="router__link" href="") Cards
+        a(class="router__link" href="") Headers and Footers
+        a(class="router__link" href="") Form Elements

@@ -1,1 +1,17 @@
 extends ../../layouts/ui-kit-layout.pug
+include ../../components/colors/colors.pug
+block scripts 
+    link(href=require('./colors-and-type.scss') rel='stylesheet')
+    link(href=require('../../components/colors/colors.scss') rel='stylesheet')
+block content 
+    .wrapper
+        .colors
+            +colors("#1F2041", "Dark Shade 100%", "#1F2041")
+            +colors("#1F204175", "Dark Shade 75%", "#1F2041")
+            +colors("#1F204150", "Dark Shade 50%", "#1F2041")
+            +colors("#1F204125", "Dark Shade 25%", "#1F2041")
+            +colors("#1F204105", "Dark Shade 5%", "#1F2041")
+            +colors("#BC9CFF", "Purple", "#BC9CFF")
+            +colors("#6FCF97", "Green", "#6FCF97")
+        .typography
+            

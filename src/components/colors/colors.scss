@@ -1,0 +1,28 @@
+.color-wrapper{
+    height: 70px;
+    width: 290px;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.color-container{
+    height: 70px;
+    width: 70px;
+    border-radius: 5px;
+
+}
+.label-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 41px;
+
+    &__top-text{
+        margin-top: 1px;
+    }
+
+    &__bottom-text{
+        font-weight: 400;
+    }
+
+}

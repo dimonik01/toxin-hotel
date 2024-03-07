@@ -1,9 +1,11 @@
-link(href=require('./colors.scss') rel='stylesheet')
-mixin colors 
-    .wrapper
-        .color-container
+mixin colors(color, text, hashname) 
+    .color-wrapper
+        div(class="color-container" style="background-color:" + color)
         .label-container
-            .label-container__top-text
+            
+            h2(class="label-container__top-text")
+                =text 
 
-            .label-container__bottom-text
+            h2(class="label-container__bottom-text")
+                =hashname
                 

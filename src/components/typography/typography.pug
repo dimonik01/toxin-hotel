@@ -1,4 +1,23 @@
 mixin typography(heading, text)
-    .typo-container 
-        h1(class="typo-container__heading")
-        h1.typo-container__text
+    div(class="typo-container typo-container_first")
+        .typo-container__heading-container
+            h1(class="typo-container__heading") H1
+        .typo-container__text-container
+            h1.typo-container__text This one is the sub-section or widget title
+    div(class="typo-container typo-container_second")
+        .typo-container__heading-container 
+            h2(class="typo-container__heading") H2
+        .typo-container__text-container
+            h2.typo-container__text Next one is the item title inside widgets
+    div(class="typo-container typo-container_third")
+        .typo-container__heading-container 
+            h3(class="typo-container__heading") H3
+        .typo-container__text-container
+            h3.typo-container__text This is a label or CTA text
+    div(class="typo-container")
+        .typo-container__heading-container
+            p(class="typo-container__heading") Body
+        .typo-container__text-container
+            p.typo-container__text This is the body text which is used for most of the design, like paragraphs, lists, etc.
+
+    

@@ -1,5 +1,6 @@
 extends ../../layouts/ui-kit-layout.pug
 include ../../components/colors/colors.pug
+include ../../components/typography/typography.pug
 block scripts 
     link(href=require('./colors-and-type.scss') rel='stylesheet')
     link(href=require('../../components/colors/colors.scss') rel='stylesheet')
@@ -14,4 +15,4 @@ block content
             +colors("#BC9CFF", "Purple", "#BC9CFF")
             +colors("#6FCF97", "Green", "#6FCF97")
         .typography
-            
+            +typography

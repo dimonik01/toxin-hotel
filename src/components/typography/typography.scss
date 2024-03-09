@@ -1,0 +1,33 @@
+.typo-container{
+    display: flex;
+
+    &__heading{
+        color: $dark-shade-25;
+        font-weight: 400;
+        text-align: right;
+    }
+
+    &__heading-container{
+        width: 35px;
+    }
+
+    &__text-container{
+        width: 420px;
+    }
+
+    &__text{
+        margin-left: 33px;
+    }
+
+    &_first{
+        margin-bottom: 50px;
+    }
+
+    &_second{
+        margin-bottom: 52px;
+    }
+
+    &_third{
+        margin-bottom: 48px;
+    }
+}

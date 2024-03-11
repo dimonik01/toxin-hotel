@@ -1,0 +1,8 @@
+extends ../../layouts/ui-kit-layout.pug
+include ../../components/navbar/navbar.pug
+include ../../components/header-logged-out/header-logged-out.pug
+include ../../components/logo/logo.pug
+block scripts 
+    link(href=require('./headers-and-footers.scss') rel='stylesheet')
+block content
+    +header-logged-out

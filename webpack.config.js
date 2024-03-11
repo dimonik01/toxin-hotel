@@ -17,7 +17,8 @@ module.exports = (env) => {
           index: 'src/pages/starting-page/starting-page.pug',
           test: 'src/pages/test-page/test-page.pug',
           uikit: 'src/pages/ui-kit/ui-kit.pug',
-          colorsAndType: 'src/pages/colors-and-type/colors-and-type.pug'
+          colorsAndType: 'src/pages/colors-and-type/colors-and-type.pug',
+          headersAndFooters: 'src/pages/headers-and-footers/headers-and-footers.pug'
           //path.resolve(__dirname, 'src', 'index.js'),
         },
         output: {

@@ -1,0 +1,26 @@
+.color-wrapper {
+  height: 70px;
+  width: 290px;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.color-container {
+  height: 70px;
+  width: 70px;
+  border-radius: 5px;
+}
+
+.label-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-left: 41px;
+}
+.label-container__top-text {
+  margin-top: 1px;
+}
+.label-container__bottom-text {
+  font-weight: 400;
+}
+/*# sourceMappingURL=colors.7ca6018b.css.map */

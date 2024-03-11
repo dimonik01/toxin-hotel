@@ -2,13 +2,15 @@
 @import "../../scss/global/typography.scss";
 
 .navbar{
+    display: grid;
     position: relative;
-    width: 100%;
+    width: 439px;
 }
 
 .list{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
 
     &__icon::after{

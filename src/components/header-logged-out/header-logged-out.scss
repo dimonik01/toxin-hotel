@@ -1,0 +1,25 @@
+.header-logged-out{
+    display: flex;
+    justify-content: center;
+
+    &__container{
+        display: grid;
+        grid-template-columns: 391px 439px 328px;
+        width: 391px + 439px + 328px;
+        height: 70px;
+        background-color:#FFFFFF;
+        ;
+    }
+
+}
+
+.auth{
+    display: flex;
+    justify-content: flex-end;
+
+    &__button-register{
+        margin-right: 20px;
+
+    }
+    
+}

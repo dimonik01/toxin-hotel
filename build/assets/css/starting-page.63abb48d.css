@@ -1,12 +1,11 @@
 .content {
   width: 100%;
-  margin-left: 20%;
-  margin-right: 20%;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 .content__link {
   margin-top: 10%;
+  font-size: 40px;
 }
-/*# sourceMappingURL=starting-page.34b8c753.css.map */
+/*# sourceMappingURL=starting-page.63abb48d.css.map */

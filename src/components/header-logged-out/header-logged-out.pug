@@ -1,0 +1,18 @@
+include ../logo/logo.pug
+include ../navbar/navbar.pug
+mixin header-logged-out
+    .header-logged-out
+        .header-logged-out__container
+            +logo
+            +navbar
+            .auth
+                button(class="auth__button auth__button-register")
+                    include ../../svg/rectangle2.svg
+                button(class="auth__button auth__button-sign-in" type="button")            
+                    include ../../svg/rectangle_big.svg
+                
+                     
+                            
+                    
+                    
+                        

@@ -217,11 +217,19 @@ button {
   flex-shrink: 0;
 }
 
+.auth {
+  display: flex;
+  justify-content: flex-end;
+}
+.auth__button-register {
+  margin-right: 20px;
+}
+
 .typo-container {
   display: flex;
 }
 .typo-container__heading {
-  color: rgba(31, 32, 65, 0.1450980392);
+  color: rgba(31, 32, 65, 0.3137254902);
   font-weight: 400;
   text-align: right;
 }
@@ -250,9 +258,29 @@ button {
 }
 .header-logged-out__container {
   display: grid;
-  grid-template-columns: 391px 439px 323px;
-  width: 1153px;
+  grid-template-columns: 391px 439px 328px;
+  width: 1158px;
   height: 70px;
   background-color: #FFFFFF;
 }
-/*# sourceMappingURL=index.6ea60f7d.css.map */
+
+.auth {
+  display: flex;
+  justify-content: flex-end;
+}
+.auth__button-register {
+  margin-right: 20px;
+}
+
+.header-logged-in {
+  display: flex;
+  justify-content: center;
+}
+.header-logged-in__container {
+  display: grid;
+  grid-template-columns: 391px 439px 328px;
+  width: 1158px;
+  height: 70px;
+  background-color: #FFFFFF;
+}
+/*# sourceMappingURL=index.0143f03c.css.map */

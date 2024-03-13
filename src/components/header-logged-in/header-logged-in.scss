@@ -1,0 +1,18 @@
+.header-logged-in{
+    display: flex;
+    justify-content: center;
+
+    &__container{
+        display: grid;
+        grid-template-columns: 572px 582px;
+        width: 1160px;
+        height: 70px;
+        background-color:#FFFFFF;
+        ;
+    }
+
+    &__separator{
+        display: flex;
+    }
+
+}

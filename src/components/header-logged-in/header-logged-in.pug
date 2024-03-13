@@ -1,0 +1,10 @@
+include ../logo/logo.pug
+include ../navbar/navbar.pug
+include ../authed/authed.pug
+mixin header-logged-in
+    .header-logged-in
+        .header-logged-in__container
+            +logo
+            .header-logged-in__separator
+                +navbar
+                +authed

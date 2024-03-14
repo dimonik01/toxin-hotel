@@ -1,0 +1,10 @@
+mixin footer(arr = [["Please"],["god"],["help"],["me"],["fr"]]) 
+    .footer 
+        .footer__info-container 
+             for(let x = 0; x < arr.length; x++)
+                .footer__list-container
+                - let subArr = arr[x]
+                 for(let y = 0; y < subArr.length)
+                    - a.footer__link #{subArr[y]}
+                
+        .footer__copy-container

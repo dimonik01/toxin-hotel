@@ -1,0 +1,44 @@
+.footer{
+    &__wrapper {
+        display: flex;
+        justify-content: center;    
+    }
+    &__container{
+        max-width: 260px;
+        line-height: 20px;
+        margin-top: 5px;
+
+        &_first{
+            margin-right: 40px;
+            margin-top: 0px;
+        }
+
+        &_second{
+            margin-right: 57px; 
+        }
+
+        &_third{
+            margin-right: 92px;
+        }
+
+        &_fourth{
+            margin-right: 51px;
+        }
+
+        &_fifth{
+            
+        }
+    }
+
+    &__list-item{
+        margin-bottom: 20px;
+    }
+
+    &__text{
+        margin-top:12px;
+    }
+}
+
+
+
+

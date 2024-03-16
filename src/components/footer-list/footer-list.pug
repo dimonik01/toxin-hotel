@@ -1,8 +1,8 @@
-mixin footer-list(arr)
-    ul.footer-container__list
-        each val in arr                             
-            li.footer-container__list-item
+mixin footer-list(arr, pos)
+    ul.footer__list
+        each val in arr
+            li.footer__list-item
                 if (val == arr[0])
-                    h3(class="footer-container__list-link")= val
+                    h3(class="footer__list-link")= val
                 else
-                    a.footer-container__list-link= val
+                    a.footer__list-link= val

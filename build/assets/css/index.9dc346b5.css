@@ -65,6 +65,7 @@ a {
 
 body p {
   font-family: "Montserrat", sans-serif;
+  color: rgba(31, 32, 65, 0.4588235294);
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;
@@ -116,11 +117,13 @@ button {
 }
 
 .logo__image {
-  margin-top: 15px;
-  margin-bottom: 15px;
-  background-image: url(/ac88cb0fd69232c0759f.svg);
+  background-image: url(/139317c2235049c9cd88.svg);
   height: 40px;
   width: 106px;
+}
+.logo__image_header {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 html, body {
@@ -164,6 +167,7 @@ a {
 
 body p {
   font-family: "Montserrat", sans-serif;
+  color: rgba(31, 32, 65, 0.4588235294);
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;
@@ -217,6 +221,12 @@ button {
   flex-shrink: 0;
 }
 
+.user {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-grow: 1;
+}
 .auth {
   display: flex;
   justify-content: flex-end;
@@ -252,6 +262,35 @@ button {
   margin-bottom: 48px;
 }
 
+.footer__wrapper {
+  display: flex;
+  justify-content: center;
+}
+.footer__container {
+  max-width: 260px;
+  line-height: 20px;
+  margin-top: 5px;
+}
+.footer__container_first {
+  margin-right: 40px;
+  margin-top: 0px;
+}
+.footer__container_second {
+  margin-right: 57px;
+}
+.footer__container_third {
+  margin-right: 92px;
+}
+.footer__container_fourth {
+  margin-right: 51px;
+}
+.footer__list-item {
+  margin-bottom: 20px;
+}
+.footer__text {
+  margin-top: 12px;
+}
+
 .header-logged-out {
   display: flex;
   justify-content: center;
@@ -264,23 +303,18 @@ button {
   background-color: #FFFFFF;
 }
 
-.auth {
-  display: flex;
-  justify-content: flex-end;
-}
-.auth__button-register {
-  margin-right: 20px;
-}
-
 .header-logged-in {
   display: flex;
   justify-content: center;
 }
 .header-logged-in__container {
   display: grid;
-  grid-template-columns: 391px 439px 328px;
-  width: 1158px;
+  grid-template-columns: 572px 582px;
+  width: 1160px;
   height: 70px;
   background-color: #FFFFFF;
 }
-/*# sourceMappingURL=index.0143f03c.css.map */
+.header-logged-in__separator {
+  display: flex;
+}
+/*# sourceMappingURL=index.9dc346b5.css.map */

@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://./src/pages/headers-and-footers/headers-and-footers.scss"],"names":[],"mappings":"AAAA;EACI,mBAAA;AACJ","sourcesContent":[".header-container{\r\n    margin-bottom: 40px;\r\n}"],"sourceRoot":""}

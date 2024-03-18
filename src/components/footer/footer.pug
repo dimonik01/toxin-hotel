@@ -1,16 +1,24 @@
 include ../footer-list/footer-list.pug
+include ../socials/socials.pug
 mixin footer(arr1, arr2 ,arr3, arr4)
     .footer 
         .footer__wrapper
-                div(class="footer__container footer__container_first")
-                    +logo
-                    p.footer__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
-                div(class="footer__container footer__container_second")
-                    +footer-list(arr1)
-                div(class="footer__container footer__container_third")
-                    +footer-list(arr2)
-                div(class="footer__container footer__container_fourth")
-                    +footer-list(arr3)
-                div(class="footer__container footer__container_fifth")
-                    +footer-list(arr4)            
-        .footer__copy-container
+            div(class="footer__container footer__container_first")
+                +logo
+                p.footer__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+            div(class="footer__container footer__container_second")
+                +footer-list(arr1)
+            div(class="footer__container footer__container_third")
+                +footer-list(arr2)
+            div(class="footer__container footer__container_fourth")
+                +footer-list(arr3)
+            div(class="footer__container footer__container_fifth")
+                +footer-list(arr4)            
+        .footer__copy-wrapper
+                .footer__copy-container
+                    .footer__copy-text-container
+                        p.footer__copy-text Copyright © 2018 Toxin отель. Все права защищены.
+                    .footer__copy-blank 
+                    .footer__copy-socials
+                        +socials
+

@@ -1,8 +1,8 @@
 mixin logo(type)
     a(href="path-to-landing" class="logo")
         if (type == "header")
-            img(alt="" class="logo__image logo__image_header")
+            img(src=require("Logo.svg") alt="" class="logo__image logo__image_header")
         else 
-            img(alt="" class="logo__image")
+            img(src=require("Logo.svg") alt="" class="logo__image")
     
             

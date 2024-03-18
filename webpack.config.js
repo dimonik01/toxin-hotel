@@ -54,6 +54,11 @@ module.exports = (env) => {
               type: 'asset/resource',
               
             },
+            {
+              test: /\.svg$/,
+              type: 'asset/resource',
+              use: 'svgo-loader'
+            },
             { 
                 test: /\.pug$/,
                 loader: PugPlugin.loader, 

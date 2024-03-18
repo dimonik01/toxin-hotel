@@ -1,16 +1,18 @@
 .footer{
     &__wrapper {
         display: flex;
-        justify-content: center;    
+        justify-content: center;
+        height: 372px;
+           
     }
     &__container{
         max-width: 260px;
         line-height: 20px;
-        margin-top: 5px;
+        margin-top: 101px;
 
         &_first{
             margin-right: 40px;
-            margin-top: 0px;
+            margin-top: 98px;
         }
 
         &_second{
@@ -29,6 +31,28 @@
             
         }
     }
+
+    &__copy-wrapper{
+        display: flex;
+        justify-content: center;
+        border-top: 1px $dark-shade-25 solid; 
+        height: 70px;
+    }
+
+    &__copy-blank{
+        flex-shrink: 1;
+        width: 678px;
+    }
+    
+
+    &__copy-container{
+        width: 1160px;
+        display:flex;
+        justify-content: flex-start;
+        align-items: center;
+        
+    }
+    
 
     &__list-item{
         margin-bottom: 20px;

@@ -2,6 +2,7 @@ extends ../../layouts/ui-kit-layout.pug
 include ../../components/header-logged-out/header-logged-out.pug
 include ../../components/header-logged-in/header-logged-in.pug
 include ../../components/footer/footer.pug
+include ../../components/footer-mobile/footer-mobile.pug
 block scripts 
     link(href=require('./headers-and-footers.scss') rel='stylesheet')
 block content
@@ -11,3 +12,6 @@ block content
         +header-logged-in
     .header-container
         +footer(["Навигация","О нас", "Новости", "Служба поддержки", "Услуги"],["О нас","О сервисе","Наша команда","Вакансии","Инвесторы"],["Служба поддержки","Соглашения","Сообщества","Связь с нами"], ["Подписка","Получайте специальные предложения и новости сервиса"])
+    .header-container
+        +footer-mobile
+    

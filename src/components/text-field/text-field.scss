@@ -1,0 +1,42 @@
+.text-field{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 320px;
+
+    &__input{
+        box-sizing: border-box;
+        padding-left: 14px;
+        width: 318px;
+        height: 43px;
+        border-radius: 3px;
+        border: 1px solid $dark-shade-50;
+        font-family: Montserrat;
+        font-size: 14px;
+        transition: 0.2s ease;
+        outline:0px
+    }
+
+    &__input:hover{
+        border: 1px solid $dark-shade-100;
+        transition: 0.2s ease;
+        
+    }
+
+    &__input:focus{
+        border: 1px solid $dark-shade-100;
+        transition: 0.2s ease;
+    }
+
+}
+
+.ui{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+}
+
+.form-paragraph{
+    font-size: 12px;
+}

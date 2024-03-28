@@ -1,0 +1,8 @@
+mixin text-field(type)
+    .text-field
+        if type = "ui"
+            .ui
+                h3 text field
+                p.form-paragraph DEFAULT
+        form(class="text-field__form" action="#" method="get")
+            input(class="text-field__input" type="text" defaultValue="Email")

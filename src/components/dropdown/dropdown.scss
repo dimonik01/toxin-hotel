@@ -1,0 +1,16 @@
+@import '../../scss/mixins/_input.scss';
+.dropdown{
+    width: 320px;
+    &__input{
+        @include input;
+        font-size: 12px;
+    }
+
+    &__option{
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 12px;
+        margin-bottom: 22px;
+    }
+
+}

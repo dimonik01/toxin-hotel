@@ -1,6 +1,17 @@
 extends ../../layouts/ui-kit-layout.pug
 include ../../components/text-field/text-field.pug
+include ../../components/ui-text/ui-text.pug
+include ../../components/dropdown/dropdown.pug
 block scripts
     link(href=require('./form-elements.scss') rel='stylesheet')
+block values
+    - var textFieldArr1 = ["ui","text-field","DEFAULT"]
+    - var textFieldArr2 = ["ui","text-field", "HOVER/FOCUS"]
+    - var dropdownArr1 = ["ui","dropdown", "DEFAULT"]
+    - var dropdownParams = ["Спальни","Кровати","Ванные комнаты"]
+     - var dropdownParams1 = ["мася","Юля","Дима"]
 block content
-    +text-field
+    +text-field(textFieldArr1)
+    +text-field(textFieldArr2)
+    +dropdown(dropdownArr1, dropdownParams)
+    +dropdown(dropdownArr1, dropdownParams1)

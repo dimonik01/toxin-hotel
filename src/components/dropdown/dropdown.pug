@@ -1,0 +1,7 @@
+mixin dropdown(arrText, arrDropdownParams)
+    .dropdown
+        +ui-text(arrText)
+        form(class="dropdown__form" action="#" method="get")
+            select(class="dropdown__input" type="text" defaultValue="Email")
+                each val in arrDropdownParams
+                    option(class="dropdown__option" value="test") #{val}

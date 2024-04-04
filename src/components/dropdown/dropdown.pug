@@ -1,7 +1,11 @@
-mixin dropdown(arrText, arrDropdownParams)
-    .dropdown
-        +ui-text(arrText)
-        form(class="dropdown__form" action="#" method="get")
-            select(class="dropdown__input" type="text" defaultValue="Email")
-                each val in arrDropdownParams
-                    option(class="dropdown__option" value="test") #{val}
+include ../dropdown-list/dropdown-list.pug
+mixin dropdown(type, arrText, inputText, dropdownParams)
+    if type == "accomodation"
+        .dropdown_accomodation
+            +ui-text(arrText)
+            .dropdown__container
+                .dropdown__input
+                    p.dropdown__input-text(value="test") #{inputText}
+                    .dropdown__expand
+                .dropdown__select
+                    +dropdown-list(dropdownParams)

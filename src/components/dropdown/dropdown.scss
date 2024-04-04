@@ -1,9 +1,27 @@
 @import '../../scss/mixins/_input.scss';
 .dropdown{
     width: 320px;
+    margin-bottom: 6px;
+
+    &_accomodation{
+        width: 264px;
+    }
     &__input{
         @include input;
-        font-size: 12px;
+        border-radius:3px 3px 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-right: 14px;
+        width: 264px;
+    }
+
+    &__expand::after{
+        font-family: 'Material Icons';
+        content: "expand_more";
+        font-size: 24px;
+        cursor: pointer;
+
     }
 
     &__option{
@@ -11,6 +29,12 @@
         font-weight: bold;
         font-size: 12px;
         margin-bottom: 22px;
+    }
+
+    &__select{
+        border: 1px solid $dark-shade-50;
+        width: inherit;
+        border-radius: 0 0 3px 3px;
     }
 
 }

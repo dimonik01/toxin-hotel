@@ -1,0 +1,32 @@
+.dropdown-list{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    &__options{
+        display: flex;
+        align-items: center;
+
+    }
+
+    &__minus{
+        width: 30px;
+        height:30px;
+        cursor: pointer;
+    }
+    &__plus{
+        width: 30px;
+        height:30px;
+        cursor: pointer;
+        
+    }
+
+    &__quantity{
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+}   

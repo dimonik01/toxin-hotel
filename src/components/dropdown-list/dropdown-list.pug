@@ -1,0 +1,9 @@
+mixin dropdown-list(dropdownParams)
+    - var x = 0
+    each val in dropdownParams
+        .dropdown-list
+            h3.dropdown-list__text #{val}
+            .dropdown-list__options
+                img(class="dropdown-list__minus" src=require("minus.svg") alt="")
+                h3.dropdown-list__quantity #{x}
+                img(class="dropdown-list__plus" src=require("plus.svg") alt="")

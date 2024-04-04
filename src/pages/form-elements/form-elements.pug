@@ -5,13 +5,15 @@ include ../../components/dropdown/dropdown.pug
 block scripts
     link(href=require('./form-elements.scss') rel='stylesheet')
 block values
-    - var textFieldArr1 = ["ui","text-field","DEFAULT"]
-    - var textFieldArr2 = ["ui","text-field", "HOVER/FOCUS"]
-    - var dropdownArr1 = ["ui","dropdown", "DEFAULT"]
-    - var dropdownParams = ["Спальни","Кровати","Ванные комнаты"]
-     - var dropdownParams1 = ["мася","Юля","Дима"]
+    script 
+        - var textFieldArr1 = ["ui","text-field","DEFAULT"]
+        - var textFieldArr2 = ["ui","text-field", "HOVER/FOCUS"]
+        - var type = "accomodation"
+        - var inputText = "Выберите удобства"
+        - var dropdownArr1 = ["ui","dropdown", "DEFAULT"]
+        - var dropdownParams = ["Спальни","Кровати","Ванные комнаты"]
+        - var dropdownParams1 = ["мася","Юля","Дима"]
 block content
     +text-field(textFieldArr1)
     +text-field(textFieldArr2)
-    +dropdown(dropdownArr1, dropdownParams)
-    +dropdown(dropdownArr1, dropdownParams1)
+    +dropdown(type,dropdownArr1, inputText, dropdownParams)

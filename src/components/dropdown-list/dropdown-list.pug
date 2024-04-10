@@ -5,5 +5,5 @@ mixin dropdown-list(dropdownParams)
             h3.dropdown-list__text #{val}
             .dropdown-list__options
                 img(class="dropdown-list__minus" src=require("minus.svg") alt="")
-                h3.dropdown-list__quantity #{x}
+                h3(class="dropdown-list__quantity", count = 0) #{x}
                 img(class="dropdown-list__plus" src=require("plus.svg") alt="")

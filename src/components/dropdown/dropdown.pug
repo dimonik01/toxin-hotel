@@ -9,3 +9,13 @@ mixin dropdown(type, arrText, inputText, dropdownParams)
                     .dropdown__expand
                 .dropdown__select
                     +dropdown-list(dropdownParams)
+    else 
+        .dropdown
+            +ui-text(arrText)
+            .dropdown__container
+                .dropdown__input
+                    p.dropdown__input-text(value="test") #{inputText}
+                    .dropdown__expand
+                .dropdown__select
+                    +dropdown-list(dropdownParams)
+                    h3.dropdown__accept Применить

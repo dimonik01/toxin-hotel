@@ -8,12 +8,19 @@ block values
     script 
         - var textFieldArr1 = ["ui","text-field","DEFAULT"]
         - var textFieldArr2 = ["ui","text-field", "HOVER/FOCUS"]
-        - var type = "accomodation"
-        - var inputText = "Выберите удобства"
+        - var type1 = "accomodation"
+        - var type2 = null
+        - var inputText1 = "Выберите удобства"
+        - var inputText2 = "Сколько гостей"
         - var dropdownArr1 = ["ui","dropdown", "DEFAULT"]
-        - var dropdownParams = ["Спальни","Кровати","Ванные комнаты"]
-        - var dropdownParams1 = ["мася","Юля","Дима"]
+        - var dropdownParams1 = ["Спальни","Кровати","Ванные комнаты"]
+        - var dropdownParams2 = ["Взрослые", "Дети", "Младенцы"]
 block content
     +text-field(textFieldArr1)
     +text-field(textFieldArr2)
-    +dropdown(type,dropdownArr1, inputText, dropdownParams)
+    +dropdown(type1, dropdownArr1, inputText1, dropdownParams1)
+    +dropdown(type2, dropdownArr1, inputText2, dropdownParams2)
+block js 
+    script
+        include ../../components/dropdown/dropdown.js
+

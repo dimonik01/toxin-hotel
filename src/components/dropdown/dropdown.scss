@@ -12,8 +12,8 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding-right: 14px;
-        width: 264px;
+        padding-right: 9px;
+        width: inherit;
     }
 
     &__expand::after{
@@ -35,6 +35,14 @@
         border: 1px solid $dark-shade-50;
         width: inherit;
         border-radius: 0 0 3px 3px;
+    }
+
+    &__accept{
+        text-align: end;
+        padding-right: 6px;
+        margin-bottom: 14px;
+        margin-top: 16px;
+        color: $purple;
     }
 
 }

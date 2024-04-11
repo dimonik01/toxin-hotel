@@ -5,26 +5,35 @@
 
 
     for (let i = 0; i < plusCollection.length; i++){
-        plusCollection.item(i).addEventListener("click", plusHandler);
-        minusCollection.item(i).addEventListener("click", minusHandler);
-        accomodationCollection.item(i).count = 0;
+        plusCollection.item(i).count = 0;
+        plusCollection.item(i).addEventListener("click", counter(this.item(i).count));
+        minusCollection.item(i).addEventListener("click", counter);
+        //accomodationCollection.item(i).count = 0;
     }
         
-    function plusHandler(event){
-        if (event.target == "dropdown-list__plus"){
-            console.log("test complete");
+    function countHandler(event){
+        if (event.target.attributes.class.nodeValue == "dropdown-list__plus"){
+            console.log("win");
+            return event
         }
-
-
+        console.log(event);
         accomodationCollection.item(this).count++;
         this.previousSibling.innerHTML = accomodationCollection.item(this).count;
     }
 
-    function minusHandler(){
-        console.log(this.count);
-        this.count--;
-        this.nextElementSibling.innerHTML = this.count;
-    }
+    function counter(count) {
+        return function(event){
+            console.log(event);
+            let count = 0;
+        console.log(count);
+        if (event.target.attributes.class.nodeValue == "dropdown-list__plus")
+            {return count++}
+        else {return count--}
+        
+        }
+        
+      }
+
 
 })() 
 

@@ -21,26 +21,18 @@
 
         add(){
             this.count++;
-            this.counterButton.innerText = this.count;
-            return this.update();
+            this.counterButton.innerText = this.count;;
         }
-
         subtract(){
             if (this.count > 0){
                 this.count--;
                 this.counterButton.innerText = this.count;
-            }
-                return this.update();
-            
+            }; 
         }
-
         update(){
-            if (this.number <= 1){
-                this.textField.innerText = this.count + " " + this.text;
-            }
-            else {this.textField.innerText = this.count + " " + this.text;}
-
-            return this.count
+            //this.textField.innerText = this.count + " " + this.text;
+            let numberValue = this.count;
+            return numberValue
         }
     }
 
@@ -50,6 +42,24 @@
     let leCounter4 = new Counter(plusColl, minusColl, accomodationColl, textField, 3, "Гостей");
     let leCounter5 = new Counter(plusColl, minusColl, accomodationColl, textField, 4, "Гостей");
     let leCounter6 = new Counter(plusColl, minusColl, accomodationColl, textField, 5, "Гостей");
+    for (let i = 0; i < 2; i++){
+        plusColl.item(i).addEventListener("click", updateText);
+        minusColl.item(i).addEventListener("click", updateText);
+    }
+    function updateText(){
+        let number1 = parseInt(leCounter1.update());
+        let number2 = parseInt(leCounter2.update());
+        console.log(number1);
+        let arr = [number1, number2];
+        for (let i = 0; i < 2; i++){
+            if (arr[i] == 1){
+                textField.item(0).innerHTML = number1 +" "+ "Кровать";}
+            if (arr[i] == 2 || arr[i] == 3 || arr[i] == 4){
+                textField.item(0).innerHTML = number1 +" "+ "Кровати";}
+            if (arr[i] > 4){
+                textField.item(0).innerHTML = number1 +" "+ "Кроватей";}
+        }
+    }
 
 })() 
 

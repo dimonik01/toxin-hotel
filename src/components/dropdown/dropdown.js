@@ -18,7 +18,6 @@
             this.plusButton.addEventListener("click", this.add.bind(this));
             this.minusButton.addEventListener("click", this.subtract.bind(this));
         }
-
         add(){
             this.count++;
             this.counterButton.innerText = this.count;;
@@ -29,38 +28,69 @@
                 this.counterButton.innerText = this.count;
             }; 
         }
-        update(){
-            //this.textField.innerText = this.count + " " + this.text;
+        getNumberValue(){
             let numberValue = this.count;
-            return numberValue
+            return parseInt(numberValue)
         }
     }
 
+    function updateText(){
+        let number1 = leCounter1.getNumberValue();
+        let number2 = leCounter2.getNumberValue();
+        let number4 = leCounter4.getNumberValue();
+        let number5 = leCounter5.getNumberValue();
+        let number6 = leCounter6.getNumberValue();
+        let totalNumber = number4 + number5 + number6;
+
+        function grammar(number, firstCase, secondCase, thirdCase){
+            if (number == 0){
+                let text = "";
+                number = "";
+                return [text, number]
+            }
+            if (number == 1){
+                let text = firstCase;
+                return [text, number]
+            }
+            if (number == 2 || number == 3 || number == 4){
+                let text = secondCase;
+                return [text, number]
+            }
+            if (number > 4){
+                let text = thirdCase;
+                return [text, number]
+            }
+        }
+        /*let text1 = grammar(number1, "Спальня","Спальни","Спален");
+        let text2 = grammar(number2, "Кровать", "Кровати", "Кроватей");
+        let text4 = grammar(totalNumber, "Гость", "Гостя", "Гостей");*/
+        let [textValue1,numberValue1] = grammar(number1, "Спальня","Спальни","Спален");
+        let [textValue2,numberValue2] = grammar(number2, "Кровать", "Кровати", "Кроватей");
+        let [textValue4,numberValue4] = grammar(totalNumber, "Гость", "Гостя", "Гостей");
+        if (number1 == 0 && number2 == 0){
+            leCounter1.textField.innerText ="Выберите удобства"}
+        else {
+            leCounter1.textField.innerText = numberValue1 + " " + textValue1 + " " + numberValue2 + " " + textValue2;}
+        if (totalNumber > 0){
+            leCounter4.textField.innerText = numberValue4 + " " + textValue4;
+        }
+        else {leCounter4.textField.innerText = "Сколько гостей"}      
+    }
     let leCounter1 = new Counter(plusColl, minusColl, accomodationColl, textField, 0, "Спальни" );
     let leCounter2 = new Counter(plusColl, minusColl, accomodationColl, textField, 1, "Кровати" );
     let leCounter3 = new Counter(plusColl, minusColl, accomodationColl, textField, 2);
     let leCounter4 = new Counter(plusColl, minusColl, accomodationColl, textField, 3, "Гостей");
     let leCounter5 = new Counter(plusColl, minusColl, accomodationColl, textField, 4, "Гостей");
     let leCounter6 = new Counter(plusColl, minusColl, accomodationColl, textField, 5, "Гостей");
-    for (let i = 0; i < 2; i++){
+
+    for (let i = 0; i < 6; i++){
         plusColl.item(i).addEventListener("click", updateText);
         minusColl.item(i).addEventListener("click", updateText);
-    }
-    function updateText(){
-        let number1 = parseInt(leCounter1.update());
-        let number2 = parseInt(leCounter2.update());
-        console.log(number1);
-        let arr = [number1, number2];
-        for (let i = 0; i < 2; i++){
-            if (arr[i] == 1){
-                textField.item(0).innerHTML = number1 +" "+ "Кровать";}
-            if (arr[i] == 2 || arr[i] == 3 || arr[i] == 4){
-                textField.item(0).innerHTML = number1 +" "+ "Кровати";}
-            if (arr[i] > 4){
-                textField.item(0).innerHTML = number1 +" "+ "Кроватей";}
-        }
-    }
-
+    }                   
 })() 
 
-
+//Получить значения счетчика с двух leCounteroв
+//Сделать проверку на склонения слов
+//Создать переменные, содержащие в себе и текст и массив засунуть их в массив
+//При нажатии одной из кнопок, пересобрать массив с помощью splice
+//поместить в innerText значения массива, с помощью join

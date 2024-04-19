@@ -32,9 +32,19 @@
     }
 
     &__select{
+        visibility: hidden;
         border: 1px solid $dark-shade-50;
         width: inherit;
         border-radius: 0 0 3px 3px;
+        transition: all 0.5s linear ;
+
+        &_expanded{
+            visibility: visible;
+            border: 1px solid $dark-shade-50;
+            width: inherit;
+            border-radius: 0 0 3px 3px;
+            transition: all 0.5s linear ;
+        }
     }
 
     &__accept{

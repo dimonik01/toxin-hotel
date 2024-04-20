@@ -7,15 +7,19 @@
         width: 264px;
     }
     &__input{
-        @include input;
+        @include input($dark-shade-100);
         border-radius:3px 3px 0 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding-right: 9px;
         width: inherit;
-    }
 
+        
+    }
+    &__input-text{
+        cursor:default;
+    }
     &__expand::after{
         font-family: 'Material Icons';
         content: "expand_more";
@@ -32,18 +36,31 @@
     }
 
     &__select{
+        height: 0;
         visibility: hidden;
         border: 1px solid $dark-shade-50;
         width: inherit;
         border-radius: 0 0 3px 3px;
-        transition: all 0.5s linear ;
-
+        transform: translateY(-120px);
+        transition: transform 0.2s ease-out, opacity 0.15s ease-in, visibility 0s linear 0.2s, height 0.2s ease-out ;
+        opacity: 0;
         &_expanded{
-            visibility: visible;
+            height: 129px;
             border: 1px solid $dark-shade-50;
             width: inherit;
             border-radius: 0 0 3px 3px;
-            transition: all 0.5s linear ;
+            transform: translateY(0px);
+            opacity: 1;
+            transition: transform 0.2s ease-out, opacity 0.15s ease-in, height 0.2s ease-out ;
+        }
+        &_big-expanded{
+            height: 158px;
+            border: 1px solid $dark-shade-50;
+            width: inherit;
+            border-radius: 0 0 3px 3px;
+            transform: translateY(0px);
+            opacity: 1;
+            transition: transform 0.2s ease-out, opacity 0.15s ease-in, height 0.2s ease-out ;
         }
     }
 

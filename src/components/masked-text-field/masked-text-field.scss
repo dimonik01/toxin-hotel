@@ -1,0 +1,9 @@
+@import '../../scss/mixins/_input.scss';
+.masked-text{
+    &__form{
+
+    }
+    &__input{
+        @include input($dark-shade-50);
+    }
+}

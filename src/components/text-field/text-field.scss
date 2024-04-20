@@ -6,7 +6,7 @@
     width: 320px;
 
     &__input{
-        @include input;
+        @include input($dark-shade-100);
     }
 
     &__input:hover{

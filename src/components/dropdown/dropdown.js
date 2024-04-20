@@ -2,7 +2,8 @@
     let plusColl = document.getElementsByClassName("dropdown-list__plus");
     let minusColl = document.getElementsByClassName("dropdown-list__minus");
     let accomodationColl = document.getElementsByClassName("dropdown-list__quantity");
-    let selectColl = document.getElementsByClassName("dropdown__select");
+    let selectM = document.getElementsByClassName("dropdown__select_expanded");
+    let selectB = document.getElementsByClassName("dropdown__select_big-expanded");
     let textField = document.getElementsByClassName("dropdown__input-text");
     let dropdownButton = document.getElementsByClassName("dropdown__expand");
     ;
@@ -17,10 +18,10 @@
             
             if (number <= 2){
                 this.textField = text.item(0);
-                this.select = selectColl.item(0);}
+                this.select = selectM.item(0);}
             else { 
                 this.textField = text.item(1);
-                this.select = selectColl.item(1);}
+                this.select = selectM.item(0);}
             this.plusButton.addEventListener("click", this.add.bind(this));
             this.minusButton.addEventListener("click", this.subtract.bind(this));
         }
@@ -86,12 +87,20 @@
         constructor(selectDiv, dropdownButton){
             this.select = selectDiv;
             this.dropdown = dropdownButton;
-            this.dropdown.addEventListener("click", this.toggleSelect.bind(this));
+            if (this.select.className == "dropdown__select_big-expanded"){
+                this.dropdown.addEventListener("click", this.toggleSelectB.bind(this));
+            }
+            else{
+                this.dropdown.addEventListener("click", this.toggleSelectM.bind(this));
+            }
         }
-        toggleSelect(){
-            this.select.classList.toggle("dropdown__select");
+        toggleSelectM(){
             this.select.classList.toggle("dropdown__select_expanded");
-            console.log(this.select);
+            this.select.classList.toggle("dropdown__select");
+        }
+        toggleSelectB(){
+            this.select.classList.toggle("dropdown__select");
+            this.select.classList.toggle("dropdown__select_big-expanded");          
         }
     }
 
@@ -101,8 +110,8 @@
     let leCounter4 = new Counter(plusColl, minusColl, accomodationColl, textField, 3, "Гостей");
     let leCounter5 = new Counter(plusColl, minusColl, accomodationColl, textField, 4, "Гостей");
     let leCounter6 = new Counter(plusColl, minusColl, accomodationColl, textField, 5, "Гостей");
-    let select1 = new Select(selectColl.item(0), dropdownButton.item(0));
-    let select2 = new Select(selectColl.item(1), dropdownButton.item(1));
+    let select1 = new Select(selectM.item(0), dropdownButton.item(0));
+    let select2 = new Select(selectB.item(0), dropdownButton.item(1));
 
     for (let i = 0; i < 6; i++){
         plusColl.item(i).addEventListener("click", updateText);

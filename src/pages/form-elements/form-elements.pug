@@ -2,12 +2,14 @@ extends ../../layouts/ui-kit-layout.pug
 include ../../components/text-field/text-field.pug
 include ../../components/ui-text/ui-text.pug
 include ../../components/dropdown/dropdown.pug
+include ../../components/masked-text-field/masked-text-field.pug
 block scripts
     link(href=require('./form-elements.scss') rel='stylesheet')
 block values
     script 
-        - var textFieldArr1 = ["ui","text-field","DEFAULT"]
-        - var textFieldArr2 = ["ui","text-field", "HOVER/FOCUS"]
+        - var textFieldArr1 = ["ui","text field","DEFAULT"]
+        - var textFieldArr2 = ["ui","text field", "HOVER/FOCUS"]
+        - var textFieldArr3 = ["ui","masked text field"]
         - var type1 = "accomodation"
         - var type2 = null
         - var inputText1 = "Выберите удобства"
@@ -20,6 +22,7 @@ block content
     +text-field(textFieldArr2)
     +dropdown(type1, dropdownArr1, inputText1, dropdownParams1)
     +dropdown(type2, dropdownArr1, inputText2, dropdownParams2)
+    +masked-text-field(textFieldArr3)
 block js 
     script
         include ../../components/dropdown/dropdown.js

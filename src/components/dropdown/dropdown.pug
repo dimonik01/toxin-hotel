@@ -7,7 +7,7 @@ mixin dropdown(type, arrText, inputText, dropdownParams)
                 .dropdown__input
                     p.dropdown__input-text(value="test") #{inputText}
                     .dropdown__expand
-                .dropdown__select
+                div(class="dropdown__select_expanded")
                     +dropdown-list(dropdownParams)
     else 
         .dropdown
@@ -16,6 +16,6 @@ mixin dropdown(type, arrText, inputText, dropdownParams)
                 .dropdown__input
                     p.dropdown__input-text(value="test") #{inputText}
                     .dropdown__expand
-                .dropdown__select
+                div(class="dropdown__select_big-expanded")
                     +dropdown-list(dropdownParams)
                     h3.dropdown__accept Применить

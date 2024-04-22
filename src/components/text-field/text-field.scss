@@ -1,34 +1,28 @@
 @import '../../scss/mixins/_input.scss';
+@import '../../scss/mixins/_form.scss';
 .text-field{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 320px;
-
-    &__input{
-        @include input($dark-shade-100);
-    }
-
-    &__input:hover{
-        border: 1px solid $dark-shade-100;
-        transition: 0.2s ease;
+    width: $form-b;
+    &__form{
+        @include form($form-b, $dark-shade-50);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
         
     }
 
-    &__input:focus{
-        border: 1px solid $dark-shade-100;
+    &__form:hover{
+        border: 1px solid $dark-shade-50;
         transition: 0.2s ease;
     }
 
-}
+    &__input{
+        @include input($form-b, $dark-shade-50);
+    }
 
-.ui{
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+    &__input:focus{
+        border: 1px solid $dark-shade-50;
+        transition: 0.2s ease;
+    }
 
-}
 
-.form-paragraph{
-    font-size: 12px;
 }

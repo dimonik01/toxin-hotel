@@ -1,9 +1,44 @@
 @import '../../scss/mixins/_input.scss';
+@import '../../scss/mixins/_form.scss';
 .masked-text{
-    &__form{
+    
+    &_m{@include form($form-m);}
+    &_s{@include form($form-s);}
 
+    &__form{
+        &_s{
+            @include form($form-s, $dark-shade-50);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &_m{
+            @include form($form-m, $dark-shade-50);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
     }
-    &__input{
-        @include input($dark-shade-50);
+
+    &__input_m{
+        @include input($form-m, $dark-shade-50);
+        display: flex;
+        align-items: center;;
+    }
+
+    &__input_s{
+        @include input($form-s, $dark-shade-50);
+        display: flex;
+        align-items: center;
+          
+    }
+    &__expand::after{
+        display: flex;
+        align-items: center;
+        font-family: 'Material Icons';
+        content: "expand_more";
+        font-size: 24px;
+        cursor: pointer;
+        margin-right: 12px; 
     }
 }

@@ -1,0 +1,24 @@
+@import '../../scss/mixins/_input.scss';
+@import '../../scss/mixins/_form.scss';
+.substext{
+    &__form{
+        @include form($form-m, $dark-shade-50);
+        display:flex;
+    }
+    &__input{
+        @include input($form-m, $dark-shade-50)
+    }
+    &__send::after{
+        display: flex;
+        align-items: center;
+        font-family: 'Material Icons';
+        content: "arrow_forward";
+        font-size: 24px;
+        cursor: pointer;
+        margin-right: 12px;
+        height: 42px;
+        color: $purple;
+    }
+
+
+}

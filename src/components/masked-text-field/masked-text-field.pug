@@ -1,5 +1,12 @@
-mixin masked-text-field(arr)
-    .masked-text
-        +ui-text(arr)
-        form.masked-text__form
-            input(class="masked-text__input" type="text" value="ДД.ММ.ГГГГ")
+mixin masked-text-field(type, arr, text)
+    if (type == "medium")
+        .masked-text_m
+            +ui-text(arr)  
+            form.masked-text__form_m
+                p(class="masked-text__input_m") #{text} 
+    if (type == "small")
+        .masked-text_s
+            +ui-text(arr)
+            form.masked-text__form_s
+                div(class="masked-text__input_s") #{text} 
+                p.masked-text__expand 

@@ -6,6 +6,7 @@
 @import 'scss/mixins/_input.scss';
 @import 'components/colors/colors.scss';
 @import 'components/logo/logo.scss';
+@import 'components/ui-text/ui-text.scss';
 @import 'components/navbar/navbar.scss';
 @import 'components/authed/authed.scss';
 @import 'components/unauthed/unauthed.scss';
@@ -16,8 +17,10 @@
 @import 'components/footer-mobile/footer-mobile.scss';
 @import 'components/socials/socials.scss';
 @import 'components/text-field/text-field.scss';
+@import 'components/checkbox/checkbox.scss';
 @import 'components/dropdown/dropdown.scss';
 @import 'components/dropdown-list/dropdown-list.scss';
+@import 'components/subscription-text-field/subscription-text-field.scss';
 @import 'components/header-logged-out/header-logged-out.scss';
 @import 'components/header-logged-in/header-logged-in.scss';
 

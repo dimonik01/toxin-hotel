@@ -1,12 +1,7 @@
 mixin masked-text-field(type, arr, text)
-    if (type == "medium")
-        .masked-text_m
+    if (type == "big")
+        .masked-text_b
             +ui-text(arr)  
-            form.masked-text__form_m
+            form.masked-text__form_b
                 p(class="masked-text__input_m") #{text} 
-    if (type == "small")
-        .masked-text_s
-            +ui-text(arr)
-            form.masked-text__form_s
-                div(class="masked-text__input_s") #{text} 
-                p.masked-text__expand 
+ 

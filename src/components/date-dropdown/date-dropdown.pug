@@ -1,0 +1,25 @@
+mixin date-dropdown(size, arr, text1, text2)
+    .date-dropdown
+        if (size == "small")
+            .date-dropdown_s
+                +ui-text(arr)  
+                form.date-dropdown__form_s
+                    p(class="date-dropdown__input_s") #{text1}
+                    .date-dropdown__expand
+            .date-dropdown_s
+                +ui-text(arr)  
+                form.date-dropdown__form_s
+                    p(class="date-dropdown__input_s") #{text2}
+                    .date-dropdown__expand
+        .factual-dd
+            .factual-dd__container
+                .factual-dd__top
+                    .factual-dd__arrow-left
+                    .factual-dd__date 
+                    .factual-dd__arrow-right
+                .factual-dd__middle
+                    .factual-dd__calendar
+                .factual-dd__bottom
+                    .factual-dd__buttons
+                        .factual-dd__clear
+                        .factual-dd__accept 

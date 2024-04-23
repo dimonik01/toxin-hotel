@@ -1,0 +1,74 @@
+@import '../../scss/mixins/_input.scss';
+@import '../../scss/mixins/_form.scss';
+
+.date-dropdown{
+    width: $form-b;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    &_s{
+        @include form($form-s);
+        margin-bottom: 0px;
+    }
+    &_m{
+        @include form($form-m);
+        margin-bottom: 0px;
+    }
+
+    &__form{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &_s{
+            @include form($form-s, $dark-shade-50);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0px;
+            
+        }
+        &_m{
+            @include form($form-m, $dark-shade-50);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0px;
+            
+        }
+    }
+
+    &__input_s{
+        @include input($form-s, $dark-shade-50);
+        display:flex;
+        align-items: center;
+    }
+
+    &__input_m{
+        @include input($form-m, $dark-shade-50);
+        display:flex;
+        align-items: center;
+    }
+
+    &__expand::after{
+        font-family: 'Material Icons';
+        content: "expand_more";
+        font-size: 24px;
+        cursor: pointer;
+        padding-right: 9px;
+        display:flex;
+        align-items: center;
+    }
+}
+
+.factual-dd{
+    height: 369px;
+    width: 320px;
+    &__container{
+        display: flex;
+        justify-content:center;
+        height: 329px;
+        width: 280px;
+        margin: 20px; 
+    }
+}

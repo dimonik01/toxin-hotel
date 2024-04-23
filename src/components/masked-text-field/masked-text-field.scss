@@ -1,7 +1,7 @@
 @import '../../scss/mixins/_input.scss';
 @import '../../scss/mixins/_form.scss';
 .masked-text{
-    
+    &_b{@include form($form-b);}
     &_m{@include form($form-m);}
     &_s{@include form($form-s);}
 
@@ -18,10 +18,21 @@
             justify-content: space-between;
             align-items: center;
         }
+        &_b{
+            @include form($form-b, $dark-shade-50);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
     }
 
     &__input_m{
         @include input($form-m, $dark-shade-50);
+        display: flex;
+        align-items: center;;
+    }
+    &__input_b{
+        @include input($form-b, $dark-shade-50);
         display: flex;
         align-items: center;;
     }

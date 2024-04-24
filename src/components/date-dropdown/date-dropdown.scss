@@ -11,6 +11,7 @@
         @include form($form-s);
         margin-bottom: 0px;
     }
+    
     &_m{
         @include form($form-m);
         margin-bottom: 0px;
@@ -20,6 +21,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
         &_s{
             @include form($form-s, $dark-shade-50);
             display: flex;
@@ -28,6 +30,7 @@
             margin-bottom: 0px;
             
         }
+
         &_m{
             @include form($form-m, $dark-shade-50);
             display: flex;
@@ -67,8 +70,74 @@
     &__container{
         display: flex;
         justify-content:center;
+        flex-direction: column;
         height: 329px;
         width: 280px;
         margin: 20px; 
     }
+
+    &__top{
+        font-size: 19px;
+        height: 24px;
+        width: 279px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+       }
+
+     &__arrow-left::after{
+            color: $purple;
+            display: flex;
+            align-items: center;
+            width: auto;
+            font-family: 'Material Icons';
+            content: "arrow_back";
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        &__value{
+            font-size: 19px;
+            color: $dark-shade-100;
+            font-weight: 700;
+        }
+
+        &__arrow-right::after{
+            color: $purple;
+            display: flex;
+            align-items: center;
+            width: auto;
+            font-family: 'Material Icons';
+            content: "arrow_forward";
+            font-size: 24px;
+            cursor: pointer;
+        }
+            
+    &__middle{
+        height: 240px;
+        width: 279px;
+    }
+
+    &__bottom{
+        height: 15px;
+        width: 279px;
+    }
+
+    &__buttons{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__clear{
+        color: $purple;
+        font-size: 12px;
+        font-weight: 700;
+    }
+
+    &__accept{
+        color: $purple;
+        font-size: 12px;
+        font-weight: 700;
+    }
+
 }

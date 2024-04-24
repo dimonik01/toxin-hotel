@@ -5,21 +5,24 @@ mixin date-dropdown(size, arr, text1, text2)
                 +ui-text(arr)  
                 form.date-dropdown__form_s
                     p(class="date-dropdown__input_s") #{text1}
-                    .date-dropdown__expand
+                    div(class="date-dropdown__expand" isExpanded = true)
             .date-dropdown_s
                 +ui-text(arr)  
                 form.date-dropdown__form_s
                     p(class="date-dropdown__input_s") #{text2}
-                    .date-dropdown__expand
+                    div(class="date-dropdown__expand" isExpanded = true)
         .factual-dd
             .factual-dd__container
                 .factual-dd__top
                     .factual-dd__arrow-left
-                    .factual-dd__date 
+                    div(class="factual-dd__date") 
+                        p(class="factual-dd__value" value="Август 2019") Август 2019   
                     .factual-dd__arrow-right
                 .factual-dd__middle
                     .factual-dd__calendar
                 .factual-dd__bottom
                     .factual-dd__buttons
-                        .factual-dd__clear
-                        .factual-dd__accept 
+                        .factual-dd__clear-container
+                            p(class="factual-dd__clear") ОЧИСТИТЬ
+                        .factual-dd__accept-container
+                            p(class="factual-dd__accept") ПРИМЕНИТЬ

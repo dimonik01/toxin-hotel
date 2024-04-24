@@ -117,5 +117,5 @@
         plusColl.item(i).addEventListener("click", updateText);
         minusColl.item(i).addEventListener("click", updateText);
     }                   
-})() 
+})();
 

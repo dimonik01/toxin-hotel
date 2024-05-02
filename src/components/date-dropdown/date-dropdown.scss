@@ -1,6 +1,6 @@
 @import '../../scss/mixins/_input.scss';
 @import '../../scss/mixins/_form.scss';
-
+@import '../../scss/mixins/_date-dropdown.scss';
 .date-dropdown{
     width: $form-b;
     display: flex;
@@ -67,9 +67,27 @@
 .factual-dd{
     height: 369px;
     width: 320px;
+    border: 1px solid $dark-shade-50;
+    border-radius: 0 0 3px 3px;
+    transform: translateY(5px);
+    transition: transform 0.2s ease-out, opacity 0.15s ease-in, visibility 0s linear , height 0.2s ease-out ;
+    visibility: visible;
+    margin-bottom: 20px;
+    opacity: 1;
+
+    &_closed{
+        border: 1px solid $dark-shade-50;
+        border-radius: 0 0 3px 3px;
+        transform: translateY(-369px);
+        transition: transform 0.2s ease-out, opacity 0.15s ease-in, visibility 0s linear 0.2s, height 0.2s ease-out ;
+        visibility: hidden;
+        opacity: 0;
+        height: 0px;
+    }
+
     &__container{
         display: flex;
-        justify-content:center;
+        justify-content:space-between;
         flex-direction: column;
         height: 329px;
         width: 280px;
@@ -78,7 +96,7 @@
 
     &__top{
         font-size: 19px;
-        height: 24px;
+        height: auto;
         width: 279px;
         display: flex;
         justify-content: space-between;
@@ -96,10 +114,30 @@
             cursor: pointer;
         }
 
-        &__value{
-            font-size: 19px;
-            color: $dark-shade-100;
-            font-weight: 700;
+        &__day-value_active{
+            @include date-dropdown();
+            cursor: pointer;
+        }
+
+        &__day-value{
+            display: none;
+        }
+
+        &__month-value_active{
+            @include date-dropdown();
+            cursor: pointer;
+        }
+
+        &__month-value{
+            display: none;
+        }
+
+        &__year-value_active{
+            @include date-dropdown();
+        }
+
+        &__year-value{
+            display: none;
         }
 
         &__arrow-right::after{
@@ -134,10 +172,85 @@
         font-weight: 700;
     }
 
+    &__clear_hidden{
+        display: none;
+    }
+
     &__accept{
         color: $purple;
         font-size: 12px;
         font-weight: 700;
     }
 
+    &__accept_hidden{
+        display: none;
+    }
+
+    &__days_active{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__days{
+        display: none;
+    }
+
+    &__weekdays_active{
+        font-family: 'Montserrat';
+        font-weight: bold;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 40px;
+        width: 279.13px;
+        color: $purple;
+    }
+
+    &__weekdays{
+        display: none;
+    }
+
+    &__cell{
+        font-family: 'Montserrat';
+        font-weight: 400;
+        font-size: 12px;
+        color: $dark-shade-100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        width: 39.7px;
+        cursor: pointer;
+    }
+    &__months{
+        display: none;
+    }
+
+    &__months_active{
+        height: inherit;
+        width: inherit;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__month{
+        @include date-dropdown(12px, 400, $dark-shade-75);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 25%;
+        width: 33%;
+        
+
+    }
+
+    &__years{
+
+    }
+
+    &__years_active{
+
+    }
+    
 }

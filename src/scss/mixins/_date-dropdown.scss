@@ -1,0 +1,6 @@
+@mixin date-dropdown($size: 19px, $weight: 700, $color: $dark-shade-100){
+    font-family: 'Montserrat';
+    font-size: $size;
+    color: $color;
+    font-weight: $weight;
+}

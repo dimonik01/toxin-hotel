@@ -76,7 +76,11 @@
         }
 
         showDays(){
-
+            this.yearValueNode.classList.replace("factual-dd__year-value_active","factual-dd__year-value");
+            this.dayValueNode.classList.replace("factual-dd__day-value","factual-dd__day-value_active");
+            this.daysNode.classList.replace("factual-dd__days","factual-dd__days_active");
+            this.weekdaysNode.classList.replace("factual-dd__weekdays","factual-dd__weekdays_active");
+            this.yearNode.classList,replace("factual-dd__years_active","factual-dd__years");
         }
 
     }

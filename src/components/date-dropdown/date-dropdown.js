@@ -22,6 +22,7 @@
         constructor(node){
             this.node = node;
             this.weekdays = ["ПН","ВТ","СР","ЧТ","ПН","СБ","ВС"];
+            this.date = new Date(2018, 2, 0);
             this.weekdaysNode = document.getElementsByClassName("factual-dd__weekdays_active").item(0);
             this.daysNode = document.getElementsByClassName("factual-dd__days_active").item(0);
             this.dayValueNode = document.getElementsByClassName("factual-dd__day-value_active").item(0);
@@ -46,16 +47,42 @@
             }
         }
 
-        initCells(){
-            for (let i = 1; i <= 31; i++){ //initialising dates
-                console.log("test");
+        initEmptyCells(){
+            for (let i = 1; i <= 35; i++){ //initialising empty dates
                 let newDiv = document.createElement("div");
                 newDiv.className = "factual-dd__cell";
-                let newContent = document.createTextNode(i);
+                let newContent = document.createTextNode("");
                 newDiv.appendChild(newContent);
                 this.daysNode.appendChild(newDiv);
             } 
+            this.initMonth();
         }
+
+        initMonth(){
+            let currentMonthDate = this.date;
+            let lastDate;
+            let wholeMonthArr = Array.prototype.slice.call(document.getElementsByClassName("factual-dd__cell"));
+            console.log(this.date.getDate());
+            let currDay = this.date.getDay();
+            let dayPointer = 0;
+            let skippedDays = 0;
+            let dayIterator = 1;
+            while (currDay !== dayPointer){
+                dayPointer++;
+                skippedDays++;
+            }
+            for(let i = 1; i <= this.date.getDate(); i++){
+                wholeMonthArr[dayPointer].innerHTML = i;
+                dayPointer++;
+                lastDate = i+skippedDays;
+            }
+            while(lastDate < wholeMonthArr.length){
+                wholeMonthArr[lastDate].innerHTML = dayIterator;
+                dayIterator++;
+                lastDate++;
+            }
+        }
+
         showMonths(){
             this.daysNode.classList.replace("factual-dd__days_active","factual-dd__days");
             this.weekdaysNode.classList.replace("factual-dd__weekdays_active","factual-dd__weekdays");
@@ -87,7 +114,7 @@
     let button1 = new DropdownToggler(parameters, 0);
     let button2 = new DropdownToggler(parameters, 1);
     let calendar = new Calendar();
-    calendar.initCells();
+    calendar.initEmptyCells();
     calendar.initDays();
 
 })();

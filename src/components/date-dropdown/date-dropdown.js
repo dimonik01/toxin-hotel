@@ -22,7 +22,7 @@
         constructor(node){
             this.node = node;
             this.weekdays = ["ПН","ВТ","СР","ЧТ","ПН","СБ","ВС"];
-            this.date = new Date(2018, 2, 0);
+            this.date = new Date(2019, 2, 0);
             this.weekdaysNode = document.getElementsByClassName("factual-dd__weekdays_active").item(0);
             this.daysNode = document.getElementsByClassName("factual-dd__days_active").item(0);
             this.dayValueNode = document.getElementsByClassName("factual-dd__day-value_active").item(0);
@@ -32,6 +32,10 @@
             this.yearNode = document.getElementsByClassName("factual-dd__years").item(0);
             this.acceptButton = document.getElementsByClassName("factual-dd__accept").item(0);
             this.clearButton = document.getElementsByClassName("factual-dd__clear").item(0);
+            this.nextMonth = document.getElementsByClassName("factual-dd__arrow-right").item(0);
+            this.previousMonth = document.getElementsByClassName("factual-dd__arrow-left").item(0);
+            this.nextMonth.addEventListener("click", this.showNextMonth.bind(this));
+            this.nextMonth.addEventListener("click", this.showPreviousMonth.bind(this));
             this.dayValueNode.addEventListener("click", this.showMonths.bind(this));
             this.monthValueNode.addEventListener("click", this.showYears.bind(this));
             this.yearValueNode.addEventListener("click", this.showDays.bind(this));
@@ -60,27 +64,52 @@
 
         initMonth(){
             let currentMonthDate = this.date;
-            let lastDate;
+            let nextDate;
+            let lastDate = new Date(currentMonthDate.getFullYear(), currentMonthDate.getMonth() - 1, 0).getDate();
             let wholeMonthArr = Array.prototype.slice.call(document.getElementsByClassName("factual-dd__cell"));
-            console.log(this.date.getDate());
-            let currDay = this.date.getDay();
+            console.log(lastDate);
+            console.log(this.date);
+            let currDay = currentMonthDate.getDay();
+            console.log("first day of the month = "+currDay);
             let dayPointer = 0;
             let skippedDays = 0;
             let dayIterator = 1;
-            while (currDay !== dayPointer){
+            while (currDay !== dayPointer){//finding the first day of the month corresponding it to the day of the week
                 dayPointer++;
                 skippedDays++;
             }
-            for(let i = 1; i <= this.date.getDate(); i++){
+            skippedDays--;
+            console.log("amount of days in the month"+currentMonthDate.getDate());
+            for(let i = 1; i <= currentMonthDate.getDate(); i++){//filling the current month
                 wholeMonthArr[dayPointer].innerHTML = i;
                 dayPointer++;
-                lastDate = i+skippedDays;
+                nextDate = i + skippedDays;
             }
-            while(lastDate < wholeMonthArr.length){
-                wholeMonthArr[lastDate].innerHTML = dayIterator;
+            while(nextDate < wholeMonthArr.length){//filling the left out space with the next month
+                wholeMonthArr[nextDate].innerHTML = dayIterator;
                 dayIterator++;
-                lastDate++;
+                nextDate++;
             }
+            console.log("the amount of skipped days " + skippedDays);
+            while(skippedDays >= 0){//filling the last month 
+                wholeMonthArr[skippedDays].innerHTML = lastDate;
+                skippedDays--;
+                lastDate--;
+                
+            }
+
+        }
+
+        showNextMonth(){
+            let oldMonth = document.getElementsByClassName("factual-dd__cell");
+            while(oldMonth.length) {oldMonth[0].remove();}
+            this.date.setMonth(this.date.getMonth() + 2);
+            this.date.setDate(0);
+            this.initEmptyCells();
+        }
+
+        showPreviousMonth(){
+
         }
 
         showMonths(){
@@ -114,7 +143,8 @@
     let button1 = new DropdownToggler(parameters, 0);
     let button2 = new DropdownToggler(parameters, 1);
     let calendar = new Calendar();
-    calendar.initEmptyCells();
     calendar.initDays();
+    calendar.initEmptyCells();
+    
 
 })();

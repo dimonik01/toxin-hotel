@@ -20,12 +20,12 @@ mixin date-dropdown(size, arr, text1, text2)
                         p(class="factual-dd__month-value" value="Август 2019") 2019 
                         p(class="factual-dd__year-value" value="Август 2019") year range   
                     .factual-dd__arrow-right
+                    .factual-dd__weekdays_active
                 .factual-dd__middle
                     .factual-dd__years
                     .factual-dd__months
                         each val in ["Янв","Фев","Мар","Апр","Май","Июн","Июл","Авг","Сен","Окт","Ноя","Дек"]
                             .factual-dd__month #{val}
-                    .factual-dd__weekdays_active
                     .factual-dd__days_active
                 .factual-dd__bottom
                     .factual-dd__buttons

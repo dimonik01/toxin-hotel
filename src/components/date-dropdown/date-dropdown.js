@@ -22,7 +22,9 @@
         constructor(node){
             this.node = node;
             this.weekdays = ["Пн","Вт","Ср","Чт","Пт","Сб","Вс"];
-            this.date = new Date(2019, 0, 0);
+            this.date = new Date(2019, 1, 0);
+            this.numberdayweek = [6,0,1,2,3,4,5];
+            this.titleMonths = ["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"];
             this.weekdaysNode = document.getElementsByClassName("factual-dd__weekdays_active").item(0);
             this.daysNode = document.getElementsByClassName("factual-dd__days_active").item(0);
             this.dayValueNode = document.getElementsByClassName("factual-dd__day-value_active").item(0);
@@ -58,7 +60,6 @@
                 }
             
             for (let i = 1; i <= amount; i++){ //initialising empty dates
-                console.log("govno");
                 let newDiv = document.createElement("div");
                 newDiv.className = "factual-dd__cell";
                 let newContent = document.createTextNode("");
@@ -91,7 +92,7 @@
         }
         
         fillLastMonth(wholeMonthArr, skippedDays){
-            let lastDate = new Date(this.date.getFullYear(), this.date.getMonth() - 1, 0).getDate();
+            let lastDate = new Date(this.date.getFullYear(), this.date.getMonth(), 0).getDate();
             skippedDays--;
             while(skippedDays >= 0){
                 wholeMonthArr[skippedDays].innerHTML = lastDate;
@@ -99,16 +100,26 @@
                 lastDate--;
                 
             }
+            this.changeDateTitle();
         }
 
-        countSkippedDays(exists, firstDayOfTheMonth){//finding the first day of the month corresponding it to the day of the week
+        changeDateTitle(){
+            let title = document.getElementsByClassName("factual-dd__day-value_active").item(0);
+            title.innerHTML = this.titleMonths[this.date.getMonth()] + " " + this.date.getFullYear();
+        }
+
+        countSkippedDays(exists = false, firstDayOfTheMonth){//finding the first day of the month corresponding it to the day of the week
             let dayPointer = 0;
             let skippedDays = 0;
-            let numberdayweek = [6,0,1,2,3,4,5];
-            //console.log(numberdayweek[first]);
             let currDay = this.date.getDay();
-            console.log(this.date);
-            console.log("First day of the month" + currDay);
+            console.log("after init"+ this.date + currDay + this.date.getDay());
+            if (exists) {
+                currDay = this.numberdayweek[firstDayOfTheMonth];
+                console.log(this.numberdayweek[firstDayOfTheMonth]);
+                console.log("REAL DAY" + currDay);
+                console.log("correct");
+            }
+            console.log(currDay);
             let extended = false;
             const factualDD = document.getElementsByClassName("factual-dd__container").item(0);
             while (currDay !== dayPointer){
@@ -116,35 +127,43 @@
                 skippedDays++;
             }
             let requiredDays = this.date.getDate() + skippedDays;
-            console.log("required days = " + requiredDays);
             if (requiredDays > 35){
                 factualDD.parentElement.className = "factual-dd_extended";
                 this.initEmptyCells(42, skippedDays, exists);
                 extended = true;
-                console.log("require days > 35");
             }
             else{
                 factualDD.parentElement.className = "factual-dd";
                 extended = false;
                 this.initEmptyCells(35, skippedDays, exists);
-                console.log("require days < 35");
             }
+            //console.log(new Date(this.date.getFullYear(), this.date.getMonth(), 0) + "  " + this.date + "  " + new Date(this.date.getFullYear(), this.date.getMonth() + 2, 0));
         }
 
 
         showNextMonth(){
-            this.date.setMonth(this.date.getMonth() + 2);
             this.date.setDate(1);
+            this.date.setMonth(this.date.getMonth() + 1);
             let firstDayOfTheMonth = this.date.getDay();
+            this.date.setMonth(this.date.getMonth() + 1);
             this.date.setDate(0);
-            console.log(this.date);
+            console.log(this.date.getFullYear(), this.date.getMonth(), 0) + "  " + this.date + "  " + new Date(this.date.getFullYear(), this.date.getMonth() + 2, 0);
             let exists = true;
             this.countSkippedDays(exists, firstDayOfTheMonth);
             
         }
 
         showPreviousMonth(){
-
+            this.date.setDate(1);
+            this.date.setMonth(this.date.getMonth() - 1);
+            console.log(this.date);
+            let firstDayOfTheMonth = this.date.getDay();
+            this.date.setMonth(this.date.getMonth() + 1);
+            this.date.setDate(0);
+            console.log(this.date);
+            console.log(this.date.getFullYear(), this.date.getMonth(), 0) + "  " + this.date + "  " + new Date(this.date.getFullYear(), this.date.getMonth() + 2, 0);
+            let exists = true;
+            this.countSkippedDays(exists, firstDayOfTheMonth);
         }
 
         showMonths(){

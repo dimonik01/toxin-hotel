@@ -29,6 +29,16 @@
                 this.months.item(i).addEventListener("click", this.chooseMonth.bind(this));
                 this.months.item(i).addEventListener("click", this.showDays.bind(this));
             };
+            this.years = document.getElementsByClassName("factual-dd__year");
+            this.defaultYear = 2009;
+            for (let i = 0; i < 12; i++){
+                this.years.item(i).setAttribute(`year-number`, this.defaultYear);
+                this.years.item(i).addEventListener("click", this.showChosenYear.bind(this));
+                this.years.item(i).addEventListener("click", this.chooseMonth.bind(this));
+                this.years.item(i).addEventListener("click", this.showDays.bind(this));
+                this.defaultYear++;
+            };
+            this.defaultYear = 2009;
             this.weekdaysNode = document.getElementsByClassName("factual-dd__weekdays_active").item(0);
             this.daysNode = document.getElementsByClassName("factual-dd__days_active").item(0);
             this.dayValueNode = document.getElementsByClassName("factual-dd__day-value_active").item(0);
@@ -39,7 +49,9 @@
             this.acceptButton = document.getElementsByClassName("factual-dd__accept").item(0);
             this.clearButton = document.getElementsByClassName("factual-dd__clear").item(0);
             this.nextMonth = document.getElementsByClassName("factual-dd__arrow-right").item(0);
+            this.nextMonth.setAttribute("type", "month-changer");
             this.previousMonth = document.getElementsByClassName("factual-dd__arrow-left").item(0);
+            this.previousMonth.setAttribute("type", "month-changer");
             this.nextMonth.addEventListener("click", this.showNextMonth.bind(this));
             this.previousMonth.addEventListener("click", this.showPreviousMonth.bind(this));
             this.dayValueNode.addEventListener("click", this.showMonths.bind(this));
@@ -86,7 +98,6 @@
                 extended = false;
                 this.initEmptyCells(35, skippedDays, exists, manual);
             }
-            //console.log(new Date(this.date.getFullYear(), this.date.getMonth(), 0) + "  " + this.date + "  " + new Date(this.date.getFullYear(), this.date.getMonth() + 2, 0));
         }
 
         initEmptyCells(amount, skippedDays, exists = false, manual = false){
@@ -140,46 +151,121 @@
         }
 
         changeDateTitle(){
-            if (document.getElementsByClassName("factual-dd__day-value_active").item(0) != undefined){
-                let title = document.getElementsByClassName("factual-dd__day-value_active").item(0);
-                title.innerHTML = this.titleMonths[this.date.getMonth()] + " " + this.date.getFullYear();
-            }
-            else{
-                let title = document.getElementsByClassName("factual-dd__day-value").item(0);
-                title.innerHTML = this.titleMonths[this.date.getMonth()] + " " + this.date.getFullYear();
-            }
+            this.dayValueNode.innerHTML = this.titleMonths[this.date.getMonth()] + " " + this.date.getFullYear();
+            this.monthValueNode.innerHTML = this.date.getFullYear();
+            this.yearValueNode.innerHTML = this.years.item(0).getAttribute("year-number") + " - " + this.years.item(11).getAttribute("year-number");
         }
 
         chooseMonth(e){
-            this.date.setMonth(e.target.getAttribute("month-number"));
-            console.log(e.target.getAttribute("month-number"));
-            this.countSkippedDays(false, 0, true);
-
-        }
-
-        showNextMonth(){
             this.date.setDate(1);
-            this.date.setMonth(this.date.getMonth() + 1);
+            this.date.setMonth(e.target.getAttribute("month-number"));
+            this.date.setDate(1);
             let firstDayOfTheMonth = this.date.getDay();
             this.date.setMonth(this.date.getMonth() + 1);
             this.date.setDate(0);
-            console.log(this.date.getFullYear(), this.date.getMonth(), 0) + "  " + this.date + "  " + new Date(this.date.getFullYear(), this.date.getMonth() + 2, 0);
-            let exists = true;
-            this.countSkippedDays(exists, firstDayOfTheMonth);
+            this.countSkippedDays(true, firstDayOfTheMonth, true);
+
+        }
+
+        initYearRange(direction){
+            let yearMin = Number(this.years.item(0).getAttribute("year-number"));
+            yearMin = yearMin - 12;
+            let yearMax = Number(this.years.item(11).getAttribute("year-number"));
+            console.log("year max  " + yearMax);
+            let negativeIterator = yearMin - 12;
+            console.log("attribute " + typeof(yearMin));
+            while(document.getElementsByClassName("factual-dd__year").length > 0){  
+                document.getElementsByClassName("factual-dd__year")[0].remove();
+            }               
+            for (let i = 0; i < 12; i++){
+                
+                let newDiv = document.createElement("div");
+                newDiv.className = "factual-dd__year";
+                let newContent = document.createTextNode("");
+                newDiv.appendChild(newContent);
+                this.yearNode.appendChild(newDiv);
+                this.years.item(i).addEventListener("click", this.showChosenYear.bind(this));
+                this.years.item(i).addEventListener("click", this.chooseMonth.bind(this));
+                this.years.item(i).addEventListener("click", this.showDays.bind(this));
+                if (direction == false){
+                    let result = yearMin + i;
+                    this.years.item(i).innerHTML = result;
+                    this.years.item(i).setAttribute(`year-number`, result);
+                    this.defaultYear--;
+                }
+                else{
+                    this.years.item(i).innerHTML = yearMax;
+                    this.years.item(i).setAttribute(`year-number`, yearMax);
+                    this.defaultYear++;
+                    yearMax++;
+                }
+                
+            }
             
         }
+        
+
+        showNextMonth(){
+            if (this.nextMonth.getAttribute("type") == "month-changer"){
+                this.date.setDate(1);
+                this.date.setMonth(this.date.getMonth() + 1);
+                let firstDayOfTheMonth = this.date.getDay();
+                this.date.setMonth(this.date.getMonth() + 1);
+                this.date.setDate(0);
+                console.log(this.date.getFullYear(), this.date.getMonth(), 0) + "  " + this.date + "  " + new Date(this.date.getFullYear(), this.date.getMonth() + 2, 0);
+                let exists = true;
+                this.countSkippedDays(exists, firstDayOfTheMonth);
+                if (this.years.item(11) == this.date.getFullYear()){
+                    console.log("oldYear != newYear");
+                    this.initYearRange(true);
+                }
+
+            }
+            if (this.nextMonth.getAttribute("type") == "year-changer"){
+                this.date.setFullYear(this.date.getFullYear() + 1);
+                this.monthValueNode.innerHTML = this.date.getFullYear();
+                console.log(this.date.getFullYear(), this.date.getMonth(), 0) + "  " + this.date + "  " + new Date(this.date.getFullYear(), this.date.getMonth() + 2, 0);
+            }
+            if (this.nextMonth.getAttribute("type") == "year-period-changer"){
+                this.initYearRange(true);
+                this.changeDateTitle();
+            }
+        }
+            
+        
 
         showPreviousMonth(){
-            this.date.setDate(1);
-            this.date.setMonth(this.date.getMonth() - 1);
-            console.log(this.date);
-            let firstDayOfTheMonth = this.date.getDay();
-            this.date.setMonth(this.date.getMonth() + 1);
-            this.date.setDate(0);
-            console.log(this.date);
-            console.log(this.date.getFullYear(), this.date.getMonth(), 0) + "  " + this.date + "  " + new Date(this.date.getFullYear(), this.date.getMonth() + 2, 0);
-            let exists = true;
-            this.countSkippedDays(exists, firstDayOfTheMonth);
+            if (this.previousMonth.getAttribute("type") == "month-changer"){
+                let oldYear = this.date.getFullYear();
+                this.date.setDate(1);
+                this.date.setMonth(this.date.getMonth() - 1);
+                console.log(this.date);
+                let firstDayOfTheMonth = this.date.getDay();
+                this.date.setMonth(this.date.getMonth() + 1);
+                this.date.setDate(0);
+                console.log(this.date);
+                console.log(this.date.getFullYear(), this.date.getMonth(), 0) + "  " + this.date + "  " + new Date(this.date.getFullYear(), this.date.getMonth() + 2, 0);
+                let exists = true;
+                this.countSkippedDays(exists, firstDayOfTheMonth);
+                if (oldYear != this.date.getFullYear()){
+                    console.log("oldYear != newYear");
+                    this.initYearRange(true);
+                }
+            }
+            if (this.previousMonth.getAttribute("type") == "year-changer"){
+                this.date.setFullYear(this.date.getFullYear() - 1);
+                this.monthValueNode.innerHTML = this.date.getFullYear();
+            }
+            if (this.previousMonth.getAttribute("type") == "year-period-changer"){
+                this.initYearRange(false);
+                this.changeDateTitle();
+            }
+        }
+        
+
+        showChosenYear(e){
+            this.date.setFullYear(Number(e.target.getAttribute("year-number")));
+
         }
 
         showMonths(){
@@ -190,6 +276,9 @@
             this.monthsNode.classList.replace("factual-dd__months","factual-dd__months_active");
             this.acceptButton.classList.replace("factual-dd__accept","factual-dd__accept_hidden");
             this.clearButton.classList.replace("factual-dd__clear","factual-dd__clear_hidden");
+            this.nextMonth.setAttribute("type", "year-changer");
+            this.previousMonth.setAttribute("type", "year-changer");
+            
             console.log("months triggered");
         }
 
@@ -199,6 +288,8 @@
             this.yearValueNode.classList.replace("factual-dd__year-value","factual-dd__year-value_active");
             this.monthsNode.classList.replace("factual-dd__months_active","factual-dd__months");
             this.yearNode.classList.replace("factual-dd__years", "factual-dd__years_active");
+            this.nextMonth.setAttribute("type", "year-period-changer");
+            this.previousMonth.setAttribute("type", "year-period-changer");
             console.log("years triggered");
 
         }
@@ -211,6 +302,8 @@
             this.daysNode.classList.replace("factual-dd__days","factual-dd__days_active");
             this.weekdaysNode.classList.replace("factual-dd__weekdays","factual-dd__weekdays_active");
             this.yearNode.classList.replace("factual-dd__years_active","factual-dd__years");
+            this.nextMonth.setAttribute("type", "month-changer");
+            this.previousMonth.setAttribute("type", "month-changer");
             console.log("days triggered");
         }
 

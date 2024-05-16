@@ -261,11 +261,23 @@
     }
 
     &__years{
-
+        display: none;
     }
 
     &__years_active{
+        height: inherit;
+        width: inherit;
+        display: flex;
+        flex-wrap: wrap;
+    }
 
+    &__year{
+        @include date-dropdown(12px, 400, $dark-shade-75);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 25%;
+        width: 33%;
     }
     
 }

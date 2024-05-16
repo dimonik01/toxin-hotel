@@ -23,6 +23,9 @@ mixin date-dropdown(size, arr, text1, text2)
                     .factual-dd__weekdays_active
                 .factual-dd__middle
                     .factual-dd__years
+                        - let x = 2009
+                        - for(let i = 0; i < 12; i++)
+                            .factual-dd__year #{x + i}
                     .factual-dd__months
                         each val in ["Янв","Фев","Мар","Апр","Май","Июн","Июл","Авг","Сен","Окт","Ноя","Дек"]
                             .factual-dd__month #{val}

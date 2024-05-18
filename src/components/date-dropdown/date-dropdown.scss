@@ -236,7 +236,12 @@
         justify-content: center;
         height: 40px;
         width: 39.7px;
+        border-radius: 100px;
         cursor: pointer;
+    }
+
+    &__cell:hover{
+        background-color: $dark-shade-25;
     }
     &__months{
         display: none;
@@ -256,8 +261,16 @@
         align-items: center;
         height: 25%;
         width: 33%;
-        
+        border-radius: 100px;
 
+    }
+
+    &__month:hover{
+        background-color: $dark-shade-25;
+    }
+
+    &__month_selected{
+        background-color: $purple;
     }
 
     &__years{
@@ -278,6 +291,15 @@
         align-items: center;
         height: 25%;
         width: 33%;
+        border-radius: 100px;
+    }
+
+    &__year:hover{
+        background-color: $dark-shade-25;
+    }
+
+    &__year_selected{
+        background-color: $purple;
     }
     
 }

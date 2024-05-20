@@ -238,6 +238,9 @@
         width: 39.7px;
         border-radius: 100px;
         cursor: pointer;
+        &_highlighted{
+            background-color: $purple;
+        }
     }
 
     &__cell:hover{
@@ -301,5 +304,6 @@
     &__year_selected{
         background-color: $purple;
     }
+
     
 }

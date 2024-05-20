@@ -25,7 +25,8 @@
             this.titleMonths = ["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"];
             this.months = document.getElementsByClassName("factual-dd__month");
             this.firstChosen = null;
-            this.secondChosen - null;
+            this.secondChosen = null;
+            this.listenerAssigned = false;
             for (let i = 0; i < 12; i++){
                 this.months.item(i).setAttribute(`month-number`, i);
                 this.months.item(i).addEventListener("click", this.chooseMonth.bind(this));
@@ -276,30 +277,57 @@
         }
 
         markChosenDay(e){
+            let cells = document.getElementsByClassName("factual-dd__cell");
             let firstChanged = false;
-            let chosenState = this.firstChosen;
-            if (this.firstChosen == null){
+            if (this.firstChosen != undefined && this.secondChosen != undefined){
+                this.firstChosen = undefined;
+                this.secondChosen = undefined;
+                for (let i = 0; i < document.getElementsByClassName("factual-dd__cell").length; i++){
+                    cells.item(i).classList.remove("factual-dd__cell_highlighted");
+                    console.log("removed");
+                }
+            }
+            if (this.firstChosen == undefined || this.secondChosen != undefined){
                 this.firstChosen = e.target;
                 firstChanged = true;
             }
-            if (firstChanged == false){
+            if (this.firstChosen != undefined && firstChanged == false){
                 this.secondChosen = e.target;
             }
 
             console.log(this.firstChosen);
             console.log(this.secondChosen);
             let str = "test"
-            let cells = document.getElementsByClassName("factual-dd__cell");
-            for (let i = 0; i < cells.length; i++){
-                cells.item(i).classList.remove("factual-dd__cell_chosen");
-                cells.item(i).addEventListener("mouseover", highlightCells);
+            //let cells = document.getElementsByClassName("factual-dd__cell");
+            if (this.listenerAssigned == false){
+                for (let i = 0; i < cells.length; i++){
+                    cells.item(i).classList.remove("factual-dd__cell_chosen");
+                    cells.item(i).addEventListener("mouseover", highlightCells.bind(this));
+                    this.listenerAssigned = true; 
+                }
             }
             e.target.classList.add("factual-dd__cell_chosen");
             function highlightCells(f){
-                for (let i = Number(e.target.getAttribute("day-number")); i < Number(f.target.getAttribute("day-number")); i++){
-                    console.log(i);
-                }
+                let cells = document.getElementsByClassName("factual-dd__cell");
+                console.log("removed");
                 
+                console.log("second Chosen  " + this.secondChosen);
+                if (this.secondChosen != null){
+                    f.target.removeEventListener("mouseover", highlightCells);
+                    this.listenerAssigned = false;
+                }
+                else {
+                    for (let i = 0; i < document.getElementsByClassName("factual-dd__cell").length; i++){
+                        cells.item(i).classList.remove("factual-dd__cell_highlighted");
+                        console.log("removed");
+                    }
+                    for (let i = Number(e.target.getAttribute("day-number")); i < Number(f.target.getAttribute("day-number")); i++){
+                        console.log(i);
+                        cells.item(i).classList.add("factual-dd__cell_highlighted");
+                    }  
+                }
+                    
+                 
             }
         }
         

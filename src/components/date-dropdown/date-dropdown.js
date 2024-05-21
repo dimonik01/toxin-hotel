@@ -280,6 +280,10 @@
             let cells = document.getElementsByClassName("factual-dd__cell");
             let firstChanged = false;
             if (this.firstChosen != undefined && this.secondChosen != undefined){
+                for (let i = 0; i < cells.length; i++){
+                    cells.item(i).classList.remove("factual-dd__cell_chosen-first");
+                    cells.item(i).classList.remove("factual-dd__cell_chosen-last");
+                }
                 this.firstChosen = undefined;
                 this.secondChosen = undefined;
                 for (let i = 0; i < document.getElementsByClassName("factual-dd__cell").length; i++){
@@ -289,10 +293,13 @@
             }
             if (this.firstChosen == undefined || this.secondChosen != undefined){
                 this.firstChosen = e.target;
+                e.target.classList.add("factual-dd__cell_chosen-first");
+                console.log("first chosen assigned");
                 firstChanged = true;
             }
             if (this.firstChosen != undefined && firstChanged == false){
                 this.secondChosen = e.target;
+                e.target.classList.add("factual-dd__cell_chosen-last");
             }
 
             console.log(this.firstChosen);
@@ -301,12 +308,11 @@
             //let cells = document.getElementsByClassName("factual-dd__cell");
             if (this.listenerAssigned == false){
                 for (let i = 0; i < cells.length; i++){
-                    cells.item(i).classList.remove("factual-dd__cell_chosen");
                     cells.item(i).addEventListener("mouseover", highlightCells.bind(this));
                     this.listenerAssigned = true; 
                 }
             }
-            e.target.classList.add("factual-dd__cell_chosen");
+            //e.target.classList.add("factual-dd__cell_chosen");
             function highlightCells(f){
                 let cells = document.getElementsByClassName("factual-dd__cell");
                 console.log("removed");
@@ -321,7 +327,7 @@
                         cells.item(i).classList.remove("factual-dd__cell_highlighted");
                         console.log("removed");
                     }
-                    for (let i = Number(e.target.getAttribute("day-number")); i < Number(f.target.getAttribute("day-number")); i++){
+                    for (let i = Number(e.target.getAttribute("day-number")); i < Number(f.target.getAttribute("day-number")) - 1; i++){
                         console.log(i);
                         cells.item(i).classList.add("factual-dd__cell_highlighted");
                     }  

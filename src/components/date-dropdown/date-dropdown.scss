@@ -239,8 +239,41 @@
         border-radius: 100px;
         cursor: pointer;
         &_highlighted{
-            background-color: $purple;
+           // background-color: $purple;
+           background: -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, .25)), to(rgba(139, 164, 249, .25)));
+            border-radius: 0;
         }
+
+        &_chosen-first::before{
+            content: "";
+            position: absolute;
+            height: inherit;
+            width: inherit;
+            border-radius: 50% 0 0 50%;
+            background: -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, .25)), to(rgba(139, 164, 249, .25)));
+        }
+
+        &_chosen-last::after{
+            content: "";
+            position: absolute;
+            height: inherit;
+            width: inherit;
+            border-radius: 0 50% 50% 0;
+            background: -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, .25)), to(rgba(139, 164, 249, .25)));
+        }
+
+        &_chosen-first{
+            background: -webkit-gradient(linear, left top, left bottom, from(#bc9cff), to(#8ba4f9));
+            color: white;
+            
+        }
+
+        &_chosen-last{
+            background: -webkit-gradient(linear, left top, left bottom, from(#bc9cff), to(#8ba4f9));
+            color: white
+        }
+
+        
     }
 
     &__cell:hover{

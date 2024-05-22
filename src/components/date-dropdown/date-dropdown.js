@@ -293,15 +293,14 @@
             }
             if (this.firstChosen == undefined || this.secondChosen != undefined){
                 this.firstChosen = e.target;
-                e.target.classList.add("factual-dd__cell_chosen-first");
+                //e.target.classList.add("factual-dd__cell_chosen-first");
                 console.log("first chosen assigned");
                 firstChanged = true;
             }
             if (this.firstChosen != undefined && firstChanged == false){
                 this.secondChosen = e.target;
-                e.target.classList.add("factual-dd__cell_chosen-last");
+                //e.target.classList.add("factual-dd__cell_chosen-last");
             }
-
             console.log(this.firstChosen);
             console.log(this.secondChosen);
             let str = "test"
@@ -312,12 +311,12 @@
                     this.listenerAssigned = true; 
                 }
             }
-            //e.target.classList.add("factual-dd__cell_chosen");
             function highlightCells(f){
                 let cells = document.getElementsByClassName("factual-dd__cell");
-                console.log("removed");
-                
-                console.log("second Chosen  " + this.secondChosen);
+                f.target.classList.remove("factual-dd__cell_chosen-first");
+                f.target.classList.remove("factual-dd__cell_chosen-last");
+                //e.target.classList.remove("factual-dd__cell_chosen-first");
+                e.target.classList.remove("factual-dd__cell_chosen-last");
                 if (this.secondChosen != null){
                     f.target.removeEventListener("mouseover", highlightCells);
                     this.listenerAssigned = false;
@@ -327,10 +326,31 @@
                         cells.item(i).classList.remove("factual-dd__cell_highlighted");
                         console.log("removed");
                     }
-                    for (let i = Number(e.target.getAttribute("day-number")); i < Number(f.target.getAttribute("day-number")) - 1; i++){
-                        console.log(i);
-                        cells.item(i).classList.add("factual-dd__cell_highlighted");
-                    }  
+                    if(Number(e.target.getAttribute("day-number")) > Number(f.target.getAttribute("day-number"))){
+                        for (let i = 0; i < cells.length; i++){
+                            cells.item(i).classList.remove("factual-dd__cell_chosen-first");
+                        }
+                        f.target.classList.add("factual-dd__cell_chosen-first");
+                        e.target.classList.add("factual-dd__cell_chosen-last");
+                        console.log("Первый выбранный =  " + e.target.getAttribute("day-number"));
+                        console.log("Второй выбранный =  " + f.target.getAttribute("day-number"));
+                        for (let i = Number(f.target.getAttribute("day-number")); i < Number(e.target.getAttribute("day-number")) - 1; i++){
+                            console.log(i);
+                            cells.item(i).classList.add("factual-dd__cell_highlighted");
+                        }  
+                    }
+                    else {
+                        for (let i = 0; i < cells.length; i++){
+                            cells.item(i).classList.remove("factual-dd__cell_chosen-last");
+                        }
+                        e.target.classList.add("factual-dd__cell_chosen-first");
+                        f.target.classList.add("factual-dd__cell_chosen-last");
+                        for (let i = Number(e.target.getAttribute("day-number")); i < Number(f.target.getAttribute("day-number")) - 1; i++){
+                            console.log(i);
+                            cells.item(i).classList.add("factual-dd__cell_highlighted");
+                        }  
+                    }
+                    
                 }
                     
                  

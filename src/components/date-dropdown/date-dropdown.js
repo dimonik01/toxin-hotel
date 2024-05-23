@@ -78,7 +78,6 @@
             let currDay = this.date.getDay();
             for (let i = 0; i < 12; i++){
                 this.months.item(i).className = "factual-dd__month";
-                //this.years.item(i).className = "factual-dd_year";
                 if(this.date.getMonth() == Number(this.months.item(i).getAttribute("month-number"))){
                     this.months.item(i).classList.add("factual-dd__month_selected");
                 }
@@ -86,14 +85,9 @@
                     this.years.item(i).classList.add("factual-dd__year_selected");
                 }
             }
-            console.log("after init"+ this.date + currDay + this.date.getDay());
             if (exists) {
                 currDay = this.numberdayweek[firstDayOfTheMonth];
-                console.log(this.numberdayweek[firstDayOfTheMonth]);
-                console.log("REAL DAY" + currDay);
-                console.log("correct");
             }
-            console.log(currDay);
             let extended = false;
             const factualDD = document.getElementsByClassName("factual-dd__container").item(0);
             while (currDay !== dayPointer){
@@ -179,16 +173,13 @@
             this.date.setMonth(this.date.getMonth() + 1);
             this.date.setDate(0);
             this.countSkippedDays(true, firstDayOfTheMonth, true);
-
         }
 
         initYearRange(direction){
             let yearMin = Number(this.years.item(0).getAttribute("year-number"));
             yearMin = yearMin - 12;
             let yearMax = Number(this.years.item(11).getAttribute("year-number"));
-            console.log("year max  " + yearMax);
             let negativeIterator = yearMin - 12;
-            console.log("attribute " + typeof(yearMin));
             while(document.getElementsByClassName("factual-dd__year").length > 0){  
                 document.getElementsByClassName("factual-dd__year")[0].remove();
             }               
@@ -226,19 +217,15 @@
                 let firstDayOfTheMonth = this.date.getDay();
                 this.date.setMonth(this.date.getMonth() + 1);
                 this.date.setDate(0);
-                console.log(this.date.getFullYear(), this.date.getMonth(), 0) + "  " + this.date + "  " + new Date(this.date.getFullYear(), this.date.getMonth() + 2, 0);
                 let exists = true;
                 this.countSkippedDays(exists, firstDayOfTheMonth);
                 if (this.years.item(11) == this.date.getFullYear()){
-                    console.log("oldYear != newYear");
                     this.initYearRange(true);
                 }
-
             }
             if (this.nextMonth.getAttribute("type") == "year-changer"){
                 this.date.setFullYear(this.date.getFullYear() + 1);
                 this.monthValueNode.innerHTML = this.date.getFullYear();
-                console.log(this.date.getFullYear(), this.date.getMonth(), 0) + "  " + this.date + "  " + new Date(this.date.getFullYear(), this.date.getMonth() + 2, 0);
             }
             if (this.nextMonth.getAttribute("type") == "year-period-changer"){
                 this.initYearRange(true);
@@ -253,16 +240,12 @@
                 let oldYear = this.date.getFullYear();
                 this.date.setDate(1);
                 this.date.setMonth(this.date.getMonth() - 1);
-                console.log(this.date);
                 let firstDayOfTheMonth = this.date.getDay();
                 this.date.setMonth(this.date.getMonth() + 1);
                 this.date.setDate(0);
-                console.log(this.date);
-                console.log(this.date.getFullYear(), this.date.getMonth(), 0) + "  " + this.date + "  " + new Date(this.date.getFullYear(), this.date.getMonth() + 2, 0);
                 let exists = true;
                 this.countSkippedDays(exists, firstDayOfTheMonth);
                 if (oldYear != this.date.getFullYear()){
-                    console.log("oldYear != newYear");
                     this.initYearRange(true);
                 }
             }
@@ -281,30 +264,23 @@
             let firstChanged = false;
             if (this.firstChosen != undefined && this.secondChosen != undefined){
                 for (let i = 0; i < cells.length; i++){
-                    cells.item(i).classList.remove("factual-dd__cell_chosen-first");
-                    cells.item(i).classList.remove("factual-dd__cell_chosen-last");
+                    cells.item(i).classList.remove("factual-dd__chosen");
                 }
                 this.firstChosen = undefined;
                 this.secondChosen = undefined;
-                for (let i = 0; i < document.getElementsByClassName("factual-dd__cell").length; i++){
-                    cells.item(i).classList.remove("factual-dd__cell_highlighted");
-                    console.log("removed");
-                }
+                this.removeHighlightedCells();
             }
             if (this.firstChosen == undefined || this.secondChosen != undefined){
+                this.removeChosen();
                 this.firstChosen = e.target;
-                //e.target.classList.add("factual-dd__cell_chosen-first");
-                console.log("first chosen assigned");
+                e.target.classList.add("factual-dd__chosen");
                 firstChanged = true;
             }
             if (this.firstChosen != undefined && firstChanged == false){
                 this.secondChosen = e.target;
-                //e.target.classList.add("factual-dd__cell_chosen-last");
+                e.target.classList.add("factual-dd__chosen");
             }
-            console.log(this.firstChosen);
-            console.log(this.secondChosen);
             let str = "test"
-            //let cells = document.getElementsByClassName("factual-dd__cell");
             if (this.listenerAssigned == false){
                 for (let i = 0; i < cells.length; i++){
                     cells.item(i).addEventListener("mouseover", highlightCells.bind(this));
@@ -313,51 +289,51 @@
             }
             function highlightCells(f){
                 let cells = document.getElementsByClassName("factual-dd__cell");
-                f.target.classList.remove("factual-dd__cell_chosen-first");
-                f.target.classList.remove("factual-dd__cell_chosen-last");
-                //e.target.classList.remove("factual-dd__cell_chosen-first");
-                e.target.classList.remove("factual-dd__cell_chosen-last");
                 if (this.secondChosen != null){
                     f.target.removeEventListener("mouseover", highlightCells);
                     this.listenerAssigned = false;
                 }
                 else {
-                    for (let i = 0; i < document.getElementsByClassName("factual-dd__cell").length; i++){
-                        cells.item(i).classList.remove("factual-dd__cell_highlighted");
-                        console.log("removed");
-                    }
+                    this.removeHighlightedCells();
                     if(Number(e.target.getAttribute("day-number")) > Number(f.target.getAttribute("day-number"))){
-                        for (let i = 0; i < cells.length; i++){
-                            cells.item(i).classList.remove("factual-dd__cell_chosen-first");
-                        }
-                        f.target.classList.add("factual-dd__cell_chosen-first");
-                        e.target.classList.add("factual-dd__cell_chosen-last");
-                        console.log("Первый выбранный =  " + e.target.getAttribute("day-number"));
-                        console.log("Второй выбранный =  " + f.target.getAttribute("day-number"));
+                        this.removeChosen();
+                        e.target.classList.add("factual-dd__chosen_first-reverse");
+                        e.target.classList.add("factual-dd__chosen");
+                        f.target.classList.add("factual-dd__chosen_last-reverse");
                         for (let i = Number(f.target.getAttribute("day-number")); i < Number(e.target.getAttribute("day-number")) - 1; i++){
-                            console.log(i);
                             cells.item(i).classList.add("factual-dd__cell_highlighted");
                         }  
                     }
                     else {
-                        for (let i = 0; i < cells.length; i++){
-                            cells.item(i).classList.remove("factual-dd__cell_chosen-last");
-                        }
-                        e.target.classList.add("factual-dd__cell_chosen-first");
-                        f.target.classList.add("factual-dd__cell_chosen-last");
+                        this.removeChosen();
+                        e.target.classList.add("factual-dd__chosen_first");
+                        e.target.classList.add("factual-dd__chosen");
+                        f.target.classList.add("factual-dd__chosen_last");
                         for (let i = Number(e.target.getAttribute("day-number")); i < Number(f.target.getAttribute("day-number")) - 1; i++){
-                            console.log(i);
                             cells.item(i).classList.add("factual-dd__cell_highlighted");
                         }  
                     }
-                    
-                }
-                    
-                 
+                }    
             }
         }
-        
-        
+
+        removeHighlightedCells(){
+            let cells = document.getElementsByClassName("factual-dd__cell");
+            for (let i = 0; i < document.getElementsByClassName("factual-dd__cell").length; i++){
+                cells.item(i).classList.remove("factual-dd__cell_highlighted");
+            }
+        }
+
+        removeChosen(){
+            let cells = document.getElementsByClassName("factual-dd__cell");
+            for (let i = 0; i < cells.length; i++){
+                cells.item(i).classList.remove("factual-dd__chosen");
+                cells.item(i).classList.remove("factual-dd__chosen_first");
+                cells.item(i).classList.remove("factual-dd__chosen_last");
+                cells.item(i).classList.remove("factual-dd__chosen_first-reverse");
+                cells.item(i).classList.remove("factual-dd__chosen_last-reverse");
+            }
+        }
 
         showChosenYear(){
             this.date.setFullYear(Number(e.target.getAttribute("year-number")));
@@ -386,8 +362,6 @@
             this.yearNode.classList.replace("factual-dd__years", "factual-dd__years_active");
             this.nextMonth.setAttribute("type", "year-period-changer");
             this.previousMonth.setAttribute("type", "year-period-changer");
-            console.log("years triggered");
-
         }
 
         showDays(){
@@ -398,18 +372,15 @@
             this.daysNode.classList.replace("factual-dd__days","factual-dd__days_active");
             this.weekdaysNode.classList.replace("factual-dd__weekdays","factual-dd__weekdays_active");
             this.yearNode.classList.replace("factual-dd__years_active","factual-dd__years");
+            this.acceptButton.classList.replace("factual-dd__accept_hidden","factual-dd__accept");
+            this.clearButton.classList.replace("factual-dd__clear_hidden","factual-dd__clear");
             this.nextMonth.setAttribute("type", "month-changer");
             this.previousMonth.setAttribute("type", "month-changer");
-            console.log("days triggered");
         }
-
     }
     let button1 = new DropdownToggler(parameters, 0);
     let button2 = new DropdownToggler(parameters, 1);
     let calendar = new Calendar();
     calendar.countSkippedDays();
     calendar.initDays();
-
-    
-
 })();

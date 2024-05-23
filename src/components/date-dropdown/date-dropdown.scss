@@ -1,6 +1,7 @@
 @import '../../scss/mixins/_input.scss';
 @import '../../scss/mixins/_form.scss';
 @import '../../scss/mixins/_date-dropdown.scss';
+@import '../../scss/mixins/_date-dropdown-border.scss';
 .date-dropdown{
     width: $form-b;
     display: flex;
@@ -243,38 +244,78 @@
            background: -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, .25)), to(rgba(139, 164, 249, .25)));
             border-radius: 0;
         }
+    }
 
-        &_chosen-first::before{
-            content: "";
-            position: absolute;
-            height: inherit;
-            width: inherit;
+    &__chosen{
+        background: -webkit-gradient(linear, left top, left bottom, from(#bc9cff), to(#8ba4f9));
+
+        &:hover{
+            background: linear-gradient(180deg, rgba(188, 156, 255, .25), rgba(139, 164, 249, .25));
+        }
+        &_first{
+            background: -webkit-gradient(linear, left top, left bottom, from(#bc9cff), to(#8ba4f9));
+            color: azure;
+        }
+
+        &_first::after{
+            @include date-dropdown-border();
             border-radius: 50% 0 0 50%;
-            background: -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, .25)), to(rgba(139, 164, 249, .25)));
         }
 
-        &_chosen-last::after{
-            content: "";
-            position: absolute;
-            height: inherit;
-            width: inherit;
+        &_last{
+            background: -webkit-gradient(linear, left top, left bottom, from(#bc9cff), to(#8ba4f9));
+            color: azure;
+        }
+
+        &_last::after{
+            @include date-dropdown-border();
             border-radius: 0 50% 50% 0;
-            background: -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, .25)), to(rgba(139, 164, 249, .25)));
         }
 
-        &_chosen-first{
+        &_first-reverse{
             background: -webkit-gradient(linear, left top, left bottom, from(#bc9cff), to(#8ba4f9));
-            color: white;
-            
+            color: azure;
         }
 
-        &_chosen-last{
+        &_first-reverse::after{
+            @include date-dropdown-border();
+            border-radius: 0 50% 50% 0;
+        }
+
+        &_last-reverse{
             background: -webkit-gradient(linear, left top, left bottom, from(#bc9cff), to(#8ba4f9));
-            color: white
+            color: azure;
         }
 
+        &_last-reverse::after{
+            @include date-dropdown-border();
+            border-radius: 50% 0 0 50%;
+        }
+        
+}
+
+    &__chosen-last::after{
+        content: "";
+        position: absolute;
+        height: inherit;
+        width: inherit;
+        border-radius: 0 50% 50% 0;
+        background: -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, .25)), to(rgba(139, 164, 249, .25)));
+    }
+
+    &__chosen-first{
+        background: -webkit-gradient(linear, left top, left bottom, from(#bc9cff), to(#8ba4f9));
+        color: white;
         
     }
+
+    &__chosen-last{
+        background: -webkit-gradient(linear, left top, left bottom, from(#bc9cff), to(#8ba4f9));
+        color: white
+    }
+
+        
+    
 
     &__cell:hover{
         background-color: $dark-shade-25;

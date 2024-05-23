@@ -4,4 +4,10 @@ mixin checkbox(size, type, arr)
             +ui-text(type)
             .checkbox__expand
         .checkbox__dropdown
+            form.form-checkbox
+                each val in arr
+                    .form-checkbox__container
+                        input(class="form-checkbox__checkbox", type="checkbox")
+                        label(class="form-checkbox__text") #{val}
+
             

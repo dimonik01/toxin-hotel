@@ -6,6 +6,7 @@ include ../../components/checkbox/checkbox.pug
 include ../../components/masked-text-field/masked-text-field.pug
 include ../../components/subscription-text-field/subscription-text-field.pug
 include ../../components/date-dropdown/date-dropdown.pug
+include ../../components/perks-container/perks-container.pug
 block scripts
     link(href=require('./form-elements.scss') rel='stylesheet')
 block values
@@ -24,6 +25,8 @@ block values
         - var subscriptionText = ["ui","subscription text field"]
         - var checkboxParams = ["ui","expandable checkbox list"]
         - var checkboxArr = ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка","Телевизор","Шампунь"]
+        - var perksArr1 = ["../../svg/perk_comfort.svg", "Комфорт", "Шумопоглощающие стены"]
+        - var perksArr2 = ["../../svg/perk_conveniency.svg", "Удобство", "Окно в каждой из спален"]
 block content
     +text-field(textFieldArr1)
     +text-field(textFieldArr2)
@@ -34,6 +37,7 @@ block content
     +subscription-text-field("medium", subscriptionText)
     +checkbox("medium", checkboxParams, checkboxArr, true)
     +checkbox("medium", checkboxParams, checkboxArr, false)
+    +perks-container(perksArr1, perksArr2)
 block js 
     script
         include ../../components/dropdown/dropdown.js

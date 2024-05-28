@@ -1,0 +1,9 @@
+mixin perks(perksArr)
+    .perks__container 
+        .perks__svg-container
+            img(src=require(`${perksArr[0]}`) alt="" class="perks__svg")
+        .perks__text-container 
+            .perks__header-container
+                p.perks__header #{perksArr[1]}
+            .perks__paragraph-container
+                p.perks__paragraph #{perksArr[2]}

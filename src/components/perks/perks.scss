@@ -1,0 +1,50 @@
+.perks{
+    height: 158px;
+    width: 291px;
+    &__container{
+        margin-bottom: 21px;
+        height: 68px;
+        width: inherit;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    &__svg-container{
+        height: 48px;
+        width: 48px;
+        
+    }
+    &__svg{
+        height: 40px;
+        width: 40px;
+    }
+    &__text-container{
+        display: flex;
+        flex-direction: column;
+        margin-left: 6px;
+        height: 48px;
+        width: 233px;
+    }
+
+    &__header-container{
+        display: flex;
+        
+    }
+    &__header{
+        color: $dark-shade-75;
+        height: fit-content;
+        font-weight: 700;
+        margin-top: -4px;
+    }
+
+    &__paragraph-container{
+        display: flex;
+        margin-top: 5px;
+        
+    }
+    &__paragraph{
+        color: $dark-shade-75;
+        margin-top: -5px;
+    }
+}

@@ -1,13 +1,15 @@
 .perks{
     height: 158px;
-    width: 291px;
+    width: 276px;
     &__container{
-        margin-bottom: 21px;
-        height: 68px;
+        margin-bottom: 24px;
+        height: 65px;
         width: inherit;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
+        border-bottom: 1px solid $dark-shade-25;
+        border-radius: 2%;
     }
 
     &__svg-container{
@@ -22,7 +24,7 @@
     &__text-container{
         display: flex;
         flex-direction: column;
-        margin-left: 6px;
+        margin-left: 8px;
         height: 48px;
         width: 233px;
     }

@@ -1,4 +1,4 @@
-(function(){
+/*(function(){
     class Checkbox{
         constructor(node){
             this.form = document.getElementsByClassName("checkbox__container").item(node).nextElementSibling;
@@ -20,4 +20,4 @@
     }
     let checkbox1 = new Checkbox(0);
     let checkbox2 = new Checkbox(1);
-})();
+})();*/

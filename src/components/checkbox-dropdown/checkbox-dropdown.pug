@@ -1,0 +1,14 @@
+include ../checkbox/checkbox.pug
+mixin checkbox-dropdown(size, type, arr, expanded)
+    .checkbox-dropdown
+        .checkbox-dropdown__container
+            .checkbox-dropdown__ui
+                +ui-text(type)
+            if (expanded)
+                div(class="checkbox-dropdown__expand checkbox-dropdown__expand_closed" state= `${expanded}`)
+                    form.form-checkbox
+                        +checkbox(arr)
+            else 
+                div(class="checkbox-dropdown__expand" state= `${expanded}`)
+                    form.form-checkbox
+                        +checkbox(arr)

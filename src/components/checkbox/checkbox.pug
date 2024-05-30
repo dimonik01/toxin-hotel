@@ -1,41 +1,5 @@
-mixin checkbox(size, type, arr, expanded)
-    .checkbox
-        .checkbox__container 
-            +ui-text(type)
-            div(class="checkbox__expand" state= `${expanded}`)
-        if (expanded)
-            .checkbox__dropdown_closed
-                form.form-checkbox
-                    //each val in arr
-                    .form-checkbox__container
-                        input(class="form-checkbox__checkbox", type="checkbox")
-                        label(class="form-checkbox__text") #{arr[0]}
-                    - for (var i = 1; i < 4; ++i) {
-                    .form-checkbox__container
-                        input(class="form-checkbox__checkbox", type="checkbox" checked)
-                        label(class="form-checkbox__text") #{arr[i]}
-                    - }
-                    - for (var i = 4; i < 6; ++i) {
-                    .form-checkbox__container
-                        input(class="form-checkbox__checkbox", type="checkbox")
-                        label(class="form-checkbox__text") #{arr[i]}
-                    - }
-        else 
-            .checkbox__dropdown
-                form.form-checkbox
-                    //each val in arr
-                    .form-checkbox__container
-                        input(class="form-checkbox__checkbox", type="checkbox")
-                        label(class="form-checkbox__text") #{arr[0]}
-                    - for (var i = 1; i < 4; ++i) {
-                    .form-checkbox__container
-                        input(class="form-checkbox__checkbox", type="checkbox" checked)
-                        label(class="form-checkbox__text") #{arr[i]}
-                    - }
-                    - for (var i = 4; i < 6; ++i) {
-                    .form-checkbox__container
-                        input(class="form-checkbox__checkbox", type="checkbox")
-                        label(class="form-checkbox__text") #{arr[i]}
-                    - }
-
-                            
+mixin checkbox(textArr)
+    - for (let i=0; i < textArr.length; i++)
+        .checkbox__container
+            input(class="checkbox__checkbox", type="checkbox")
+            label(class="checkbox__text") #{textArr[i]}

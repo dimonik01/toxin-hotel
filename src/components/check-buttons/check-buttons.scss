@@ -1,0 +1,10 @@
+.cbuttons{
+    @include form(223px);
+    //width: 222px;
+    &__header{
+
+    }
+    &__list{
+        margin-top: 16px;
+    }
+}

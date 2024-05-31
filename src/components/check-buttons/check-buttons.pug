@@ -1,7 +1,7 @@
-include ../ui-text/ui-text.pug
-mixin cbuttons(textArr)
+mixin cbuttons(uiText, textArr, checkedArr)
     .cbuttons
-        .cbuttons-header
-            +ui()
-        .cbuttons-list
-            .
+        .cbuttons__header
+            +ui-text(uiText)
+        .cbuttons__list
+            +checkbox(textArr, checkedArr)
+            

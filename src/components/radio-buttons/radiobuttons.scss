@@ -1,0 +1,46 @@
+.radiobuttons{
+    @include form(221px);
+    &__ui{
+
+    }
+
+    &__wrapper{
+
+    }
+
+    &__form{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    &__container{
+        margin-right: 20px;
+    }
+
+    &__radiobutton{
+        appearance: none;
+        &::before{
+            display: block;
+            content: "";
+            width: 20px;
+            height: 20px;
+            border-radius: 45px;
+            border-style: solid;
+            border-image: linear-gradient(180deg, #bc9cff, #8ba4f9);
+            transform: translateY(5px);
+        }
+    }
+
+    &__radio-text{
+        font-family: 'Montserrat';
+        font-size: 14px;
+        color: $dark-shade-75;
+    }
+
+    &__radiobutton:checked + &__radio-text{
+        font-family: 'Montserrat';
+        font-size: 14px;
+        color: $dark-shade-100;
+    }
+}

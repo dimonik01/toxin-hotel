@@ -1,0 +1,12 @@
+mixin radiobuttons(uiText)
+    .radiobuttons 
+        .radiobuttons__ui
+            +ui-text(uiText)
+        .radiobuttons__wrapper
+            form(class="radiobuttons__form")
+                .radiobuttons__container
+                    input(class="radiobuttons__radiobutton" type="radio" name="sex" checked)
+                    label(class="radiobuttons__radio-text") Мужчина
+                .radiobuttons__container
+                    input(class="radiobuttons__radiobutton" type="radio" name="sex" ) 
+                    label(class="radiobuttons__radio-text") Женщина

@@ -1,23 +1,28 @@
-/*(function(){
+(function(){
     class Checkbox{
         constructor(node){
-            this.form = document.getElementsByClassName("checkbox__container").item(node).nextElementSibling;
-            this.checkbox = document.getElementsByClassName("checkbox__expand").item(node);
-            this.state = this.checkbox.getAttribute("state");
-            console.log(node + " " +  this.state)
-            this.checkbox.addEventListener("click", this.toggleExpand.bind(this));
+            this.toggle = document.getElementsByClassName("checkbox-dropdown__ui").item(node);
+            this.dropdown = this.toggle.nextElementSibling;
+            this.toggleState = this.toggle.getAttribute("state");
+            this.dropdownState = this.dropdown.getAttribute("state");
+            console.log(node + " " +  this.toggleState + "" + this.dropdownState)
+            this.toggle.addEventListener("click", this.toggleExpand.bind(this));
         }
         toggleExpand(){
-            if (this.state == "false"){
-                this.form.className = "checkbox__dropdown_closed";
-                this.state = "true";
+            if (this.toggleState == "false"){
+                this.dropdown.classList.remove("checkbox-dropdown__expand_closed");
+                this.toggle.classList.replace("checkbox-dropdown__ui_closed", "checkbox-dropdown__ui_open")
+                this.toggleState = "true";
+                this.dropdownState = "true";
             } 
             else{
-                this.form.className = "checkbox__dropdown";
-                this.state = "false";
+                this.dropdown.classList.add("checkbox-dropdown__expand_closed");
+                this.toggle.classList.replace("checkbox-dropdown__ui_open", "checkbox-dropdown__ui_closed")
+                this.toggleState = "false";
+                this.dropdownState = "false";
             } 
         }
     }
     let checkbox1 = new Checkbox(0);
     let checkbox2 = new Checkbox(1);
-})();*/
+})();

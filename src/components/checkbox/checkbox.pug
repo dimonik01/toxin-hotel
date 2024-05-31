@@ -1,5 +1,8 @@
-mixin checkbox(textArr)
+mixin checkbox(textArr, checkedArr)
     - for (let i=0; i < textArr.length; i++)
         .checkbox__container
-            input(class="checkbox__checkbox", type="checkbox")
+            if (checkedArr[i] != "")
+                input(class="checkbox__checkbox", type="checkbox", checked)
+            else 
+                input(class="checkbox__checkbox", type="checkbox")
             label(class="checkbox__text") #{textArr[i]}

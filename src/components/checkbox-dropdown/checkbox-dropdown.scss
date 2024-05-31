@@ -1,6 +1,5 @@
 .checkbox-dropdown{
     @include form(266px);
-    height: 217px;
     &__container{
         display: flex;
         align-items: flex-start;
@@ -15,29 +14,43 @@
     &__ui{
         display: flex;
         width: inherit;
-        &::after{
-            font-family: "Material Icons";
-            content: "expand_more";
-            font-size: 24px;
-            cursor: pointer;
-            color: rgba(31, 32, 65, 0.4588235294);
-            margin-left: 40px;
-            transform: translateY(-5px);
+        &_closed{
+            &::after{
+                font-family: "Material Icons";
+                content: "expand_more";
+                font-size: 24px;
+                cursor: pointer;
+                color: rgba(31, 32, 65, 0.4588235294);
+                margin-left: 40px;
+                transform: translateY(-5px);
+                transition: transform 0.1s ease-in 0.05s ;
+            }
+        }
+        &_open{
+            &::after{
+                font-family: "Material Icons";
+                content: "expand_more";
+                font-size: 24px;
+                cursor: pointer;
+                color: rgba(31, 32, 65, 0.4588235294);
+                margin-left: 40px;
+                transform: translateY(-5px) rotate(-180deg);
+                transition: transform 0.1s ease-in 0.05s;
+            }
         }
     }
 
     &__expand{
-        margin-top: 10px;
+        margin-top: 8px;
         margin-left: -2px;
         height: 171px;
-    }
-
-    &__dropdown{
         &_closed{
             display: none;
         }
     }
 
+
+    
 }
 
 .form-checkbox{

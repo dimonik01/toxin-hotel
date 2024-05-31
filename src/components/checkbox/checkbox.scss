@@ -25,34 +25,35 @@
         border:1px solid $dark-shade-75;
         border-radius: 4px;
         cursor: pointer;
+        &:checked{
+            border-width: 1px;
+            border:1px solid $purple;
+        }
+
+        &:checked::before{
+            display: block;
+            position: absolute;
+            content: "";
+            height: 8px;
+            width: 5px;
+            /* background-color: #bc9cff; */
+            border-image: linear-gradient(180deg, #bc9cff, #8ba4f9);
+            border-width: 0 2px 2px 0;
+            border-image-slice: 1;
+            border-style: solid;
+            transform: rotate(45deg);
+            margin-top: 3px;
+            margin-left: 6px;
+            cursor: pointer;
+        }
+        &:hover{
+            box-shadow: 2px 2px 2px 0px $purple;
+        }
     }
 
-    &:checked{
-        border-width: 1px;
-        border:1px solid $purple;
-        //content: "bbb";
-    }
+   
 
-    &:checked::before{
-        display: block;
-        position: absolute;
-        content: "";
-        height: 8px;
-        width: 5px;
-        /* background-color: #bc9cff; */
-        border-image: linear-gradient(180deg, #bc9cff, #8ba4f9);
-        border-width: 0 2px 2px 0;
-        border-image-slice: 1;
-        border-style: solid;
-        transform: rotate(45deg);
-        margin-top: 3px;
-        margin-left: 6px;
-        cursor: pointer;
-    }
-
-    &:hover{
-        box-shadow: 2px 2px 2px 0px $purple;
-    }
+    
 
     &:focus{
 

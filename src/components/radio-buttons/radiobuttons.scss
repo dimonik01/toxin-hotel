@@ -23,14 +23,23 @@
         &::before{
             display: block;
             content: "";
-            width: 20px;
-            height: 20px;
-            border-radius: 45px;
-            border-style: solid;
-            border-image: linear-gradient(180deg, #bc9cff, #8ba4f9);
+            width: 12px;
+            height: 12px;
+            appearance: none;
             transform: translateY(5px);
+            border: 3px solid white;
+            border-radius: 45px;
+            /*background-image: linear-gradient(180deg, #bc9cff, #8ba4f9);*/
+            background-clip: border-box;
+            outline: 1px solid #BC9CFF;
+
+        }
+
+        &:checked::before{
+            background-image: linear-gradient(180deg, #bc9cff, #8ba4f9);
         }
     }
+
 
     &__radio-text{
         font-family: 'Montserrat';
@@ -42,5 +51,9 @@
         font-family: 'Montserrat';
         font-size: 14px;
         color: $dark-shade-100;
+    }
+
+    &__radiobutton:checked + &__radiobutton::before{
+        background-image: linear-gradient(180deg, #4f0ddd, #8ba4f9);
     }
 }

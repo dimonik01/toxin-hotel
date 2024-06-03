@@ -1,7 +1,7 @@
 .radiobuttons{
-    @include form(221px);
+    @include form(266px);
     &__ui{
-
+        margin-bottom: 12px;
     }
 
     &__wrapper{
@@ -45,6 +45,7 @@
         font-family: 'Montserrat';
         font-size: 14px;
         color: $dark-shade-75;
+        margin-left: 12px;
     }
 
     &__radiobutton:checked + &__radio-text{

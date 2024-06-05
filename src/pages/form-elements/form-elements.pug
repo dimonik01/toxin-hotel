@@ -10,6 +10,7 @@ include ../../components/subscription-text-field/subscription-text-field.pug
 include ../../components/date-dropdown/date-dropdown.pug
 include ../../components/perks-container/perks-container.pug
 include ../../components/radio-buttons/radiobuttons.pug
+include ../../components/toggle/toggle.pug
 
 block scripts
     link(href=require('./form-elements.scss') rel='stylesheet')
@@ -36,6 +37,8 @@ block values
         - var checkedArrFormpage = ["","checked","checked","checked","",""]
         - var checkedArrButtons = ["", "checked"," checked"]
         - var radiobuttonParams = ["ui","radio buttons"]
+        - var toggleParams1 = ["ui","toggle"]
+        - var toggleParams2 = [""]
 block content
     +text-field(textFieldArr1)
     +text-field(textFieldArr2)
@@ -49,9 +52,12 @@ block content
     +perks-container(perksArr1, perksArr2)
     +cbuttons(checkButtonsParams, checkButtonsArr, checkedArrButtons)
     +radiobuttons(radiobuttonParams)
+    +toggle(toggleParams1, true)
+    +toggle(toggleParams2, false)
 block js 
     script
         include ../../components/dropdown/dropdown.js
         include ../../components/date-dropdown/date-dropdown.js
         include ../../components/checkbox/checkbox.js
+        include ../../components/toggle/toggle.js
 

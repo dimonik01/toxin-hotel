@@ -5,7 +5,6 @@
             this.dropdown = this.toggle.nextElementSibling;
             this.toggleState = this.toggle.getAttribute("state");
             this.dropdownState = this.dropdown.getAttribute("state");
-            console.log(node + " " +  this.toggleState + "" + this.dropdownState)
             this.toggle.addEventListener("click", this.toggleExpand.bind(this));
         }
         toggleExpand(){

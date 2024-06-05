@@ -1,0 +1,56 @@
+.toggle{
+    @include form(266px);
+    margin-bottom: 0px;
+    &__ui{
+        margin-bottom: 12px;
+
+    }
+    &__container{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    &__text{
+        color: $dark-shade-100;
+    }
+}
+
+.real-toggle{
+    margin-right: 11px;
+    &__icon{
+        width: 40px;
+        height: 20px;
+        outline: 1px solid;
+        border-radius: 45px;
+        background-clip: border-box;
+
+        &_enabled{
+            outline-color: $purple;
+            &::before{
+                display: block;
+                content: "";
+                border-radius: 45px;
+                width: 12px;
+                height: 12px;
+                background-image: linear-gradient(180deg, #bc9cff, #8ba4f9);
+                transform: translateY(4px) translateX(25px);
+                transition: transform 0.1s ease-in;
+            }
+        }
+
+        &_disabled{
+            &::before{
+                display: block;
+                content: "";
+                border-radius: 45px;
+                width: 12px;
+                height: 12px;
+                background-color: $dark-shade-50;
+                transform: translateY(4px) translateX(2px);
+                transition: transform 0.1s ease-in;
+            }
+            outline-color: $dark-shade-50;
+        }
+    }
+}

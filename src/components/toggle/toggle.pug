@@ -1,0 +1,13 @@
+mixin toggle(uiText, isEnabled)
+    .toggle
+        .toggle__ui
+            +ui-text(uiText)
+        .toggle__container
+            .real-toggle
+                if (isEnabled == true)
+                    div(class="real-toggle__icon real-toggle__icon_enabled" enabled = "true")
+                else 
+                    div(class="real-toggle__icon real-toggle__icon_disabled" enabled = "false")
+            .toggle__text-container
+                form.toggle__form
+                    p.toggle__text Получать спецпредложения

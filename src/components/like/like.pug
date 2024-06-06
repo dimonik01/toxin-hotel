@@ -1,0 +1,13 @@
+mixin like(uiText, ui = false)
+    .like
+        .like__ui
+            +ui-text(uiText)
+        .like__container
+            if (ui == false)
+                div(class="like__button like__button_off" isOn = "false")
+                    span(class="like__button-count like__button-count_off") 2
+            else 
+                div(class="like__button like__button_off" isOn = "false")
+                    span(class="like__button-count like__button-count_off") 2
+                div(class="like__button like__button_on" isOn = "true")
+                    span(class="like__button-count like__button-count_on") 12

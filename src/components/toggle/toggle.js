@@ -24,4 +24,4 @@
     }
     let toggle1 = new Toggle(0);
     let toggle2 = new Toggle(1);
-})()
+})();

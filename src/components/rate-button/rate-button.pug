@@ -1,0 +1,18 @@
+mixin rate-button(uiText, isUi, starAmount = 5)
+    .rate-button
+        .rate-button__ui 
+            +ui-text(uiText)
+        .rate-button__container
+            if (isUi == true)
+                .rate-button__sub-container
+                    - for (let i = 0; i < starAmount; i++)
+                        div(class="rate-button__star rate-button__star_on" starEnabled = "true")
+                    div(class="rate-button__star rate-button__star_off" starEnabled = "false")
+                .rate-button__sub-container
+                    - for (let i = 0; i < starAmount + 1; i++)
+                        div(class="rate-button__star rate-button__star_on" starEnabled = "true")
+            else
+                .rate-button__sub-container
+                    - for (let i = 0; i < starAmount; i++)
+                        div(class="rate-button__star rate-button__star_on" starEnabled = "true")
+                    div(class="rate-button__star rate-button__star_off" starEnabled = "false")

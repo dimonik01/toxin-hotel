@@ -12,6 +12,7 @@ include ../../components/perks-container/perks-container.pug
 include ../../components/radio-buttons/radiobuttons.pug
 include ../../components/toggle/toggle.pug
 include ../../components/like/like.pug
+include ../../components/rate-button/rate-button.pug
 
 block scripts
     link(href=require('./form-elements.scss') rel='stylesheet')
@@ -42,6 +43,9 @@ block values
         - var toggleParams2 = [""]
         - var likeParams1 = ["ui", "like button"]
         - var likeParams2 = [""]
+        - var rateParams = ["ui", "rate button"]
+        - var starAmount1 = 4;
+        - var starAmount2 = 5;
 block content
     +text-field(textFieldArr1)
     +text-field(textFieldArr2)
@@ -58,6 +62,7 @@ block content
     +toggle(toggleParams1, true)
     +toggle(toggleParams2, false)
     +like(likeParams1, true)
+    +rate-button(rateParams, true, starAmount1)
 block js 
     script
         include ../../components/dropdown/dropdown.js
@@ -65,4 +70,5 @@ block js
         include ../../components/checkbox/checkbox.js
         include ../../components/toggle/toggle.js
         include ../../components/like/like.js
+        include ../../components/rate-button/rate-button.js
 

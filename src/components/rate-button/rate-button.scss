@@ -1,0 +1,32 @@
+.rate-button{
+    width: 262px;
+    &__ui{
+
+    }
+
+    &__container{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 18px;
+        margin-left: 2px;
+    }
+
+    &__sub-container{
+        display: flex;
+
+    }
+
+    &__star{
+        cursor: pointer;
+        height: 24px;
+        width: 24px;
+        background-repeat: no-repeat;
+        &_off{
+            background-image: url("../../svg/star-hollow.svg");
+        }
+
+        &_on{
+            background-image: url("../../svg/star-filled.svg");
+        }
+    }
+}

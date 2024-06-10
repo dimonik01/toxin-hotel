@@ -1,8 +1,15 @@
-mixin checkbox(textArr, checkedArr)
+mixin checkbox(textArr, checkedArr, headingArr = 0)
     - for (let i=0; i < textArr.length; i++)
         .checkbox__container
             if (checkedArr[i] != "")
-                input(class="checkbox__checkbox", type="checkbox", checked)
-            else 
-                input(class="checkbox__checkbox", type="checkbox")
-            label(class="checkbox__text") #{textArr[i]}
+                .checkbox__wrapper
+                    input(class="checkbox__checkbox", type="checkbox", checked)
+            else
+                .checkbox__wrapper 
+                    input(class="checkbox__checkbox", type="checkbox")
+            .checkbox__text-container
+                if (headingArr != 0)
+                    label(class="checkbox__heading") #{headingArr[i]}
+                    label(class="checkbox__text") #{textArr[i]}
+                else 
+                    label(class="checkbox__text") #{textArr[i]}

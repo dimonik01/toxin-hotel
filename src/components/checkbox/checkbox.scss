@@ -6,7 +6,6 @@
         display: flex;
         justify-content: flex-start;
         flex-direction: row;
-        height: 20px;
         margin-bottom: 10px;
         color: $dark-shade-75;
         &:hover{
@@ -51,19 +50,24 @@
         }
     }
 
-   
-
-    
-
-    &:focus{
+    &__text-container{
+        display: flex;
+        flex-direction: column;
 
     }
-    
 
     &__text{
         font-family: 'Montserrat';
-        font-size: 14px;
+        font-size: 12px;
+        max-width: 200px;
 
+    }
+
+    &__heading{
+        font-family: 'Montserrat';
+        font-size: 14px;
+        font-weight: 700;
+        color: $dark-shade-100;
     }
 }
 

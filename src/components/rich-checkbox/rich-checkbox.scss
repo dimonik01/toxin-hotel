@@ -1,0 +1,10 @@
+.rich-checkbox{
+    @include form($form-m);
+    &__ui{
+
+    }
+
+    &__container{
+        margin-top: 16px;
+    }
+}

@@ -1,8 +1,8 @@
 mixin ui-text(arr)
     - [ui,text1,text2] = arr
         if (ui == "ui")
-                    .ui
-                        if (text1 !== undefined)
-                            h3.form-paragraph__first #{text1}
-                        if (text2 !== undefined)
-                            p.form-paragraph__second #{text2}
+            .ui
+                if (text1 !== undefined)
+                    h3.form-paragraph__first #{text1}
+                if (text2 !== undefined)
+                    p.form-paragraph__second #{text2}

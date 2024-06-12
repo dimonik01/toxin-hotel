@@ -1,13 +1,12 @@
-mixin like(uiText, ui = false)
+mixin like(state, amount, uiText = "")
     .like
-        .like__ui
-            +ui-text(uiText)
+        if (uiText != "")
+            .like__ui
+                +ui-text(uiText)
         .like__container
-            if (ui == false)
-                div(class="like__button like__button_off" isOn = "false")
-                    span(class="like__button-count like__button-count_off") 2
-            else 
-                div(class="like__button like__button_off" isOn = "false")
-                    span(class="like__button-count like__button-count_off") 2
+            if (state == "on")
                 div(class="like__button like__button_on" isOn = "true")
-                    span(class="like__button-count like__button-count_on") 12
+                    span(class="like__button-count like__button-count_on") #{amount}
+            if (state == "off")
+                div(class="like__button like__button_off" isOn = "false")
+                    span(class="like__button-count like__button-count_off") #{amount}

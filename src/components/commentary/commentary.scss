@@ -1,0 +1,57 @@
+.commentary{
+    @include form(712px);
+    &__ui{
+
+    }
+
+    &__container{
+        
+    }
+}
+
+.commentary-user{
+    display: flex;
+    flex-direction: row;
+
+    &__pfp-container{
+        width: 48px;
+        height: 48px;
+    }
+    &__pfp{
+        width: 48px;
+        height: 48px;
+        border-radius: 45px;
+    }
+
+    &__container{
+        margin-left: 10px;
+    }
+
+    &__name{
+        font-weight: 700;
+        color: $dark-shade-100;
+    }
+
+    &__date{
+
+    }   
+}
+
+.contents{
+    display: flex;
+    flex-direction: row;
+    &__like{
+        margin-top: 12px;
+        padding-left: 3px;
+    }
+
+    &__comment-container{
+        margin-top: 10px;
+        margin-left: 15px;
+    }
+    
+
+    &__comment{
+        color: $dark-shade-100;
+    }
+}

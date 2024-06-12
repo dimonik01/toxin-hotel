@@ -1,0 +1,18 @@
+@import '../../scss/mixins/form' ;
+.form-elements{
+    &__like-component{
+        @include form(150px);
+    }
+    
+    &__like-container{
+        margin-right: 10px;
+    }
+    
+    &__like{
+        display: flex;
+        margin-top: 16px;
+    }
+
+    
+
+}

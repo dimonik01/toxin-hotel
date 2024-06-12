@@ -1,0 +1,18 @@
+mixin commentary(uiText, name, date, text)
+    .commentary
+        .commentary__ui     
+            +ui-text(uiText)
+        .commentary__container  
+            .commentary-user
+                .commentary-user__pfp-container
+                    img(class="commentary-user__pfp" src=require("../../img/murad.png"))
+                .commentary-user__container
+                    .commentary-user__name-container
+                        p.commentary-user__name #{name}
+                    .commentary-user__date-container
+                        p.commentary-user__date #{date}
+            .contents
+                .contents__like
+                    +like("on", 12)
+                .contents__comment-container
+                    p.contents__comment #{text}

@@ -28,11 +28,10 @@
             }
         }
     }
-    if(likeCollection.length == 2){
-        let like1 = new Like(0);
-        let like2 = new Like(1);
+    let objArr = new Array(10);
+    for (let i = 0; i < likeCollection.length; i++){
+        objArr[i] = new Like(i);
     }
-    else {let like1 = new Like(0);}
 
     
     

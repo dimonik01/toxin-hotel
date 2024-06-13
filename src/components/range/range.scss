@@ -1,0 +1,48 @@
+.range{
+    @include form($form-m);
+    &__ui{
+
+    }
+
+    &__container{
+
+    }
+
+    &__slider-container{
+
+    }
+
+    &__slider{
+        display: flex;
+        width: $form-m;
+        height: 5px;
+        border: 1px solid $dark-shade-50;
+        border-radius: 45px;
+    }
+
+    &__slider-dot{
+        display: block;
+        position: relative;
+        bottom: 6px;
+        width: 12px;
+        height: 12px;
+        background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+        border: 2px solid #FFFFFF;
+        border-radius: 10px;
+        &_first{
+
+        }
+
+        &_second{
+
+        }
+    }
+
+    &__text-container{
+
+    }
+
+    &__text{
+
+    }
+}

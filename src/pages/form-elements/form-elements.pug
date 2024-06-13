@@ -15,6 +15,7 @@ include ../../components/like/like.pug
 include ../../components/rate-button/rate-button.pug
 include ../../components/rich-checkbox/rich-checkbox.pug
 include ../../components/commentary/commentary.pug
+include ../../components/range/range.pug
 
 block scripts
     link(href=require('./form-elements.scss') rel='stylesheet')
@@ -53,6 +54,7 @@ block values
         - var starAmount1 = 4;
         - var starAmount2 = 5;
         - var commentaryParams =[""]
+        - var rangeParams = ["ui","range slider", "5000\u20bd - 10000\u20bd"]
 block content
     +text-field(textFieldArr1)
     +text-field(textFieldArr2)
@@ -78,6 +80,7 @@ block content
     +rate-button(rateParams, true, starAmount1)
     +rich-checkbox(richParams ,richCheckboxArr,richCheckboxHeadingArr,checkedArrRich)
     +commentary(commentaryParams, "Мурад Сарафанов","5 дней назад","Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.")
+    +range(rangeParams, true)
 block js 
     script
         include ../../components/dropdown/dropdown.js
@@ -86,4 +89,5 @@ block js
         include ../../components/toggle/toggle.js
         include ../../components/like/like.js
         include ../../components/rate-button/rate-button.js
+        include ../../components/range/range.js
 

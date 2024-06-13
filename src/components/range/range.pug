@@ -1,0 +1,13 @@
+mixin range(uiText, ui = "false")
+    .range
+        .range__ui
+            +ui-text(uiText)
+        .range__container
+            .range__slider-container
+                div(class="range__slider")
+                    span(class="range__slider-dot range__slider-dot_first" type="from")
+                    span(class="range__slider-dot range__slider-dot_second" type="to")
+            .range__text-container
+                if (ui == "true")
+                    p.range__text Стоимость за сутки пребывания в номере
+

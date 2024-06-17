@@ -13,6 +13,7 @@
     }
 
     &__slider{
+        position: relative;
         display: flex;
         width: $form-m;
         height: 5px;
@@ -22,21 +23,23 @@
 
     &__slider-dot{
         display: block;
-        position: relative;
-        bottom: 6px;
+        position: absolute;
         width: 12px;
+        top: -5px;
         height: 12px;
         background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
         border: 2px solid #FFFFFF;
         border-radius: 10px;
+    
         &_first{
-
+            left: 0px;
         }
 
         &_second{
-
+            left: 200px;
         }
     }
+    
 
     &__text-container{
 

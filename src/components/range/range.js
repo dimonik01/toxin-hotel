@@ -4,7 +4,6 @@
             this.first = document.getElementsByClassName("range__slider-dot_first").item(node);
             this.second = document.getElementsByClassName("range__slider-dot_second").item(node);
             this.firstCoords = this.first.getBoundingClientRect().x;
-            console.log("coords" + this.first.getBoundingClientRect().x);
             this.secondCoords = this.second.getBoundingClientRect().x;
             this.listenerAssigned = false;
             this.moveCount = 0;
@@ -25,38 +24,48 @@
                 window.addEventListener("mousemove", bound, false);
                 this.listenerAssigned = true;
                 console.log("assigned");
+                let isOn = false;
                 function removeHandler(f){
-                    console.log(e.target);
                     if (this.listenerAssigned == true){
                         window.removeEventListener("mouseup", unbound, false);
                     }
                     window.removeEventListener("mousemove", bound, false);
                     this.listenerAssigned = false;
                     this.firstCoords = this.first.getBoundingClientRect().x;
-                    this.secondCoords = this.first.getBoundingClientRect().x;
-                    console.log(e.finalTarget);
+                    this.secondCoords = this.second.getBoundingClientRect().x;
                     console.log("removed");
+                    console.log(this.firstCoords + " <= " + this.secondCoords);
+                    
                 }
                 function move(f){
-                    console.log(e.target.className);
-                    console.log(this);
-                    console.log(this.firstCoords);
+                    if (this.secondCoords > 600 && isOn == false){
+                        document.getElementsByClassName("pro").item(0).className = "pro_on";
+                        isOn = true
+                    }
                     if (this.firstCoords <= this.secondCoords - 16){
                         if (this.moveCount >= 1){
                             e.finalTarget.style.left = f.pageX + 'px';
                             this.moveCount = 0;
+                            this.firstCoords = this.first.getBoundingClientRect().x;
+                            this.secondCoords = this.second.getBoundingClientRect().x;
+                            console.log("default");
+                            console.log(this.firstCoords + " <= " + this.secondCoords);
                         }
                     }
                     else{
-                        console.log(e.clientX);
-                        console.log("first coords = " + this.firstCoords);
                         if (e.finalTarget == this.first){
                             if(f.clientX < this.firstCoords){
                                 if (this.moveCount >= 1){
                                     e.finalTarget.style.left = f.pageX + 'px';
                                     this.moveCount = 0;
+                                    this.firstCoords = this.first.getBoundingClientRect().x;
+                                    console.log("first non-default");
                                     console.log("bigger");
                                 }
+                            }
+                            else {
+                                e.finalTarget.style.left = this.secondCoords - 16 + 'px';
+                                console.log("else first");
                             }
                         }
                         else{
@@ -64,20 +73,19 @@
                                 if (this.moveCount >= 1){
                                     e.finalTarget.style.left = f.pageX + 'px';
                                     this.moveCount = 0;
-                                    console.log("bigger");
+                                    this.secondCoords = this.second.getBoundingClientRect().x;
+                                    console.log("second non-default");
+                                    console.log(f.clientX - 16 + ">" + this.firstCoords);
                                 }
+                            }
+                            else {
+                                e.finalTarget.style.left = this.firstCoords + 16  + 'px';
+                                console.log("else second");
                             }
                         }
                             
                     }
-                    console.log("moved");
                     this.moveCount++;
-                    console.log(this.moveCount);
-                    this.firstCoords = this.first.getBoundingClientRect().x;
-                    this.secondCoords = this.second.getBoundingClientRect().x;
-                    console.log("e.pageX = " + f.pageX); 
-                    
-                        
                 }
             }
     }

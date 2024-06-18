@@ -13,6 +13,14 @@
         margin-top: 16px;
     }
 
+
     
 
+}
+
+.pro{
+    display: none;
+    &_on{
+        display: block;
+    }
 }

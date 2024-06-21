@@ -1,0 +1,74 @@
+    .button{
+        position: relative;
+        box-sizing: border-box;
+        border-radius: 45px;
+        cursor: pointer;
+        user-select: none;
+        &_default{
+            background-image: linear-gradient(180deg, #bc9cff, #8ba4f9);            
+
+        }
+
+        &_default-greyed{
+            background-image: linear-gradient(180deg, #bc9cff, #8ba4f9);
+            opacity: 0.5;  
+        }
+
+        &_hollow{
+            width: 95px;
+            height: 42px;
+            border-width: 2px;
+            border-style: solid;
+            border-color: transparent;
+            background:
+                linear-gradient(180deg, white, white) padding-box,
+                linear-gradient(180deg, #bc9cff, #8ba4f9) border-box
+            ;
+        }
+
+        &_hollow-greyed{
+            border-width: 2px;
+            border-style: solid;
+            border-color: transparent;
+            background:
+                linear-gradient(180deg, white, white) padding-box,
+                linear-gradient(180deg, #bb9cff85, #8ba5f985) border-box
+            ; 
+        }
+
+        &_s{
+            width: 99px;
+            height: 44px;
+        }
+
+        &_b{
+            width: 320px;
+            height: 44px;
+            &::after{
+                content: "arrow_forward";
+                font-family: "Material Icons";
+                font-size: 24px;
+                font-weight: 100;
+                color: white;
+                position: absolute;
+                right: 10px;
+                bottom: 10px;
+            }
+        }
+
+        &__text{
+            font-family: 'Montserrat';
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            &_default{
+                color: white;
+            }
+
+            &_hollow{
+                color: $purple;
+            }
+        }
+    }
+
+

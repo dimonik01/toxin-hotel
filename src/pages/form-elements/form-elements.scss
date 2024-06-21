@@ -24,3 +24,21 @@
         display: block;
     }
 }
+
+.buttons-ui{
+    width: 320px;
+    &__container{
+        margin-right: 20px;
+        margin-bottom: 30px;
+    }
+
+    &__small{
+        display: flex;
+        flex-wrap: wrap;
+        width: 240px;
+    }
+
+    &__text-container{
+        margin-bottom: 15px;
+    }
+}

@@ -1,0 +1,32 @@
+mixin buttons(type, size, text = "click me")
+    .button-container
+        if (size == "small")
+            if (type == "default")
+                button(class="button button_s button_default")
+                    span(class="button__text button__text_default") #{text}
+            if (type == "default-greyed")
+                button(class="button button_s button_default-greyed")
+                    span(class="button__text button__text_default") #{text}
+            if (type == "hollow")
+                button(class="button button_s button_hollow") 
+                    span(class="button__text button__text_hollow") #{text} 
+            if (type == "hollow-greyed")
+                button(class="button button_s button_hollow-greyed")
+                    span(class="button__text button__text_hollow") #{text}
+            if (type == "empty")
+                span(class="button__text button__text_hollow") #{text}
+            if (type == "empty-greyed")
+                span(class="button__text button__text_hollow") #{text}
+        if (size == "big")
+            if (type == "default")
+                button(class="button button_b button_default")
+                    span(class="button__text button__text_default") #{text}
+            if (type == "default-greyed")
+                button(class="button button_b button_default-greyed")
+                    span(class="button__text button__text_default") #{text}
+            if (type == "hollow")
+                button(class="button button_b button_hollow")
+                    span(class="button__text button__text_hollow") #{text}
+            if (type == "hollow-greyed")
+                button(class="button button_b button_hollow-greyed")
+                    span(class="button__text button__text_hollow") #{text}

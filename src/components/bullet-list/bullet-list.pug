@@ -1,0 +1,10 @@
+mixin bullet-list(uiText, textArr)
+    .bullet-list 
+        .bullet-list__ui-container 
+            .bullet-list__ui 
+                +ui-text(uiText)
+        .bullet-list__container 
+            ul.bullet-list__list
+                each val in textArr
+                    li.bullet-list__item #{val}
+                

@@ -17,6 +17,8 @@ include ../../components/rich-checkbox/rich-checkbox.pug
 include ../../components/commentary/commentary.pug
 include ../../components/range/range.pug
 include ../../components/buttons/buttons.pug
+include ../../components/pagination/pagination.pug
+include ../../components/bullet-list/bullet-list.pug
 
 block scripts
     link(href=require('./form-elements.scss') rel='stylesheet')
@@ -56,6 +58,9 @@ block values
         - var starAmount2 = 5;
         - var commentaryParams =[""]
         - var rangeParams = ["ui","range slider", "5000\u20bd - 10000\u20bd"]
+        - var paginationParams = ["ui","pagination"]
+        - var bulletParams = ["ui","bullet list"]
+        - var bulletText = ["Нельзя с питомцами","Без вечеринок и мероприятий","Время прибытия — после 13:00, а выезд до 12:00"]
 block content
     +text-field(textFieldArr1)
     +text-field(textFieldArr2)
@@ -102,7 +107,8 @@ block content
         .buttons-ui__big
             .buttons-ui__container
                 +buttons("default","big", "перейти к оплате")
-    img(class ="pro" src=require("../../img/мем.jpeg"))
+    +pagination(paginationParams)
+    +bullet-list(bulletParams, bulletText )
 block js 
     script
         include ../../components/dropdown/dropdown.js
@@ -112,4 +118,5 @@ block js
         include ../../components/like/like.js
         include ../../components/rate-button/rate-button.js
         include ../../components/range/range.js
+        include ../../components/pagination/pagination.js
 

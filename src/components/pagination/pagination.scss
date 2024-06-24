@@ -1,0 +1,72 @@
+.pagination{
+    @include form($form-m);
+    
+    &__ui-container{
+        margin-bottom: 15px;
+    }
+
+    &ui{
+
+    }
+
+    &__container{
+
+    }
+
+    &__select{
+
+    }
+
+    &__list{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    &__item{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 45px;
+        font-family: 'Montserrat';
+        font-size: 12px;
+        cursor: pointer;
+        color: $dark-shade-75;
+        &:hover{
+            background-color: $dark-shade-25;
+        }
+        &_selected{
+            background: linear-gradient(180deg, #bb9cff, #8ba5f9);
+            color: white;
+            font-weight: 700;
+        }
+    }
+
+    &__divider{
+
+    }
+
+    &__next{
+        background: linear-gradient(180deg, #6FCF97, #66D2EA);
+        &::after{
+            content: "arrow_forward";
+            font-family: "Material Icons";  
+            font-size: 24px;
+            color: white;
+        }
+        
+
+
+    }
+
+    &__text-container{
+        margin-top: 8px;
+        margin-left: 5px;
+    }
+
+    &__text{
+
+    }
+}

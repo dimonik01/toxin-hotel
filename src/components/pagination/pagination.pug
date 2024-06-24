@@ -1,0 +1,16 @@
+mixin pagination(uiText)
+    .pagination
+        .pagination__ui-container 
+            .pagination__ui 
+                +ui-text(uiText)
+        .pagination__container 
+            .pagination__select
+                ul.pagination__list
+                    li(class="pagination__item pagination__first pagination__item_selected" number = 1) 1
+                    li(class="pagination__item" number = 2) 2
+                    li(class="pagination__item" number = 3) 3
+                    li(class="pagination__item pagination__divider") ...
+                    li(class="pagination__item pagination__last" number = 15) 15
+                    li(class="pagination__item pagination__next")
+            .pagination__text-container 
+                p.pagination__text 1 – 12 из 100+ вариантов аренды

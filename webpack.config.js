@@ -19,7 +19,8 @@ module.exports = (env) => {
           uikit: 'src/pages/ui-kit/ui-kit.pug',
           colorsAndType: 'src/pages/colors-and-type/colors-and-type.pug',
           headersAndFooters: 'src/pages/headers-and-footers/headers-and-footers.pug',
-          formElements: 'src/pages/form-elements/form-elements.pug'
+          formElements: 'src/pages/form-elements/form-elements.pug',
+          cards: 'src/pages/cards/cards.pug',
           //path.resolve(__dirname, 'src', 'index.js'),
         },
         output: {

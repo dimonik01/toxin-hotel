@@ -1,0 +1,33 @@
+include ../../components/date-dropdown/date-dropdown.pug
+include ../../components/dropdown/dropdown.pug
+include ../../components/buttons/buttons.pug
+mixin room-finder(arr)
+    - subArrDate = arr[1]
+    - subArr = arr[2]
+    - let subArr1 = subArr[0]
+    - let subArr2 = subArr[1]
+    - let subArr3 = subArr[2]
+    - let subArr4 = subArr[3]
+    - let subArrDate1 = subArrDate[0]
+    - let subArrDate2 = subArrDate[1]
+    - let subArrDate3 = subArrDate[2]
+    - let subArrDate4 = subArrDate[3]
+    script.
+        let arr = !{JSON.stringify(arr)}
+        let subArr = !{JSON.stringify(subArr)}
+        let one = !{JSON.stringify(subArr1)}
+        let two = !{JSON.stringify(subArr2)}
+        let three = !{JSON.stringify(subArr3)}
+        let four = !{JSON.stringify(subArr4)}
+    .room-finder
+        .room-finder__ui-container
+            +ui-text(arr[0])
+            div(class="test1", data = `${arr[0]}`)
+        .room-finder__date-container 
+            +date-dropdown(subArrDate1,subArrDate2,subArrDate3,subArrDate4)
+            div(class="test2", data = `${arr[1]}`)
+        .room-finder__dropdown-container
+            +dropdown(subArr1,subArr2,subArr3,subArr4)
+        .room-finder__button 
+            +buttons(arr[3])
+            div(class="test4", data = `${arr[3]}`)

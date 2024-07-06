@@ -1,0 +1,41 @@
+extends ../../layouts/ui-kit-layout.pug
+include ../../components/text-field/text-field.pug
+include ../../components/ui-text/ui-text.pug
+include ../../components/dropdown/dropdown.pug
+include ../../components/checkbox/checkbox.pug
+include ../../components/checkbox-dropdown/checkbox-dropdown.pug
+include ../../components/check-buttons/check-buttons.pug
+include ../../components/masked-text-field/masked-text-field.pug
+include ../../components/subscription-text-field/subscription-text-field.pug
+include ../../components/date-dropdown/date-dropdown.pug
+include ../../components/perks-container/perks-container.pug
+include ../../components/radio-buttons/radiobuttons.pug
+include ../../components/toggle/toggle.pug
+include ../../components/like/like.pug
+include ../../components/rate-button/rate-button.pug
+include ../../components/rich-checkbox/rich-checkbox.pug
+include ../../components/commentary/commentary.pug
+include ../../components/range/range.pug
+include ../../components/buttons/buttons.pug
+include ../../components/pagination/pagination.pug
+include ../../components/bullet-list/bullet-list.pug
+include ../../components/room-finder/room-finder.pug
+block scripts 
+    link(href=require('./cards.scss') rel='stylesheet')
+block values 
+    script
+        - var roomFinderUi = ["ui","Найдём номера под ваши пожелания"]
+        - var dropdownUiArr = ["","",""]
+        - var roomFinderDropdown = ["small",dropdownUiArr,"ДД.ММ.ГГГГ","ДД.ММ.ГГГГ"]
+        - var accomodationParams = ["Взрослые", "Дети", "Младенцы"]
+        - var roomFinderAccomodation = ["accomodation", dropdownUiArr, "Сколько гостей", accomodationParams]
+        - var roomFinderButtons = ["default","big","Подобрать номер"]
+        - var roomFinderParams = [roomFinderUi, roomFinderDropdown, roomFinderAccomodation, roomFinderButtons]
+block content
+    +room-finder(roomFinderParams)
+block js 
+    script
+
+        include ../../components/date-dropdown/date-dropdown.js
+        include ../../components/dropdown/dropdown.js
+    

@@ -1,11 +1,12 @@
 .bullet-list{
     @include form(260px);
     &__ui-container{
-
+        margin-bottom: 14px;
     }
 
     &__ui{
         display: block;
+        
     }
 
     &__container{
@@ -20,9 +21,10 @@
 
     &__item{
         display: flex;
-        font-family: 'Montserrat';
+        font-family: "Montserrat";
         font-size: 14px;
-        margin-bottom: 10px;
+        margin-bottom: 9px;
+        line-height: 1.7em;
         &::before{
             content: "";
             display: block;

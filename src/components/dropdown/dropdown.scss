@@ -2,30 +2,46 @@
 .dropdown{
     width: 320px;
     margin-bottom: 6px;
+    &_big{
+
+    }
+
+    &_med{
+        width: 265px;
+    }
 
     &_accomodation{
-        width: 264px;
+        width: 265px;
+        &-big{
+
+        }
+
+        &-med{
+            width: 265px;
+        }
     }
     &__input{
-        @include input(318px, $dark-shade-100);
+        height: 42px;
         border-radius:3px 3px 0 0;
         border: 1px solid $dark-shade-50;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding-right: 9px;
+        padding-right: 8px;
         width: inherit;
 
         
     }
     &__input-text{
         cursor:default;
+        padding-left: 13px;
     }
     &__expand::after{
         font-family: 'Material Icons';
         content: "expand_more";
         font-size: 24px;
         cursor: pointer;
+        display: block;
 
     }
 
@@ -46,7 +62,7 @@
         transition: transform 0.2s ease-out, opacity 0.15s ease-in, visibility 0s linear 0.2s, height 0.2s ease-out ;
         opacity: 0;
         &_expanded{
-            height: 129px;
+            height: 115px;
             border: 1px solid $dark-shade-50;
             width: inherit;
             border-radius: 0 0 3px 3px;
@@ -55,7 +71,7 @@
             transition: transform 0.2s ease-out, opacity 0.15s ease-in, height 0.2s ease-out ;
         }
         &_big-expanded{
-            height: 158px;
+            height: 156px;
             border: 1px solid $dark-shade-50;
             width: inherit;
             border-radius: 0 0 3px 3px;
@@ -72,5 +88,4 @@
         margin-top: 16px;
         color: $purple;
     }
-
 }

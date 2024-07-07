@@ -2,7 +2,16 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    margin-bottom: 5px;
     font-size: 12px;
 
+}
+
+.form-paragraph{
+    &__first{
+
+    }
+
+    &__second{
+        font-size: 12px;
+    }
 }

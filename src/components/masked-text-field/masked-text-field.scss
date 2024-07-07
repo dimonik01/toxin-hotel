@@ -5,6 +5,10 @@
     &_m{@include form($form-m);}
     &_s{@include form($form-s);}
 
+    &__ui{
+        margin-bottom: 5px;
+    }
+
     &__form{
         &_s{
             @include form($form-s, $dark-shade-50);
@@ -29,7 +33,8 @@
     &__input_m{
         @include input($form-m, $dark-shade-50);
         display: flex;
-        align-items: center;;
+        align-items: center;
+        height: 41px
     }
     &__input_b{
         @include input($form-b, $dark-shade-50);

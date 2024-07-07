@@ -6,7 +6,8 @@
     let selectB = document.getElementsByClassName("dropdown__select_big-expanded");
     let textField = document.getElementsByClassName("dropdown__input-text");
     let dropdownButton = document.getElementsByClassName("dropdown__expand");
-    ;
+    let accomodExists = null;
+    let defaultExists = null;
     class Counter{
         constructor(plus, minus, counter, text, number, inputText){
             this.number = number;
@@ -104,12 +105,31 @@
         }
     }
 
-    let leCounter1 = new Counter(plusColl, minusColl, accomodationColl, textField, 0, "Спальни" );
-    let leCounter2 = new Counter(plusColl, minusColl, accomodationColl, textField, 1, "Кровати" );
-    let leCounter3 = new Counter(plusColl, minusColl, accomodationColl, textField, 2);
-    let leCounter4 = new Counter(plusColl, minusColl, accomodationColl, textField, 3, "Гостей");
-    let leCounter5 = new Counter(plusColl, minusColl, accomodationColl, textField, 4, "Гостей");
-    let leCounter6 = new Counter(plusColl, minusColl, accomodationColl, textField, 5, "Гостей");
+    if (document.getElementsByClassName("dropdown_accomodation").length == 1) accomodExists = true; 
+    else accomodExists = false; 
+    if (document.getElementsByClassName("dropdown").length == 1) defaultExists = true;
+    else defaultExists = false;
+
+
+    if (defaultExists == false && accomodExists == true){
+        var leCounter1 = new Counter(plusColl, minusColl, accomodationColl, textField, 0, "Спальни" );
+        var leCounter2 = new Counter(plusColl, minusColl, accomodationColl, textField, 1, "Кровати" );
+        var leCounter3 = new Counter(plusColl, minusColl, accomodationColl, textField, 2);
+    }
+    if (defaultExists == true && accomodExists == false){
+        var leCounter4 = new Counter(plusColl, minusColl, accomodationColl, textField, 3, "Гостей");
+        var leCounter5 = new Counter(plusColl, minusColl, accomodationColl, textField, 4, "Гостей");
+        var leCounter6 = new Counter(plusColl, minusColl, accomodationColl, textField, 5, "Гостей");
+    }
+    if (defaultExists == true && accomodExists == true){
+        var leCounter1 = new Counter(plusColl, minusColl, accomodationColl, textField, 0, "Спальни" );
+        var leCounter2 = new Counter(plusColl, minusColl, accomodationColl, textField, 1, "Кровати" );
+        var leCounter3 = new Counter(plusColl, minusColl, accomodationColl, textField, 2);
+        var leCounter4 = new Counter(plusColl, minusColl, accomodationColl, textField, 3, "Гостей");
+        var leCounter5 = new Counter(plusColl, minusColl, accomodationColl, textField, 4, "Гостей");
+        var leCounter6 = new Counter(plusColl, minusColl, accomodationColl, textField, 5, "Гостей");
+    }
+    
     let select1 = new Select(selectM.item(0), dropdownButton.item(0));
     let select2 = new Select(selectB.item(0), dropdownButton.item(1));
 

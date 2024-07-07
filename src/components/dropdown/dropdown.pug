@@ -1,8 +1,9 @@
 include ../dropdown-list/dropdown-list.pug
-mixin dropdown(type, arrText, inputText, dropdownParams)
+mixin dropdown(type, arrText, inputText, dropdownParams, size, isExpanded)
     if type == "accomodation"
         .dropdown_accomodation
-            +ui-text(arrText)
+            .dropdown__ui
+                +ui-text(arrText)
             .dropdown__container
                 .dropdown__input
                     p.dropdown__input-text(value="test") #{inputText}
@@ -11,7 +12,8 @@ mixin dropdown(type, arrText, inputText, dropdownParams)
                     +dropdown-list(dropdownParams)
     else 
         .dropdown
-            +ui-text(arrText)
+            .dropdown__ui
+                +ui-text(arrText)
             .dropdown__container
                 .dropdown__input
                     p.dropdown__input-text(value="test") #{inputText}

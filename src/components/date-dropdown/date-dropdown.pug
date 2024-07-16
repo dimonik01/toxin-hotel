@@ -1,15 +1,15 @@
-mixin date-dropdown(size, arr, text1, text2)
+mixin date-dropdown(size, arr1, arr2, text1, text2)
     .date-dropdown
         if (size == "small")
             .date-dropdown_s
                 .date-dropdown__ui
-                    +ui-text(arr)  
+                    +ui-text(arr1)  
                 form.date-dropdown__form_s
                     p(class="date-dropdown__input_s") #{text1}
                     div(class="date-dropdown__expand" isExpanded = true)
             .date-dropdown_s
                 .date-dropdown__ui
-                    +ui-text(arr)   
+                    +ui-text(arr2)   
                 form.date-dropdown__form_s
                     p(class="date-dropdown__input_s") #{text2}
                     div(class="date-dropdown__expand" isExpanded = true)

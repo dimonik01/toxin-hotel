@@ -4,30 +4,28 @@ include ../../components/buttons/buttons.pug
 mixin room-finder(arr)
     - subArrDate = arr[1]
     - subArr = arr[2]
+    - subArrButtons = arr[3]
     - let subArr1 = subArr[0]
     - let subArr2 = subArr[1]
     - let subArr3 = subArr[2]
     - let subArr4 = subArr[3]
+    - let subArr5 = subArr[4]
     - let subArrDate1 = subArrDate[0]
     - let subArrDate2 = subArrDate[1]
     - let subArrDate3 = subArrDate[2]
     - let subArrDate4 = subArrDate[3]
-    script.
-        let arr = !{JSON.stringify(arr)}
-        let subArr = !{JSON.stringify(subArr)}
-        let one = !{JSON.stringify(subArr1)}
-        let two = !{JSON.stringify(subArr2)}
-        let three = !{JSON.stringify(subArr3)}
-        let four = !{JSON.stringify(subArr4)}
+    - let subArrDate5 = subArrDate[4]
+    - let buttonsParam1 = subArrButtons[0]
+    - let buttonsParam2 = subArrButtons[1]
+    - let buttonsParam3 = subArrButtons[2]
     .room-finder
         .room-finder__ui-container
-            +ui-text(arr[0])
-            div(class="test1", data = `${arr[0]}`)
+            h1.room-finder__ui-text Найдём номера под ваши пожелания
         .room-finder__date-container 
-            +date-dropdown(subArrDate1,subArrDate2,subArrDate3,subArrDate4)
+            +date-dropdown(subArrDate1,subArrDate2,subArrDate3,subArrDate4,subArrDate5)
             div(class="test2", data = `${arr[1]}`)
         .room-finder__dropdown-container
-            +dropdown(subArr1,subArr2,subArr3,subArr4)
+            +dropdown(subArr1, subArr2, subArr3, subArr4, subArr5)
         .room-finder__button 
-            +buttons(arr[3])
+            +buttons(buttonsParam1,buttonsParam2,buttonsParam3)
             div(class="test4", data = `${arr[3]}`)

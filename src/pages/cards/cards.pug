@@ -25,10 +25,12 @@ block scripts
 block values 
     script
         - var roomFinderUi = ["ui","Найдём номера под ваши пожелания"]
-        - var dropdownUiArr = ["","",""]
-        - var roomFinderDropdown = ["small",dropdownUiArr,"ДД.ММ.ГГГГ","ДД.ММ.ГГГГ"]
+        - var dropdownUiArr1 = ["ui","Прибытие",""]
+        - var dropdownUiArr2 = ["ui","Выезд",""]
+        - var dropdownUiArr3 = ["ui","Гости",""]
+        - var roomFinderDropdown = ["small",dropdownUiArr1,dropdownUiArr2,"ДД.ММ.ГГГГ","ДД.ММ.ГГГГ"]
         - var accomodationParams = ["Взрослые", "Дети", "Младенцы"]
-        - var roomFinderAccomodation = ["accomodation", dropdownUiArr, "Сколько гостей", accomodationParams]
+        - var roomFinderAccomodation = ["", dropdownUiArr3, "Сколько гостей", accomodationParams, "big"]
         - var roomFinderButtons = ["default","big","Подобрать номер"]
         - var roomFinderParams = [roomFinderUi, roomFinderDropdown, roomFinderAccomodation, roomFinderButtons]
 block content

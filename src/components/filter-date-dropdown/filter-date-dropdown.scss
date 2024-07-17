@@ -1,0 +1,35 @@
+.filter-date{
+    width: 266px;
+    &__ui-container{
+
+    }
+
+    &__container{
+        display: flex;
+        align-items: center;
+        height: 44px;
+        border: 1px solid rgba(31, 32, 65, 0.3137254902);
+        border-radius: 3px;
+        justify-content: space-between;
+        &::after{
+            font-family: "Material Icons";
+            content: "expand_more";
+            font-size: 24px;
+            cursor: pointer;
+            padding-right: 9px;
+            display: flex;
+            align-items: center;
+            color: $dark-shade-75;
+        }
+    }
+
+    &__text{
+        box-sizing: border-box;
+        padding-left: 14px;
+        width: 266px;
+        font-family: Montserrat;
+        font-size: 14px;
+        outline: 0px;
+        color: rgba(31, 32, 65, 0.3137254902);
+    }
+}

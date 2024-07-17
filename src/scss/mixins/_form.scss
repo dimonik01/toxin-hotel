@@ -2,7 +2,6 @@
     width: $size;
     border: 0px;
     border-radius:3px;
-    margin-bottom: 24px;
     outline: 0px;
     @if $color != 0{
         border: 1px solid $color;

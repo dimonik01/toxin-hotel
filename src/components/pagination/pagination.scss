@@ -1,5 +1,6 @@
 .pagination{
     @include form($form-m);
+    margin: 0px;
     
     &__ui-container{
         margin-bottom: 15px;

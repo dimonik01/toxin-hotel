@@ -3,6 +3,7 @@
 .substext{
     &__form{
         @include form($form-m, $dark-shade-50);
+        margin: 0px;
         display:flex;
     }
     &__input{

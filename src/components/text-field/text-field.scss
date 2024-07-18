@@ -1,9 +1,9 @@
 @import '../../scss/mixins/_input.scss';
 @import '../../scss/mixins/_form.scss';
 .text-field{
-    width: $form-b;
+    width: 319px;
     &__form{
-        @include form($form-b, $dark-shade-50);
+        @include form(319px, $dark-shade-50);
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -17,12 +17,16 @@
     }
 
     &__input{
-        @include input($form-b, $dark-shade-50);
+        @include input(319px, $dark-shade-50);
     }
 
     &__input:focus{
         border: 1px solid $dark-shade-50;
         transition: 0.2s ease;
+    }
+
+    &__ui-container{
+        letter-spacing: -0.3px;
     }
 
 

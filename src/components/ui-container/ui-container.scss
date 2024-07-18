@@ -1,7 +1,7 @@
 .ui-container{
     width: 321px;
     &_small{
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
 
     &_medium{
@@ -9,6 +9,26 @@
     }
 
     &_big{
-        
+        margin-bottom: 100px;
+    }
+
+    &_rate{
+        margin-bottom: 196px;
+    }
+
+    &_page{
+        margin-bottom: 230px;
+    }
+
+    &_dd{
+        margin-bottom: 20px;
+    }
+
+    &_masked{
+        margin-bottom: 22px;
+    }
+
+    &_datedd{
+        margin-bottom: 42px;
     }
 }

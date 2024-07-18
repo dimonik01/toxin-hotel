@@ -3,6 +3,8 @@
     &__container{
         display: flex;
         width: 1160px;
+        margin-left: 10%;
+        margin-right: 10%;
     }
 
     &__bottom{
@@ -10,12 +12,18 @@
     }
 
     &__top{
-        
+        display: flex;
+        flex-direction: column;
+        height: 1239px;
+        width: 712px;
+        flex-wrap: wrap;
+        margin-bottom: 231px;
     }
 
     &__column{
+        margin-right: 126px;
         &_wide{
-            display: flex;
+
         }
     }
 

@@ -6,42 +6,42 @@ mixin dropdown(type, arrText, inputText, dropdownParams, size, isExpanded)
                 .dropdown__ui-container
                     .dropdown__ui
                         +ui-text(arrText)
-                    .dropdown__container
-                        .dropdown__input
-                            p.dropdown__input-text(value="test") #{inputText}
-                            .dropdown__expand
-                        +dropdown-list(dropdownParams, size, isExpanded, type)
+                .dropdown__container
+                    .dropdown__input
+                        p.dropdown__input-text(value="test") #{inputText}
+                        .dropdown__expand
+                    +dropdown-list(dropdownParams, size, isExpanded, type)
         else
             .dropdown_accomodation-medium
                 .dropdown__ui-container
                     .dropdown__ui
                         +ui-text(arrText)
-                    .dropdown__container
-                        .dropdown__input
-                            p.dropdown__input-text(value="test") #{inputText}
-                            .dropdown__expand
-                        +dropdown-list(dropdownParams, size, isExpanded, type)
+                .dropdown__container
+                    .dropdown__input
+                        p.dropdown__input-text(value="test") #{inputText}
+                        .dropdown__expand
+                    +dropdown-list(dropdownParams, size, isExpanded, type)
     else
         if size == "big"
             .dropdown_big
                 .dropdown__ui-container
                     .dropdown__ui
                         +ui-text(arrText)
-                    .dropdown__container
-                        .dropdown__input
-                            p.dropdown__input-text(value="test") #{inputText}
-                            .dropdown__expand
-                        +dropdown-list(dropdownParams, size, isExpanded, type)
+                .dropdown__container
+                    .dropdown__input
+                        p.dropdown__input-text(value="test") #{inputText}
+                        .dropdown__expand
+                    +dropdown-list(dropdownParams, size, isExpanded, type)
                         
         else
             .dropdown_medium
                 .dropdown__ui-container
                     .dropdown__ui
                         +ui-text(arrText)
-                    .dropdown__container
-                        .dropdown__input
-                            p.dropdown__input-text(value="test") #{inputText}
-                            .dropdown__expand
-                        +dropdown-list(dropdownParams, size, isExpanded, type)
-                            h3.dropdown__accept Применить
+                .dropdown__container
+                    .dropdown__input
+                        p.dropdown__input-text(value="test") #{inputText}
+                        .dropdown__expand
+                    +dropdown-list(dropdownParams, size, isExpanded, type)
+                        h3.dropdown__accept Применить
         

@@ -3,13 +3,15 @@
 @import '../../scss/mixins/_date-dropdown.scss';
 @import '../../scss/mixins/_date-dropdown-border.scss';
 .date-dropdown{
-    width: 318px;
+    box-sizing: border-box;
+    width: 320px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
     &_s{
-        @include form($form-s);
+        box-sizing: border-box;
+        @include form(150px);
         margin-bottom: 0px;
     }
     
@@ -24,11 +26,13 @@
         align-items: center;
 
         &_s{
-            @include form($form-s, $dark-shade-50);
+            @include form(150px, $dark-shade-50);
+            box-sizing: border-box;
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 0px;
+            height: 44px;
             
         }
 
@@ -46,6 +50,8 @@
         @include input($form-s, $dark-shade-50);
         display:flex;
         align-items: center;
+        height: 0px;
+        padding-bottom: 1px;
     }
 
     &__input_m{
@@ -65,13 +71,13 @@
     }
 
     &__ui{
-        margin-bottom:5px;
+        margin-bottom:4px;
     }
 }
 
 .factual-dd{
     height: 369px;
-    width: 318px;
+    width: 320px;
     border: 1px solid $dark-shade-50;
     border-radius: 3px 3px 3px 3px;
     transform: translateY(5px);
@@ -79,6 +85,7 @@
     visibility: visible;
     margin-bottom: 20px;
     opacity: 1;
+    box-sizing: border-box;
 
     &_extended{
         height: 409px;
@@ -245,8 +252,14 @@
         cursor: pointer;
         &_highlighted{
            // background-color: $purple;
-           background: -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, .25)), to(rgba(139, 164, 249, .25)));
+            background: -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, .25)), to(rgba(139, 164, 249, .25)));
             border-radius: 0;
+        }
+
+        &_current{
+            background: -webkit-gradient(linear, left top, left bottom, from(#6FCF97), to(#66D2EA));
+            border-radius: 45px;
+            color: white;
         }
     }
 

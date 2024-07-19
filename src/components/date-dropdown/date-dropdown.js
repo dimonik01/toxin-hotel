@@ -4,6 +4,7 @@
         dropdown: document.getElementsByClassName("factual-dd"),
     }
 
+
     class DropdownToggler{
         constructor(object, number){
             this.button = object.buttons[number];
@@ -17,10 +18,15 @@
         }
     }
     class Calendar{   
-        constructor(node){
-            this.node = node;
+        constructor(ui = false){
+            this.isUi = ui;
             this.weekdays = ["Пн","Вт","Ср","Чт","Пт","Сб","Вс"];
-            this.date = new Date(2019, 1, 0);
+            if (ui == true){
+                this.date = new Date(2019, 8, 0);
+            }
+            else{
+                this.date = new Date(2019, 1, 0);
+            }
             this.numberdayweek = [6,0,1,2,3,4,5];
             this.titleMonths = ["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"];
             this.months = document.getElementsByClassName("factual-dd__month");
@@ -63,6 +69,7 @@
         }
 
         initDays(){
+            let cells = document.getElementsByClassName("factual-dd__cell");
             for (let i = 0; i < 7; i++){  //initialising weekdays
                 let newDiv = document.createElement("div");
                 newDiv.className = "factual-dd__days_active";
@@ -70,12 +77,34 @@
                 newDiv.appendChild(newContent);
                 this.weekdaysNode.appendChild(newDiv);
             }
+            if (this.isUi == true){
+                cells.item(10).classList.add("factual-dd__cell_current");
+                cells.item(21).classList.add("factual-dd__chosen_first");
+                cells.item(22).classList.add("factual-dd__cell_highlighted");
+                cells.item(23).classList.add("factual-dd__cell_highlighted");
+                cells.item(24).classList.add("factual-dd__cell_highlighted");
+                cells.item(25).classList.add("factual-dd__chosen_last");
+
+                console.log("cell 10 swapped");
+            } 
         }
 
         countSkippedDays(exists = false, firstDayOfTheMonth, manual = false){//finding the first day of the month corresponding it to the day of the week
+            console.log(this.date);
+            
             let dayPointer = 0;
             let skippedDays = 0;
+            let maxDate = this.date.getDate();
+            console.log("maxDate = " + maxDate);
+            this.date.setDate(1);
+            console.log(this.date);
             let currDay = this.date.getDay();
+            console.log("currDay = " + currDay);
+            this.date.setDate(maxDate);
+            console.log(this.date);
+            if (!exists){
+                var firstDayOfTheMonth = currDay;
+            }
             for (let i = 0; i < 12; i++){
                 this.months.item(i).className = "factual-dd__month";
                 if(this.date.getMonth() == Number(this.months.item(i).getAttribute("month-number"))){
@@ -85,12 +114,16 @@
                     this.years.item(i).classList.add("factual-dd__year_selected");
                 }
             }
-            if (exists) {
+
                 currDay = this.numberdayweek[firstDayOfTheMonth];
-            }
+                console.log("correct way");
+
             let extended = false;
             const factualDD = document.getElementsByClassName("factual-dd__container").item(0);
             while (currDay !== dayPointer){
+                console.log(currDay);
+                console.log(dayPointer);
+                console.log(skippedDays);
                 dayPointer++;
                 skippedDays++;
             }
@@ -127,6 +160,7 @@
 
         fillCurrentMonth(skippedDays){
             let dayPointer = skippedDays;
+            console.log("skipped days = " + skippedDays);
             let nextDate = 0;
             let wholeMonthArr = Array.prototype.slice.call(document.getElementsByClassName("factual-dd__cell"));
             for (let i = 1; i <= this.date.getDate(); i++){
@@ -313,7 +347,7 @@
                             cells.item(i).classList.add("factual-dd__cell_highlighted");
                         }  
                     }
-                }    
+                }  
             }
         }
 
@@ -332,6 +366,7 @@
                 cells.item(i).classList.remove("factual-dd__chosen_last");
                 cells.item(i).classList.remove("factual-dd__chosen_first-reverse");
                 cells.item(i).classList.remove("factual-dd__chosen_last-reverse");
+                cells.item(i).classList.remove("factual-dd__cell_current");
             }
         }
 
@@ -355,7 +390,7 @@
         }
 
         showYears(){
-            this.monthValueNode.classList.replace("factual-dd__month-value_active","factual-dd__month-value" );
+            this.monthValueNode.classList.replace("factual-dd__month-value_active","factual-dd__month-value");
             this.yearValueNode.classList.replace("factual-dd__year-value","factual-dd__year-value_active");
             this.yearValueNode.classList.replace("factual-dd__year-value","factual-dd__year-value_active");
             this.monthsNode.classList.replace("factual-dd__months_active","factual-dd__months");
@@ -377,10 +412,14 @@
             this.nextMonth.setAttribute("type", "month-changer");
             this.previousMonth.setAttribute("type", "month-changer");
         }
+
+        setDefaultValues(){
+
+        }
     }
-    let button1 = new DropdownToggler(parameters, 0);
-    let button2 = new DropdownToggler(parameters, 1);
-    let calendar = new Calendar();
-    calendar.countSkippedDays();
-    calendar.initDays();
+        let button1 = new DropdownToggler(parameters, 0);
+        let button2 = new DropdownToggler(parameters, 1);
+        let calendar = new Calendar(true);
+        calendar.countSkippedDays();
+        calendar.initDays();
 })();

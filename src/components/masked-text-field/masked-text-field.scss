@@ -2,7 +2,7 @@
 @import '../../scss/mixins/_form.scss';
 .masked-text{
     &_b{
-        @include form($form-b);
+        @include form(319px);
         margin: 0px;
     }
     &_m{
@@ -34,7 +34,7 @@
             margin: 0px;
         }
         &_b{
-            @include form($form-b, $dark-shade-50);
+            @include form(319px, $dark-shade-50);
             display: flex;
             justify-content: space-between;
             align-items: center;

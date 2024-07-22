@@ -1,13 +1,13 @@
 .filter-date{
     width: 266px;
     &__ui-container{
-
+        margin-bottom: 4px;
     }
 
     &__container{
         display: flex;
         align-items: center;
-        height: 44px;
+        height: 42px;
         border: 1px solid rgba(31, 32, 65, 0.3137254902);
         border-radius: 3px;
         justify-content: space-between;

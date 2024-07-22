@@ -5,9 +5,11 @@
         @include form($form-m, $dark-shade-50);
         margin: 0px;
         display:flex;
+        box-sizing: border-box;
     }
     &__input{
-        @include input($form-m, $dark-shade-50)
+        @include input($form-m, $dark-shade-50);
+        height: 42px;
     }
     &__send::after{
         display: flex;
@@ -16,7 +18,7 @@
         content: "arrow_forward";
         font-size: 24px;
         cursor: pointer;
-        margin-right: 12px;
+        margin-right: 10px;
         height: 42px;
         color: $purple;
     }

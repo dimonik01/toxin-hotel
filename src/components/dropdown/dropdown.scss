@@ -103,7 +103,12 @@
         color: $purple;
     }
 
-    &__ui{
-        margin-bottom: 4px;
+    &__ui-container{
+        margin-bottom: 5px;
+        &_acc{
+            margin-bottom: 0px;
+        }
     }
+
+
 }

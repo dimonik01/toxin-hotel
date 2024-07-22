@@ -2,7 +2,7 @@
     @include form(266px);
     margin-bottom: 0px;
     &__ui{
-        margin-bottom: 12px;
+        margin-bottom: 11px;
 
     }
     &__container{
@@ -11,19 +11,26 @@
         justify-content: flex-start;
     }
 
+    &__text-container{
+        margin-left: -1px;
+    }
+
     &__text{
         color: $dark-shade-100;
     }
 }
 
 .real-toggle{
-    margin-right: 11px;
+    margin-right: 12px;
     &__icon{
-        width: 40px;
-        height: 20px;
+        box-sizing: border-box;
+        width: 38px;
+        height: 18px;
         outline: 1px solid;
         border-radius: 45px;
         background-clip: border-box;
+        margin-left: 1px;
+        margin-top: 2px;
 
         &_enabled{
             outline-color: $purple;
@@ -34,7 +41,7 @@
                 width: 12px;
                 height: 12px;
                 background-image: linear-gradient(180deg, #bc9cff, #8ba4f9);
-                transform: translateY(4px) translateX(25px);
+                transform: translateY(3px) translateX(23px);
                 transition: transform 0.1s ease-in;
             }
         }
@@ -46,8 +53,8 @@
                 border-radius: 45px;
                 width: 12px;
                 height: 12px;
-                background-color: $dark-shade-50;
-                transform: translateY(4px) translateX(2px);
+                background-color: rgba(31, 32, 65, 0.3137254902);
+                transform: translateY(3px) translateX(3px);
                 transition: transform 0.1s ease-in;
             }
             outline-color: $dark-shade-50;

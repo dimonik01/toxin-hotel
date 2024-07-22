@@ -3,9 +3,9 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding-left: 14px;
+    padding-left: 13px;
     padding-right: 6px;
-    padding-bottom: 6px;
+    padding-bottom: 7px;
     &__options{
         display: flex;
         align-items: center;
@@ -31,5 +31,5 @@
 }   
 
 .dropdown-list:first-child{
-    padding-top: 6px;
+    padding-top: 3px;
 }

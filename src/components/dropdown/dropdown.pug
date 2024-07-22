@@ -3,7 +3,7 @@ mixin dropdown(type, arrText, inputText, dropdownParams, size, isExpanded)
     if type == "accomodation"
         if size == "big"
             .dropdown_accomodation-big
-                .dropdown__ui-container
+                .dropdown__ui-container_acc
                     .dropdown__ui
                         +ui-text(arrText)
                 .dropdown__container
@@ -13,7 +13,7 @@ mixin dropdown(type, arrText, inputText, dropdownParams, size, isExpanded)
                     +dropdown-list(dropdownParams, size, isExpanded, type)
         else
             .dropdown_accomodation-medium
-                .dropdown__ui-container
+                .dropdown__ui-container_acc
                     .dropdown__ui
                         +ui-text(arrText)
                 .dropdown__container

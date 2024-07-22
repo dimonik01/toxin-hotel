@@ -2,8 +2,8 @@
     height: 158px;
     width: 276px;
     &__container{
-        margin-bottom: 24px;
-        height: 65px;
+        margin-bottom: 19px;
+        height: 69px;
         width: inherit;
         display: flex;
         flex-direction: row;
@@ -20,6 +20,8 @@
     &__svg{
         height: 40px;
         width: 40px;
+        margin-left: 3px;
+        margin-top: 4px;
     }
     &__text-container{
         display: flex;
@@ -35,9 +37,9 @@
     }
     &__header{
         color: $dark-shade-75;
-        height: fit-content;
         font-weight: 700;
-        margin-top: -4px;
+        margin-top: 1px;
+        margin-left: 3px;
     }
 
     &__paragraph-container{
@@ -48,5 +50,6 @@
     &__paragraph{
         color: $dark-shade-75;
         margin-top: -5px;
+        margin-left: 3px;
     }
 }

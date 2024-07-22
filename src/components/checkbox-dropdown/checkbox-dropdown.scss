@@ -3,12 +3,9 @@
     &__container{
         display: flex;
         align-items: flex-start;
-        margin-bottom: 7px;
         flex-direction: column;
         height: inherit;
-        width: inherit;
-
-        
+        width: inherit; 
     }
 
     &__ui{
@@ -41,7 +38,7 @@
     }
 
     &__expand{
-        margin-top: 8px;
+        margin-top: 7px;
         margin-left: -2px;
         height: 171px;
         &_closed{
@@ -54,7 +51,6 @@
 }
 
 .form-checkbox{
-    margin-left: 2px;
     display: flex;
     flex-direction: column;
     height: inherit;

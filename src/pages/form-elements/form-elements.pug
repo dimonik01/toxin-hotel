@@ -62,7 +62,7 @@ block values
         - var starAmount1 = 4;
         - var starAmount2 = 5;
         - var commentaryParams =[""]
-        - var rangeParams = ["ui","range slider", "5000\u20bd - 10000\u20bd"]
+        - var rangeParams = ["ui","range slider", "5 000\u20bd - 10 000\u20bd"]
         - var paginationParams = ["ui","pagination"]
         - var bulletParams = ["ui","bullet list"]
         - var bulletText = ["Нельзя с питомцами","Без вечеринок и мероприятий","Время прибытия — после 13:00, а выезд до 12:00"]
@@ -89,16 +89,16 @@ block content
                 div(class="ui-container ui-container_ddexp")
                     +dropdown("accomodation", dropdownArr3, inputText1, dropdownParams1, "medium", "false")
                 div(class="ui-container ui-container_ddcheck-closed")
-                    +checkbox-dropdown("medium", checkboxParams, checkboxArr, false, checkedArrFormpage)
+                    +checkbox-dropdown("medium", checkboxParams, checkboxArr, false, checkedArrFormpage, "14")
                 div(class="ui-container ui-container_big")
-                    +checkbox-dropdown("medium", checkboxParams, checkboxArr, true, checkedArrFormpage)
+                    +checkbox-dropdown("medium", checkboxParams, checkboxArr, true, checkedArrFormpage, "14")
                 div(class="ui-container")
                     +perks-container(perksArr1, perksArr2)
             .form-elements__column_wide
                 .form-elements__top
                     .form-elements__left
                         div(class="ui-container ui-container_checkbox-buttons")
-                            +cbuttons(checkButtonsParams, checkButtonsArr, checkedArrButtons)
+                            +cbuttons(checkButtonsParams, checkButtonsArr, checkedArrButtons, "14")
                         div(class="ui-container ui-container_radio")
                             +radiobuttons(radiobuttonParams)
                         div(class="ui-container ui-container_toggle")
@@ -115,13 +115,13 @@ block content
                         div(class="ui-container ui-container_rate")
                             +rate-button(rateParams, true, starAmount1)
                         div(class="ui-container ui-container_blank")
-                            +dropdown(null, dropdownArr1, inputText2, dropdownParams2, "big", "true")
+                            +dropdown(null, dropdownArr2, inputText2, dropdownParams2, "big", "true")
                         div(class="ui-container ui-container_medium")
-                            +rich-checkbox(richParams ,richCheckboxArr,richCheckboxHeadingArr,checkedArrRich)
+                            +rich-checkbox(richParams ,richCheckboxArr,richCheckboxHeadingArr,checkedArrRich, "12")
                     .form-elements__right
-                        div(class="ui-container ui-container_medium")
+                        div(class="ui-container ui-container_range")
                             +range(rangeParams, true)
-                        div(class="ui-container ui-container_medium")
+                        div(class="ui-container ui-container_buttons")
                             .buttons-ui
                                 .buttons-ui__text-container 
                                     .buttons-ui__text
@@ -137,14 +137,14 @@ block content
                                         +buttons("hollow-greyed", "small")
                                     .buttons-ui__container
                                         +buttons("empty", "small")
-                                    .buttons-ui__container
+                                    div(class="buttons-ui__container buttons-ui__container_hollow")
                                         +buttons("empty-greyed", "small")
                                 .buttons-ui__big
                                     +buttons("default","big", "перейти к оплате")
                         div(class="ui-container ui-container_page")
                             +pagination(paginationParams)
                         div(class="ui-container ui-container_blank")
-                            +dropdown(null, dropdownArr1, inputText2, dropdownParams2, "big", "true")
+                            +dropdown(null, dropdownArr2, inputText2, dropdownParams2, "big", "true")
                         div(class="ui-container ui-container_medium")
                             +bullet-list(bulletParams, bulletText)
                 .form-elements__bottom

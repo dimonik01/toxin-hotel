@@ -64,6 +64,12 @@
         font-family: 'Montserrat';
         font-size: 14px;
         max-width: 200px;
+        &_small{
+            font-family: 'Montserrat';
+            font-size: 12px;
+            max-width: 200px;
+            margin-top: 5px;
+        }
 
     }
 
@@ -72,6 +78,7 @@
         font-size: 14px;
         font-weight: 700;
         color: $dark-shade-100;
+        margin-top: 1px;
     }
 }
 

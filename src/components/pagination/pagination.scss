@@ -1,21 +1,13 @@
 .pagination{
     @include form($form-m);
     margin: 0px;
-    
-    &__ui-container{
-        margin-bottom: 15px;
-    }
-
-    &ui{
-
-    }
 
     &__container{
-
+        margin-left: 1px;
     }
-
-    &__select{
-
+    
+    &__ui-container{
+        margin-bottom: 17px;
     }
 
     &__list{

@@ -1,11 +1,7 @@
 .range{
     @include form($form-m);
-    &__ui{
-
-    }
-
     &__container{
-
+        margin-top: 18px;
     }
 
     &__slider-container{
@@ -16,28 +12,42 @@
         position: relative;
         display: flex;
         width: $form-m;
-        height: 5px;
+        height: 6px;
         border: 1px solid $dark-shade-50;
         border-radius: 45px;
+        box-sizing: border-box;
     }
 
     &__slider-dot{
         display: block;
         position: absolute;
         width: 12px;
-        top: -5px;
+        top: -6px;
         height: 12px;
         background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
         border: 2px solid #FFFFFF;
         border-radius: 10px;
+        box-sizing: content-box;
+        z-index: 1;
     
         &_first{
-            left: 0px;
+            left: 75px;
         }
 
         &_second{
-            left: 200px;
+            left: 160px;
         }
+    }
+
+    &__slider-space{
+        position: relative;
+        left: 88px;
+        width: 75px;
+        background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+        height: 6px;
+        display: inline-block;
+        bottom: 1px;
+        z-index: 0;
     }
     
 

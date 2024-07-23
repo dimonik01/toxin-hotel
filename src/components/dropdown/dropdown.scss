@@ -1,7 +1,7 @@
 @import '../../scss/mixins/_input.scss';
 .dropdown{
     &_big{
-        width: 321px;
+        width: 320px;
         user-select: none
     }
 
@@ -23,7 +23,7 @@
         }
     }
     &__input{
-        height: 42px;
+        height: 41px;
         border-radius:3px 3px 0 0;
         border: 1px solid $dark-shade-50;
         display: flex;
@@ -107,6 +107,10 @@
         margin-bottom: 5px;
         &_acc{
             margin-bottom: 0px;
+        }
+
+        &_big{
+            margin-bottom: 4px;
         }
     }
 

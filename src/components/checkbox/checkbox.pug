@@ -1,4 +1,4 @@
-mixin checkbox(textArr, checkedArr, headingArr = 0)
+mixin checkbox(textArr, checkedArr, headingArr = 0, font)
     - for (let i=0; i < textArr.length; i++)
         .checkbox__container
             if (checkedArr[i] != "")
@@ -10,6 +10,12 @@ mixin checkbox(textArr, checkedArr, headingArr = 0)
             .checkbox__text-container
                 if (headingArr != 0)
                     label(class="checkbox__heading") #{headingArr[i]}
-                    label(class="checkbox__text") #{textArr[i]}
+                    if font == "14"
+                        label(class="checkbox__text") #{textArr[i]}
+                    if font == "12"
+                        label(class="checkbox__text_small") #{textArr[i]}
                 else 
-                    label(class="checkbox__text") #{textArr[i]}
+                    if font == "14"
+                        label(class="checkbox__text") #{textArr[i]}
+                    if font == "12"
+                        label(class="checkbox__text_small") #{textArr[i]}

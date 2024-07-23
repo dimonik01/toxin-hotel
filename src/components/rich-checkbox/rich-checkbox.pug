@@ -1,6 +1,6 @@
-mixin rich-checkbox(uiText, checkboxText, checkboxHeading, checkedArr) 
+mixin rich-checkbox(uiText, checkboxText, checkboxHeading, checkedArr, font) 
     .rich-checkbox
         .rich-checkbox__ui
             +ui-text(uiText)
         .rich-checkbox__container
-            +checkbox(checkboxText, checkedArr, checkboxHeading)
+            +checkbox(checkboxText, checkedArr, checkboxHeading, font)

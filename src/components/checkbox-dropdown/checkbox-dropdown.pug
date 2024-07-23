@@ -1,5 +1,5 @@
 include ../checkbox/checkbox.pug
-mixin checkbox-dropdown(size, type, arr, expanded, checkedArr)
+mixin checkbox-dropdown(size, type, arr, expanded, checkedArr, font)
     .checkbox-dropdown
         .checkbox-dropdown__container
             if (expanded)
@@ -11,8 +11,8 @@ mixin checkbox-dropdown(size, type, arr, expanded, checkedArr)
             if (expanded)
                 div(class="checkbox-dropdown__expand" state= `${expanded}`)
                     form.form-checkbox
-                        +checkbox(arr, checkedArr)
+                        +checkbox(arr, checkedArr,0, font)
             else 
                 div(class="checkbox-dropdown__expand checkbox-dropdown__expand_closed" state= `${expanded}`)
                     form.form-checkbox
-                        +checkbox(arr, checkedArr)
+                        +checkbox(arr, checkedArr,0, font)

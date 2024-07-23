@@ -16,7 +16,7 @@ mixin buttons(type, size, text = "click me")
             if (type == "empty")
                 span(class="button__text button__text_hollow") #{text}
             if (type == "empty-greyed")
-                span(class="button__text button__text_hollow") #{text}
+                span(class="button__text button__text_hollow-greyed") #{text}
         if (size == "big")
             if (type == "default")
                 button(class="button button_b button_default")

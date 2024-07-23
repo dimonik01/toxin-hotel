@@ -1,7 +1,7 @@
-mixin cbuttons(uiText, textArr, checkedArr)
+mixin cbuttons(uiText, textArr, checkedArr, font)
     .cbuttons
         .cbuttons__header
             +ui-text(uiText)
         .cbuttons__list
-            +checkbox(textArr, checkedArr)
+            +checkbox(textArr, checkedArr,0, font)
             

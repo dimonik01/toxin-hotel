@@ -1,7 +1,7 @@
 .bullet-list{
     @include form(260px);
     &__ui-container{
-        margin-bottom: 14px;
+        margin-bottom: 13px;
     }
 
     &__ui{
@@ -23,17 +23,17 @@
         display: flex;
         font-family: "Montserrat";
         font-size: 14px;
-        margin-bottom: 9px;
+        margin-bottom: 11px;
         line-height: 1.7em;
         &::before{
             content: "";
             display: block;
             margin-right: 10px;
-            width: 10px;
+            width: 11px;
             height: 10px;
             border-radius: 45px;
-            background-color: rgba(31, 32, 65, 0.1450980392);
-            margin-top: 5px;
+            background-color: $dark-shade-25;
+            margin-top: 6px;
             flex-shrink: 0;
         }
 

@@ -6,6 +6,7 @@ mixin range(uiText, ui = "false")
             .range__slider-container
                 div(class="range__slider")
                     span(class="range__slider-dot range__slider-dot_first" type="from")
+                    span(class="range__slider-space")
                     span(class="range__slider-dot range__slider-dot_second" type="to")
             .range__text-container
                 if (ui == "true")

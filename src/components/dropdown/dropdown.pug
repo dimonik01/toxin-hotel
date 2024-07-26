@@ -2,7 +2,7 @@ include ../dropdown-list/dropdown-list.pug
 mixin dropdown(type, arrText, inputText, dropdownParams, size, isExpanded)
     if type == "accomodation"
         if size == "big"
-            .dropdown_accomodation-big
+            div(class="dropdown dropdown_accomodation-big")
                 .dropdown__ui-container_acc
                     .dropdown__ui
                         +ui-text(arrText)
@@ -12,7 +12,7 @@ mixin dropdown(type, arrText, inputText, dropdownParams, size, isExpanded)
                         .dropdown__expand
                     +dropdown-list(dropdownParams, size, isExpanded, type)
         else
-            .dropdown_accomodation-medium
+            div(class="dropdown dropdown_accomodation-medium")
                 .dropdown__ui-container_acc
                     .dropdown__ui
                         +ui-text(arrText)
@@ -23,7 +23,7 @@ mixin dropdown(type, arrText, inputText, dropdownParams, size, isExpanded)
                     +dropdown-list(dropdownParams, size, isExpanded, type)
     else
         if size == "big"
-            .dropdown_big
+            div(class="dropdown dropdown_big")
                 .dropdown__ui-container_big
                     .dropdown__ui
                         +ui-text(arrText)
@@ -34,7 +34,7 @@ mixin dropdown(type, arrText, inputText, dropdownParams, size, isExpanded)
                     +dropdown-list(dropdownParams, size, isExpanded, type)
                         
         else
-            .dropdown_medium
+            div(class="dropdown dropdown_medium")
                 .dropdown__ui-container
                     .dropdown__ui
                         +ui-text(arrText)

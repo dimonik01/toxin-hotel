@@ -21,6 +21,7 @@ include ../../components/buttons/buttons.pug
 include ../../components/pagination/pagination.pug
 include ../../components/bullet-list/bullet-list.pug
 include ../../components/ui-container/ui-container.pug
+include ../../components/ui-logo/ui-logo.pug
 
 block scripts
     link(href=require('./form-elements.scss') rel='stylesheet')
@@ -68,87 +69,90 @@ block values
         - var bulletText = ["Нельзя с питомцами","Без вечеринок и мероприятий","Время прибытия — после 13:00, а выезд до 12:00"]
 block content
     .form-elements
-        .form-elements__container
-            .form-elements__column
-                div(class="ui-container ui-container_small")
-                    +text-field(textFieldArr1)
-                div(class="ui-container ui-container_dd")
-                    +text-field(textFieldArr2)
-                div(class="ui-container ui-container_masked")
-                    +dropdown(type2, dropdownArr2, inputText2, dropdownParams2, "big", "false")
-                div(class="ui-container ui-container_datedd")
-                    +masked-text-field("big", textFieldArr3, "ДД.ММ.ГГГГ")
-                div(class="ui-container ui-container_medium")
-                    +date-dropdown("small", dateDropdown1, dateDropdown2, "ДД.ММ.ГГГГ", "19.08.2019")
-                div(class="ui-container ui-container_filter")
-                    +filter-date-dropdown(["ui","filter date dropdown"])
-                div(class="ui-container ui-container_subs")
-                    +subscription-text-field("medium", subscriptionText)
-                div(class="ui-container ui-container_ddclosed")
-                    +dropdown("accomodation", dropdownArr1, inputText1, dropdownParams1, "medium", "true")
-                div(class="ui-container ui-container_ddexp")
-                    +dropdown("accomodation", dropdownArr3, inputText1, dropdownParams1, "medium", "false")
-                div(class="ui-container ui-container_ddcheck-closed")
-                    +checkbox-dropdown("medium", checkboxParams, checkboxArr, false, checkedArrFormpage, "14")
-                div(class="ui-container ui-container_big")
-                    +checkbox-dropdown("medium", checkboxParams, checkboxArr, true, checkedArrFormpage, "14")
-                div(class="ui-container")
-                    +perks-container(perksArr1, perksArr2)
-            .form-elements__column_wide
-                .form-elements__top
-                    .form-elements__left
-                        div(class="ui-container ui-container_checkbox-buttons")
-                            +cbuttons(checkButtonsParams, checkButtonsArr, checkedArrButtons, "14")
-                        div(class="ui-container ui-container_radio")
-                            +radiobuttons(radiobuttonParams)
-                        div(class="ui-container ui-container_toggle")
-                            +toggle(toggleParams1, true)
-                            +toggle(toggleParams2, false)
-                        div(class="ui-container ui-container_like")
-                            .form-elements__like-component
-                                +ui-text(likeParams1)
-                                .form-elements__like
-                                    .form-elements__like-container
-                                        +like("off", 2)
-                                    .form-elements__like-container
-                                        +like("on", 12)
-                        div(class="ui-container ui-container_rate")
-                            +rate-button(rateParams, true, starAmount1)
-                        div(class="ui-container ui-container_blank")
-                            +dropdown(null, dropdownArr2, inputText2, dropdownParams2, "big", "true")
-                        div(class="ui-container ui-container_medium")
-                            +rich-checkbox(richParams ,richCheckboxArr,richCheckboxHeadingArr,checkedArrRich, "12")
-                    .form-elements__right
-                        div(class="ui-container ui-container_range")
-                            +range(rangeParams, true)
-                        div(class="ui-container ui-container_buttons")
-                            .buttons-ui
-                                .buttons-ui__text-container 
-                                    .buttons-ui__text
-                                        +ui-text(["ui", "buttons"])
-                                .buttons-ui__small
-                                    .buttons-ui__container
-                                        +buttons("default", "small")
-                                    .buttons-ui__container
-                                        +buttons("default-greyed", "small")
-                                    .buttons-ui__container
-                                        +buttons("hollow", "small")
-                                    .buttons-ui__container
-                                        +buttons("hollow-greyed", "small")
-                                    .buttons-ui__container
-                                        +buttons("empty", "small")
-                                    div(class="buttons-ui__container buttons-ui__container_hollow")
-                                        +buttons("empty-greyed", "small")
-                                .buttons-ui__big
-                                    +buttons("default","big", "перейти к оплате")
-                        div(class="ui-container ui-container_page")
-                            +pagination(paginationParams)
-                        div(class="ui-container ui-container_blank")
-                            +dropdown(null, dropdownArr2, inputText2, dropdownParams2, "big", "true")
-                        div(class="ui-container ui-container_medium")
-                            +bullet-list(bulletParams, bulletText)
-                .form-elements__bottom
-                    +commentary(commentaryParams, "Мурад Сарафанов","5 дней назад","Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.")
+        .form-elements__main-container
+            .form-elements__logo-container
+                +ui-logo()
+            .form-elements__container
+                .form-elements__column
+                    div(class="ui-container ui-container_small")
+                        +text-field(textFieldArr1)
+                    div(class="ui-container ui-container_dd")
+                        +text-field(textFieldArr2)
+                    div(class="ui-container ui-container_masked")
+                        +dropdown(type2, dropdownArr2, inputText2, dropdownParams2, "big", "false")
+                    div(class="ui-container ui-container_datedd")
+                        +masked-text-field("big", textFieldArr3, "ДД.ММ.ГГГГ")
+                    div(class="ui-container ui-container_medium")
+                        +date-dropdown("small", dateDropdown1, dateDropdown2, "ДД.ММ.ГГГГ", "19.08.2019")
+                    div(class="ui-container ui-container_filter")
+                        +filter-date-dropdown(["ui","filter date dropdown"])
+                    div(class="ui-container ui-container_subs")
+                        +subscription-text-field("medium", subscriptionText)
+                    div(class="ui-container ui-container_ddclosed")
+                        +dropdown("accomodation", dropdownArr1, inputText1, dropdownParams1, "medium", "true")
+                    div(class="ui-container ui-container_ddexp")
+                        +dropdown("accomodation", dropdownArr3, inputText1, dropdownParams1, "medium", "false")
+                    div(class="ui-container ui-container_ddcheck-closed")
+                        +checkbox-dropdown("medium", checkboxParams, checkboxArr, false, checkedArrFormpage, "14")
+                    div(class="ui-container ui-container_big")
+                        +checkbox-dropdown("medium", checkboxParams, checkboxArr, true, checkedArrFormpage, "14")
+                    div(class="ui-container")
+                        +perks-container(perksArr1, perksArr2)
+                .form-elements__column_wide
+                    .form-elements__top
+                        .form-elements__left
+                            div(class="ui-container ui-container_checkbox-buttons")
+                                +cbuttons(checkButtonsParams, checkButtonsArr, checkedArrButtons, "14")
+                            div(class="ui-container ui-container_radio")
+                                +radiobuttons(radiobuttonParams)
+                            div(class="ui-container ui-container_toggle")
+                                +toggle(toggleParams1, true)
+                                +toggle(toggleParams2, false)
+                            div(class="ui-container ui-container_like")
+                                .form-elements__like-component
+                                    +ui-text(likeParams1)
+                                    .form-elements__like
+                                        .form-elements__like-container
+                                            +like("off", 2)
+                                        .form-elements__like-container
+                                            +like("on", 12)
+                            div(class="ui-container ui-container_rate")
+                                +rate-button(rateParams, true, starAmount1)
+                            div(class="ui-container ui-container_blank")
+                                +dropdown(null, dropdownArr2, inputText2, dropdownParams2, "big", "true")
+                            div(class="ui-container ui-container_medium")
+                                +rich-checkbox(richParams ,richCheckboxArr,richCheckboxHeadingArr,checkedArrRich, "12")
+                        .form-elements__right
+                            div(class="ui-container ui-container_range")
+                                +range(rangeParams, true)
+                            div(class="ui-container ui-container_buttons")
+                                .buttons-ui
+                                    .buttons-ui__text-container 
+                                        .buttons-ui__text
+                                            +ui-text(["ui", "buttons"])
+                                    .buttons-ui__small
+                                        .buttons-ui__container
+                                            +buttons("default", "small")
+                                        .buttons-ui__container
+                                            +buttons("default-greyed", "small")
+                                        .buttons-ui__container
+                                            +buttons("hollow", "small")
+                                        .buttons-ui__container
+                                            +buttons("hollow-greyed", "small")
+                                        .buttons-ui__container
+                                            +buttons("empty", "small")
+                                        div(class="buttons-ui__container buttons-ui__container_hollow")
+                                            +buttons("empty-greyed", "small")
+                                    .buttons-ui__big
+                                        +buttons("default","big", "перейти к оплате")
+                            div(class="ui-container ui-container_page")
+                                +pagination(paginationParams)
+                            div(class="ui-container ui-container_blank")
+                                +dropdown(null, dropdownArr2, inputText2, dropdownParams2, "big", "true")
+                            div(class="ui-container ui-container_medium")
+                                +bullet-list(bulletParams, bulletText)
+                    .form-elements__bottom
+                        +commentary(commentaryParams, "Мурад Сарафанов","5 дней назад","Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.")
 block js 
     script
         include ../../components/dropdown/dropdown.js

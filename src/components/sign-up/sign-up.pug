@@ -1,0 +1,29 @@
+mixin sign-up()
+    .sign-up
+        .sign-up__inner
+            .sign-up__heading-container 
+                h1.sign-up__heading Регистрация аккаунта
+            .sign-up__user-container
+                .sign-up__username-container
+                    +text-field([""])
+                .sign-up__surname-container
+                    +text-field([""])
+                .sign-up__gender-container
+                    +radiobuttons([""])
+            .sign-up__dob-container
+                +masked-text-field("big", ["ui","ДАТА РОЖДЕНИЯ"], "ДД.ММ.ГГГГ")
+            .sign-up__credentials-container
+                .sign-up__email-container
+                    h3.sign-up__email-text данные для входа в сервис
+                    +text-field([""])
+                .sign-up__password-container
+                    +text-field([""])
+                .sign-up__toggle-container
+                    +toggle(["", false])
+            .sign-up__button-container
+                +buttons("default","big", "перейти к оплате")
+            .sign-up__extras-container
+                .sign-up__text-container
+                    p.sign-up__text Уже есть аккаунт на Toxin
+                .sign-up__redirect-container
+                    +buttons("hollow","small", "войти")

@@ -1,7 +1,19 @@
 .room-finder{
-    width: 320px;
+    width: 380px;
+    height: 374px;
+    background-color: #fff;
+    box-shadow: 0 0 25px rgba(0, 0, 0, .2);
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 4px;
+    &__main-container{
+        width: 320px;
+    }
+    
     &__ui-container{
         height: 60px;
+        margin-top: 39px;
         
     }
 
@@ -11,14 +23,14 @@
     }
 
     &__date-container {
-        
+        margin-top: 21px;
     }
 
     &__dropdown-container{
-        
+        margin-top: 20px;
     }
 
     &__button{
-        
+        margin-top: 32px;
     }
 }

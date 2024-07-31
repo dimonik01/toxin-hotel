@@ -20,6 +20,8 @@ include ../../components/buttons/buttons.pug
 include ../../components/pagination/pagination.pug
 include ../../components/bullet-list/bullet-list.pug
 include ../../components/room-finder/room-finder.pug
+include ../../components/ui-logo/ui-logo.pug
+include ../../components/sign-up/sign-up.pug
 block scripts 
     link(href=require('./cards.scss') rel='stylesheet')
 block values 
@@ -34,7 +36,18 @@ block values
         - var roomFinderButtons = ["default","big","Подобрать номер"]
         - var roomFinderParams = [roomFinderUi, roomFinderDropdown, roomFinderAccomodation, roomFinderButtons]
 block content
-    +room-finder(roomFinderParams)
+    .cards
+        .cards__logo-container
+            +ui-logo()
+        .cards__container
+            .cards__row
+                .cards__mixin_room-finder
+                    +room-finder(roomFinderParams)
+                .cards__mixin
+                    +sign-up()
+
+            .cards__row
+            .cards__row
 block js 
     script
 

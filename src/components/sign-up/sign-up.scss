@@ -1,0 +1,84 @@
+.sign-up{
+    width: 380px;
+    background-color: #fff;
+    box-shadow: 0 0 25px rgba(0, 0, 0, .2);
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 4px;
+    &__inner{
+
+    }
+
+    &__heading-container{
+        margin-top: 40px;
+    }
+
+    &__heading{
+
+    }
+
+    &__user-container{
+        margin-top: 20px;
+    }
+
+    &__username-container{
+
+    }
+
+    &__surname-container{
+        margin-top: 10px;
+    }
+
+    &__gender-container{
+        margin-top: -6px;
+    }
+
+    &__dob-container{
+        margin-top: 26px;
+    }
+
+    &__credentials-container{
+        margin-top: 21px;
+    }
+
+    &__email-container{
+
+    }
+
+    &__email-text{
+        margin-bottom: 4px;
+    }
+
+    &__password-container{
+        margin-top: 10px;
+    }
+
+    &__toggle-container{
+        margin-top: -6px;
+        margin-bottom: 23px;
+    }
+
+    &__button-container{
+        margin-bottom: 30px;
+    }
+
+    &__extras-container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+
+    &__text-container{
+
+    }
+
+    &__text{
+        color: $dark-shade-100;
+    }
+
+    &__redirect-container{
+
+    }
+}

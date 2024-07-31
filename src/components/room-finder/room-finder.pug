@@ -19,13 +19,14 @@ mixin room-finder(arr)
     - let buttonsParam2 = subArrButtons[1]
     - let buttonsParam3 = subArrButtons[2]
     .room-finder
-        .room-finder__ui-container
-            h1.room-finder__ui-text Найдём номера под ваши пожелания
-        .room-finder__date-container 
-            +date-dropdown(subArrDate1,subArrDate2,subArrDate3,subArrDate4,subArrDate5)
-            div(class="test2", data = `${arr[1]}`)
-        .room-finder__dropdown-container
-            +dropdown(subArr1, subArr2, subArr3, subArr4, subArr5)
-        .room-finder__button 
-            +buttons(buttonsParam1,buttonsParam2,buttonsParam3)
-            div(class="test4", data = `${arr[3]}`)
+        .room-finder__main-container
+            .room-finder__ui-container
+                h1.room-finder__ui-text Найдём номера под ваши пожелания
+            .room-finder__date-container 
+                +date-dropdown(subArrDate1,subArrDate2,subArrDate3,subArrDate4,subArrDate5)
+                div(class="test2", data = `${arr[1]}`)
+            .room-finder__dropdown-container
+                +dropdown(subArr1, subArr2, subArr3, subArr4, subArr5)
+            .room-finder__button 
+                +buttons(buttonsParam1,buttonsParam2,buttonsParam3)
+                div(class="test4", data = `${arr[3]}`)

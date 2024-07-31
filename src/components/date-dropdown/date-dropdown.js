@@ -1,14 +1,15 @@
 (function(){
     let parameters = {
         buttons: document.getElementsByClassName("date-dropdown__expand"),
-        dropdown: document.getElementsByClassName("factual-dd"),
+        dropdown: document.getElementsByClassName("factual-dd__container").item(0).parentElement,
     }
 
 
     class DropdownToggler{
         constructor(object, number){
             this.button = object.buttons[number];
-            this.dropdown = object.dropdown.item(0);
+            this.dropdown = object.dropdown;
+            console.log(this.dropdown);
             this.button.addEventListener("click", this.clickHandler.bind(this));
         }
 
@@ -95,13 +96,9 @@
             let dayPointer = 0;
             let skippedDays = 0;
             let maxDate = this.date.getDate();
-            console.log("maxDate = " + maxDate);
             this.date.setDate(1);
-            console.log(this.date);
             let currDay = this.date.getDay();
-            console.log("currDay = " + currDay);
             this.date.setDate(maxDate);
-            console.log(this.date);
             if (!exists){
                 var firstDayOfTheMonth = currDay;
             }
@@ -121,9 +118,6 @@
             let extended = false;
             const factualDD = document.getElementsByClassName("factual-dd__container").item(0);
             while (currDay !== dayPointer){
-                console.log(currDay);
-                console.log(dayPointer);
-                console.log(skippedDays);
                 dayPointer++;
                 skippedDays++;
             }
@@ -134,8 +128,11 @@
                 extended = true;
             }
             else{
-                factualDD.parentElement.className = "factual-dd";
-                extended = false;
+                if (exists){
+                    factualDD.parentElement.className = "factual-dd";
+                    extended = false;
+                    this.initEmptyCells(35, skippedDays, exists, manual);
+                }
                 this.initEmptyCells(35, skippedDays, exists, manual);
             }
         }
@@ -143,8 +140,9 @@
         initEmptyCells(amount, skippedDays, exists = false, manual = false){
             if (exists || manual){
                 while(document.getElementsByClassName("factual-dd__cell").length > 0){  
-                    document.getElementsByClassName("factual-dd__cell")[0].remove();}               
-                }
+                    document.getElementsByClassName("factual-dd__cell")[0].remove();
+                }               
+            }
             
             for (let i = 1; i <= amount; i++){ //initialising empty dates
                 let newDiv = document.createElement("div");
@@ -370,7 +368,7 @@
             }
         }
 
-        showChosenYear(){
+        showChosenYear(e){
             this.date.setFullYear(Number(e.target.getAttribute("year-number")));
 
         }

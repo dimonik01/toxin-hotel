@@ -30,7 +30,7 @@
                 return {
                     plus: entitySelect.item(index).nextElementSibling.childNodes[arr].lastElementChild.lastElementChild,
                     minus: entitySelect.item(index).nextElementSibling.childNodes[arr].lastElementChild.firstElementChild,
-                    counter: entitySelect.item(index).nextElementSibling.childNodes[arr].lastElementChild.childNodes[1],
+                    counter: entitySelect.item(index).nextElementSibling.childNodes[arr].lastElementChild.childNodes[1].firstElementChild,
                     textArr: textArray,
                     accomodation: acc,
                     accomodationValue: "",

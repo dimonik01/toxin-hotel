@@ -1,5 +1,5 @@
 include ../dropdown-list/dropdown-list.pug
-mixin dropdown(type, arrText, inputText, dropdownParams, size, isExpanded)
+mixin dropdown(type, arrText, inputText, dropdownParams, size, isExpanded, ui = "false")
     if type == "accomodation"
         if size == "big"
             div(class="dropdown dropdown_accomodation-big")
@@ -10,7 +10,7 @@ mixin dropdown(type, arrText, inputText, dropdownParams, size, isExpanded)
                     .dropdown__input
                         p.dropdown__input-text(value="test") #{inputText}
                         .dropdown__expand
-                    +dropdown-list(dropdownParams, size, isExpanded, type)
+                    +dropdown-list(dropdownParams, size, isExpanded, type, ui)
         else
             div(class="dropdown dropdown_accomodation-medium")
                 .dropdown__ui-container_acc
@@ -20,7 +20,7 @@ mixin dropdown(type, arrText, inputText, dropdownParams, size, isExpanded)
                     .dropdown__input
                         p.dropdown__input-text(value="test") #{inputText}
                         .dropdown__expand
-                    +dropdown-list(dropdownParams, size, isExpanded, type)
+                    +dropdown-list(dropdownParams, size, isExpanded, type, ui)
     else
         if size == "big"
             div(class="dropdown dropdown_big")
@@ -31,7 +31,7 @@ mixin dropdown(type, arrText, inputText, dropdownParams, size, isExpanded)
                     .dropdown__input
                         p.dropdown__input-text(value="test") #{inputText}
                         .dropdown__expand
-                    +dropdown-list(dropdownParams, size, isExpanded, type)
+                    +dropdown-list(dropdownParams, size, isExpanded, type, ui)
                         
         else
             div(class="dropdown dropdown_medium")
@@ -42,6 +42,6 @@ mixin dropdown(type, arrText, inputText, dropdownParams, size, isExpanded)
                     .dropdown__input
                         p.dropdown__input-text(value="test") #{inputText}
                         .dropdown__expand
-                    +dropdown-list(dropdownParams, size, isExpanded, type)
+                    +dropdown-list(dropdownParams, size, isExpanded, type, ui)
                         h3.dropdown__accept Применить
         

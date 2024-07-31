@@ -1,4 +1,4 @@
-mixin dropdown-list(dropdownParams, size, isExpanded = "false", type)
+mixin dropdown-list(dropdownParams, size, isExpanded = "false", type, ui = "false")
     if size == "big"
         if isExpanded == "true"
             div(class="dropdown__select_big-expanded")
@@ -8,7 +8,8 @@ mixin dropdown-list(dropdownParams, size, isExpanded = "false", type)
                         h3.dropdown-list__text #{val}
                         .dropdown-list__options
                             img(class="dropdown-list__minus" src=require("minus.svg") alt="")
-                            h3(class="dropdown-list__quantity", count = 0) #{x}
+                            .dropdown-list__quantity-container
+                                h3(class="dropdown-list__quantity", count = 0) #{x}
                             img(class="dropdown-list__plus" src=require("plus.svg") alt="")
                 if type != "accomodation"
                     h3.dropdown__accept Применить
@@ -20,7 +21,8 @@ mixin dropdown-list(dropdownParams, size, isExpanded = "false", type)
                         h3.dropdown-list__text #{val}
                         .dropdown-list__options
                             img(class="dropdown-list__minus" src=require("minus.svg") alt="")
-                            h3(class="dropdown-list__quantity", count = 0) #{x}
+                            .dropdown-list__quantity-container
+                                h3(class="dropdown-list__quantity", count = 0) #{x}
                             img(class="dropdown-list__plus" src=require("plus.svg") alt="")
                 if type != "accomodation"
                     h3.dropdown__accept Применить
@@ -33,7 +35,8 @@ mixin dropdown-list(dropdownParams, size, isExpanded = "false", type)
                         h3.dropdown-list__text #{val}
                         .dropdown-list__options
                             img(class="dropdown-list__minus" src=require("minus.svg") alt="")
-                            h3(class="dropdown-list__quantity", count = 0) #{x}
+                            .dropdown-list__quantity-container
+                                h3(class="dropdown-list__quantity", count = 0) #{x}
                             img(class="dropdown-list__plus" src=require("plus.svg") alt="")
         if isExpanded == "false"
             div(class="dropdown__select_expanded")
@@ -43,5 +46,6 @@ mixin dropdown-list(dropdownParams, size, isExpanded = "false", type)
                         h3.dropdown-list__text #{val}
                         .dropdown-list__options
                             img(class="dropdown-list__minus" src=require("minus.svg") alt="")
-                            h3(class="dropdown-list__quantity", count = 0) #{x}
+                            .dropdown-list__quantity-container
+                                h3(class="dropdown-list__quantity", count = 0) #{x}
                             img(class="dropdown-list__plus" src=require("plus.svg") alt="")

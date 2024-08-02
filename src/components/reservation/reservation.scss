@@ -1,0 +1,136 @@
+.reservation{
+    width: 380px;
+    height: 512px;
+    background-color: #fff;
+    box-shadow: 0 0 25px rgba(0, 0, 0, .2);
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 4px;
+    &__inner{
+        width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__info-container{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+    }
+
+    &__suite-container{
+        display: flex;
+        align-items: baseline;
+    }
+
+    &__symbol{
+        font-size: 14px;
+        margin-right: 3px;
+    }
+
+    &__suite-status{
+        color: $purple;
+        margin-left: 9px;
+    }
+
+    &__datedd-container{
+        margin-top: 17px;
+    }
+
+    &__dropdown-container{
+        margin-top: 20px;
+    }
+
+    &__rent-container{
+        display: flex;
+        align-items: baseline;
+        padding-top: 6px;
+    }
+    
+
+    &__suite-cost{
+        font-size: 14px;
+        padding-top: 5px;
+        margin-right: 5px;
+        color: $dark-shade-75;
+    }
+
+    &__suite-per{
+        font-size: 12px;
+    }
+
+    &__details-container{
+        display: flex;
+        flex-direction: column;
+        margin-top: 18px;
+    }
+
+    &__pricing-container{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        margin-bottom: 10px;
+        color: $dark-shade-100;
+    }
+
+    &__pricing-text{
+        position: relative;
+        width: 215px;
+        line-height: 1.4em;
+        color: $dark-shade-100;
+        font-family: 'Montserrat';
+        font-size: 14px;
+        &_after::after{
+            left: 219px;
+            top: -1px;
+            content: "i";
+            height: 20px;
+            width: 20px;
+            box-sizing: border-box;
+            display: block;
+            position: absolute;
+            border-radius: 45px;
+            border: 1px solid $dark-shade-50;
+            padding-left: 8px;
+            color: $dark-shade-50;
+            font-weight: bold;
+            font-size: 12px;
+        }
+    }
+
+    &__pricing{
+        color: $dark-shade-100;
+        transform: translateY(-2px);
+    }
+
+    &__total-container{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 17px;
+    }
+
+    &__price-container:nth-child(2){
+        flex-grow: 1;
+        border-bottom: 1px dotted $dark-shade-50;
+        transform: translateY(-5px);
+
+    }
+
+    &__total-text{
+        font-size: 19px;
+        font-weight: bold;
+        color: $dark-shade-100;
+    }
+
+
+    &__total-price{
+        font-size: 19px;
+        font-weight: bold;
+        color: $dark-shade-100;
+    }
+
+    &__button-container{
+        margin-top: 21px;
+    }
+}

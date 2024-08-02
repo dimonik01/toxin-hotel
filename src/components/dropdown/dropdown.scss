@@ -1,12 +1,15 @@
 @import '../../scss/mixins/_input.scss';
 .dropdown{
+    z-index: 1;
     &_big{
         width: 320px;
+        position: relative;
         user-select: none
     }
 
     &_medium{
         width: 265px;
+        position: relative;
         user-select: none
     }
 
@@ -14,16 +17,18 @@
         width: 265px;
         &-big{
             width: 320px;
+            position: relative;
             user-select: none
         }
 
         &-medium{
             width: 265px;
+            position: relative;
             user-select: none
         }
     }
     &__input{
-        height: 41px;
+        height: 44px;
         border-radius:3px 3px 0 0;
         border: 1px solid $dark-shade-50;
         display: flex;
@@ -57,41 +62,43 @@
     &__select{
         height: 0;
         visibility: hidden;
-        border: 1px solid $dark-shade-50;
+        border: 1px solid rgba(31, 32, 65, .3137254902);
         width: inherit;
         border-radius: 0 0 3px 3px;
         transform: translateY(-120px);
-        transition: transform 0.2s ease-out, opacity 0.15s ease-in, visibility 0s linear 0.2s, height 0.2s ease-out ;
         opacity: 0;
+        background-color: white;
         &_expanded{
             height: 115px;
-            border: 1px solid $dark-shade-50;
-            width: inherit;
+            border: 1px solid rgba(31, 32, 65, .3137254902);
             border-radius: 0 0 3px 3px;
             transform: translateY(0px);
             opacity: 1;
-            transition: transform 0.2s ease-out, opacity 0.15s ease-in, height 0.2s ease-out ;
+            position: absolute;
+            width: -webkit-fill-available;
+            background-color: white;
+            z-index: 1;
         }
 
         &_big{
             height: 0;
             visibility: hidden;
-            border: 1px solid $dark-shade-50;
+            border: 1px solid rgba(31, 32, 65, .3137254902);
             width: inherit;
             border-radius: 0 0 3px 3px;
             transform: translateY(-120px);
-            transition: transform 0.2s ease-out, opacity 0.15s ease-in, visibility 0s linear 0.2s, height 0.2s ease-out ;
             opacity: 0;
         }
 
         &_big-expanded{
             height: 156px;
-            border: 1px solid $dark-shade-50;
-            width: inherit;
+            border: 1px solid rgba(31, 32, 65, .3137254902);
             border-radius: 0 0 3px 3px;
             transform: translateY(0px);
             opacity: 1;
-            transition: transform 0.2s ease-out, opacity 0.15s ease-in, height 0.2s ease-out ;
+            position: absolute;
+            width: -webkit-fill-available;
+            background-color: white;
         }
     }
 

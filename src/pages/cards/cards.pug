@@ -22,6 +22,7 @@ include ../../components/bullet-list/bullet-list.pug
 include ../../components/room-finder/room-finder.pug
 include ../../components/ui-logo/ui-logo.pug
 include ../../components/sign-up/sign-up.pug
+include ../../components/reservation/reservation.pug
 block scripts 
     link(href=require('./cards.scss') rel='stylesheet')
 block values 
@@ -45,12 +46,14 @@ block content
                     +room-finder(roomFinderParams)
                 .cards__mixin
                     +sign-up()
-
             .cards__row
+                .cards__mixin_reservation
+                    +reservation()
             .cards__row
 block js 
     script
 
         include ../../components/date-dropdown/date-dropdown.js
         include ../../components/dropdown/dropdown.js
+        include ../../components/toggle/toggle.js
     

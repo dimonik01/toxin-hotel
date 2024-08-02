@@ -80,23 +80,29 @@
     width: 320px;
     border: 1px solid $dark-shade-50;
     border-radius: 3px 3px 3px 3px;
-    transform: translateY(5px);
-    transition: transform 0.2s ease-out, opacity 0.15s ease-in, visibility 0s linear , height 0.2s ease-out ;
+    transform: translateY(70px);
+    //transition: transform 0.2s ease-out, opacity 0.15s ease-in, visibility 0s linear , height 0.2s ease-out ;
     visibility: visible;
     margin-bottom: 20px;
     opacity: 1;
     box-sizing: border-box;
+    position: absolute;
+    z-index: 2;
+    background-color: white;
 
     &_extended{
         height: 409px;
         width: 320px;
         border: 1px solid $dark-shade-50;
-        border-radius: 0 0 3px 3px;
-        transform: translateY(5px);
-        transition: transform 0.2s ease-out, opacity 0.15s ease-in, visibility 0s linear , height 0.2s ease-out ;
+        border-radius: 3px 3px 3px 3px;
+        transform: translateY(70px);
+        //transition: transform 0.2s ease-out, opacity 0.15s ease-in, visibility 0s linear , height 0.2s ease-out ;
         visibility: visible;
         margin-bottom: 20px;
         opacity: 1;
+        position: absolute;
+        z-index: 2;
+        background-color: white;
 
     }
 
@@ -104,7 +110,7 @@
         border: 1px solid $dark-shade-50;
         border-radius: 0 0 3px 3px;
         transform: translateY(-369px);
-        transition: transform 0.2s ease-out, opacity 0.15s ease-in, visibility 0s linear 0.2s, height 0.2s ease-out ;
+        //transition: transform 0.2s ease-out, opacity 0.15s ease-in, visibility 0s linear 0.2s, height 0.2s ease-out ;
         visibility: hidden;
         opacity: 0;
         height: 0px;

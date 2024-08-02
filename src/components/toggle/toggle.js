@@ -3,6 +3,8 @@
         constructor(node){
             this.toggle = document.getElementsByClassName("real-toggle__icon").item(node);
             this.state = this.toggle.getAttribute("enabled");
+            console.log(this.toggle);
+            console.log(this.state);
             this.toggle.addEventListener("click", this.toggleHandler.bind(this));
         }
         toggleHandler(){
@@ -18,6 +20,9 @@
             }
         }
     }
-    let toggle1 = new Toggle(0);
-    let toggle2 = new Toggle(1);
+    let toggleQuantity = document.getElementsByClassName("toggle");
+    let toggleArr = [];
+    for (let i = 0; i < toggleQuantity.length; i++){
+        toggleArr[i] = new Toggle(i);
+    }
 })();

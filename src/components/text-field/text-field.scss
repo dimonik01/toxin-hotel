@@ -18,6 +18,7 @@
 
     &__input{
         @include input(319px, $dark-shade-50);
+        width: unset;
     }
 
     &__input:focus{

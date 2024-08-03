@@ -23,6 +23,7 @@ include ../../components/room-finder/room-finder.pug
 include ../../components/ui-logo/ui-logo.pug
 include ../../components/sign-up/sign-up.pug
 include ../../components/reservation/reservation.pug
+include ../../components/log-in/log-in.pug
 block scripts 
     link(href=require('./cards.scss') rel='stylesheet')
 block values 
@@ -49,6 +50,8 @@ block content
             .cards__row
                 .cards__mixin_reservation
                     +reservation()
+                .cards__mixin_reservation
+                    +log-in()
             .cards__row
 block js 
     script

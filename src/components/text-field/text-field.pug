@@ -1,5 +1,5 @@
-mixin text-field(arrText)
+mixin text-field(arrText, defaultValue = "")
     .text-field
         +ui-text(arrText)
         form(class="text-field__form" action="#" method="get")
-            input(class="text-field__input" type="text" defaultValue="Email")
+            input(class="text-field__input" type="text" placeholder = defaultValue)

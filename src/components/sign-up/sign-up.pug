@@ -5,9 +5,9 @@ mixin sign-up()
                 h1.sign-up__heading Регистрация аккаунта
             .sign-up__user-container
                 .sign-up__username-container
-                    +text-field([""])
+                    +text-field([""], "Имя")
                 .sign-up__surname-container
-                    +text-field([""])
+                    +text-field([""], "Фамилия")
                 .sign-up__gender-container
                     +radiobuttons([""])
             .sign-up__dob-container
@@ -15,9 +15,9 @@ mixin sign-up()
             .sign-up__credentials-container
                 .sign-up__email-container
                     h3.sign-up__email-text данные для входа в сервис
-                    +text-field([""])
+                    +text-field([""], "Email")
                 .sign-up__password-container
-                    +text-field([""])
+                    +text-field([""], "Пароль")
                 .sign-up__toggle-container
                     +toggle(["", false])
             .sign-up__button-container

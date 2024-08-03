@@ -75,9 +75,9 @@ block content
             .form-elements__container
                 .form-elements__column
                     div(class="ui-container ui-container_small")
-                        +text-field(textFieldArr1)
+                        +text-field(["ui","text field","DEFAULT"], "Email")
                     div(class="ui-container ui-container_dd")
-                        +text-field(textFieldArr2)
+                        +text-field(["ui","text field", "HOVER / FOCUS"], "This is pretty awesome")
                     div(class="ui-container ui-container_masked")
                         +dropdown(type2, dropdownArr2, inputText2, dropdownParams2, "big", "false", "false")
                     div(class="ui-container ui-container_datedd")

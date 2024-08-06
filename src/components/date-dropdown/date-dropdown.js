@@ -1,12 +1,10 @@
 (function(){
     const buttons = document.getElementsByClassName("date-dropdown__expand");
     const dropdown = document.getElementsByClassName("factual-dd__container");
-    console.log(dropdown);
     class DropdownToggler{
         constructor(numberButtons, numberDd){
             this.button = buttons.item(numberButtons);
             this.dropdown = dropdown.item(numberDd).parentElement;
-            console.log(this.dropdown);
             this.button.addEventListener("click", this.clickHandler.bind(this));
         }
 
@@ -17,7 +15,7 @@
         }
     }
     class Calendar{   
-        constructor(ui = false, node){
+        constructor(ui = false, node, daysActive){
             this.node = node;
             this.isUi = ui;
             this.weekdays = ["Пн","Вт","Ср","Чт","Пт","Сб","Вс"];
@@ -30,7 +28,6 @@
             this.numberdayweek = [6,0,1,2,3,4,5];
             this.titleMonths = ["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"];
             this.months = document.getElementsByClassName("factual-dd__months").item(node).childNodes;
-            console.log(this.months);
             this.firstChosen = null;
             this.secondChosen = null;
             this.listenerAssigned = false;
@@ -50,8 +47,10 @@
             };
             this.defaultYear = 2009;
             this.weekdaysNode = document.getElementsByClassName("factual-dd__weekdays_active").item(node);
-            this.daysNode = document.getElementsByClassName("factual-dd__days_active").item(node);
-            console.log(this.daysNode);
+            console.log(document.getElementsByClassName("factual-dd__weekdays_active"));
+            console.log(daysActive);
+            this.daysNode = document.getElementsByClassName("factual-dd__days_active").item(daysActive);
+            console.log(document.getElementsByClassName("factual-dd__days_active"));
             this.dayValueNode = document.getElementsByClassName("factual-dd__day-value_active").item(node);
             this.monthsNode = document.getElementsByClassName("factual-dd__months").item(node);
             this.monthValueNode = document.getElementsByClassName("factual-dd__month-value").item(node);
@@ -68,25 +67,32 @@
             this.dayValueNode.addEventListener("click", this.showMonths.bind(this));
             this.monthValueNode.addEventListener("click", this.showYears.bind(this));
             this.yearValueNode.addEventListener("click", this.showDays.bind(this));
+            console.log(`calendar ${this.node} created`);
         }
 
         initDays(){
-            let cells = document.getElementsByClassName("factual-dd__cell");
+            let cells = document.getElementsByClassName("factual-dd__months").item(this.node).nextElementSibling.childNodes;
+            console.log(this.node);
+            console.log(cells);
+            console.log(cells[0]);
             for (let i = 0; i < 7; i++){  //initialising weekdays
                 let newDiv = document.createElement("div");
                 newDiv.className = "factual-dd__days_active";
                 let newContent = document.createTextNode(this.weekdays[i]);
+                console.log(newContent);
                 newDiv.appendChild(newContent);
                 this.weekdaysNode.appendChild(newDiv);
             }
             if (this.isUi == true){
-                cells.item(10).classList.add("factual-dd__cell_current");
-                cells.item(21).classList.add("factual-dd__chosen_first");
-                cells.item(22).classList.add("factual-dd__cell_highlighted");
-                cells.item(23).classList.add("factual-dd__cell_highlighted");
-                cells.item(24).classList.add("factual-dd__cell_highlighted");
-                cells.item(25).classList.add("factual-dd__chosen_last");
+                cells[10].classList.add("factual-dd__cell_current");
+                cells[21].classList.add("factual-dd__chosen_first");
+                cells[22].classList.add("factual-dd__cell_highlighted");
+                cells[23].classList.add("factual-dd__cell_highlighted");
+                cells[24].classList.add("factual-dd__cell_highlighted");
+                cells[25].classList.add("factual-dd__chosen_last");
             }
+            console.log(`calendar ${this.node} initDays done`);
+
         }
 
         countSkippedDays(exists = false, firstDayOfTheMonth, manual = false){//finding the first day of the month corresponding it to the day of the week
@@ -113,7 +119,6 @@
 
             let extended = false;
             const factualDD = document.getElementsByClassName("factual-dd__container").item(this.node);
-            console.log(factualDD);
             while (currDay !== dayPointer){
                 dayPointer++;
                 skippedDays++;
@@ -150,6 +155,7 @@
                 newDiv.setAttribute("day-number", i);
                 newDiv.addEventListener("click", this.markChosenDay.bind(this));
             }
+            console.log(`empty cells calendar ${this.node} initialised`)
             this.fillCurrentMonth(skippedDays);
         }
 
@@ -157,7 +163,6 @@
             let dayPointer = skippedDays;
             let nextDate = 0;
             let wholeMonthArr = Array.prototype.slice.call(this.daysNode.childNodes);
-            console.log(wholeMonthArr);
             for (let i = 1; i <= this.date.getDate(); i++){
                 wholeMonthArr[dayPointer].innerHTML = i;
                 dayPointer++;
@@ -289,7 +294,7 @@
         }
 
         markChosenDay(e){
-            let cells = document.getElementsByClassName("factual-dd__cell");
+            let cells = document.getElementsByClassName("factual-dd__months").item(this.node).nextElementSibling.childNodes;
             let firstChanged = false;
             if (this.firstChosen != undefined && this.secondChosen != undefined){
                 for (let i = 0; i < cells.length; i++){
@@ -317,7 +322,7 @@
                 }
             }
             function highlightCells(f){
-                let cells = document.getElementsByClassName("factual-dd__cell");
+                let cells = document.getElementsByClassName("factual-dd__months").item(this.node).nextElementSibling.childNodes;
                 if (this.secondChosen != null){
                     f.target.removeEventListener("mouseover", highlightCells);
                     this.listenerAssigned = false;
@@ -407,14 +412,11 @@
             this.nextMonth.setAttribute("type", "month-changer");
             this.previousMonth.setAttribute("type", "month-changer");
         }
-
-        setDefaultValues(){
-
-        }
     }
     let buttonArr = [];
     let dropdownArr = [];
     let y = 0;
+    let daysActive = 0;
     let firstSkip = false;
     for (let i = 0; i < buttons.length; i++){
         if(i % 2 == 0 && firstSkip){
@@ -425,11 +427,11 @@
     }
     y = 0;
     for (let i = 0; i < dropdown.length; i++){
-        dropdownArr[i] = new Calendar(true, i);
+        dropdownArr[i] = new Calendar(true, i, daysActive);
         dropdownArr[i].countSkippedDays();
         dropdownArr[i].initDays();
+        daysActive = daysActive + 8;
     }
-    console.log(dropdownArr);
     /*let button1 = new DropdownToggler(0, 0);
     let button2 = new DropdownToggler(1, 0);
     let button3 = new DropdownToggler(2, 1);

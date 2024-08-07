@@ -1,0 +1,20 @@
+mixin card(stars = 5, img, font, room, status, cost)
+    .card
+        .card__bg-container
+            .card__slider-container 
+                div(class="card__slider card__slider_left")
+                div(class="card__slider card__slider_right")
+                    .card__slider-menu 
+                        ul.card__list
+                            li.card__list-item
+            img(class="card__bg" src=require(`${img}`))
+            
+        .card__info-container
+            .card__info-inner
+                .card__suite-container
+                        +suite(font, room, status, cost) 
+                .card__rating-container 
+                    .card__rating-subcontainer_first
+                        +rate-button([""], false,stars)
+                    .card__rating-subcontainer_second 
+                        h3.card__review-amount 145 #[span.card__reviews Отзывов]

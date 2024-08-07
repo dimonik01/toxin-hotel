@@ -1,0 +1,19 @@
+mixin suite(font, room = "888", status = "false", cost = "9 900₽")
+    .suite
+        .suite__container
+            if (font == 24)
+                h1.suite__number #[span.suite__symbol №]#{room}
+                if (status == "true")
+                    h3.suite__status люкс
+            if (font == 19)
+                h1.suite__number_small #[span.suite__symbol №]#{room}
+                if (status == "true")
+                    h3.suite__status_small люкс
+        if (font == 24)
+            .suite__rent-container
+                h3.suite__cost #{cost} 
+                p.suite__per в сутки
+        if (font == 19)
+            .suite__rent-container_small
+                h3.suite__cost_small #{cost} 
+                p.suite__per_small в сутки

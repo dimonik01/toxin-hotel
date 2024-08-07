@@ -1,0 +1,115 @@
+.card{
+    background-color: white;
+    width: 270px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, .2);
+    box-sizing: border-box;
+    border-radius: 4px;
+    &__bg-container{
+        position: relative;
+        width: 270px;
+        height: 151px;
+        border-radius: 4px 4px 0 0;
+    }
+
+    &__bg-container:hover &__slider_left{
+        background-image: linear-gradient(to left, rgba(255,0,0,0), $dark-shade-75);
+        transition: 1s all ease-in;
+    }
+
+    &__bg-container:hover &__slider_right{
+        background-image: linear-gradient(to right, rgba(255,0,0,0), $dark-shade-75);
+        transition: 1s all ease-in;
+    }
+
+    &__slider-container{
+        display: flex;
+        position: absolute;
+        height: inherit;
+        justify-content: space-between;
+        width: -webkit-fill-available;
+    }
+
+    &__slider{
+        width: 42px;
+        height: -webkit-fill-available;
+        border-radius: 4px 4px 0px 0px;
+        &_left{
+            transition: 1s all ease-in;
+            background-image: none;
+        }
+
+        &_right{
+            transition: 1s all ease-in;
+            background-image: none;
+        }
+    }
+
+    &__slider-menu{
+
+    }
+
+    &__list{
+
+    }
+
+    &_list-item{
+
+    }
+
+    &__bg{
+        border-radius: 4px 4px 0 0;
+    }
+   
+
+    &__info-container{
+        height: 88px;
+    }
+
+    &__info-inner{
+        width: 233px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__suite-container{
+        padding-left: 2px;
+        margin-top: 18px;
+        height: 37px;
+        border-bottom: 1px solid $dark-shade-25;
+    }
+
+    &__rating-container{
+        display: flex;
+        justify-content: space-between;
+        margin-top: -2px;
+        margin-left: 2px;
+    }
+
+    &__rating-subcontainer{
+        height: 20px;
+        margin-top: -6px;
+        &_first{
+            height: 20px;
+            margin-top: -5px;
+        }
+
+        &_second{
+            height: 20px;
+            margin-top: -6px;
+        }
+    }
+
+    &__review-amount{
+        font-size: 14px;
+        font-weight: bold;
+        color: $dark-shade-75;
+        margin-top: 22px;
+    }
+
+    &__reviews{
+        font-size: 14px;
+        color: $dark-shade-75;
+        font-weight: 400;
+        text-transform: capitalize;
+    }
+}

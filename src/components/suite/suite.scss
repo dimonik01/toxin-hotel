@@ -1,0 +1,56 @@
+.suite{
+    display: flex;
+    justify-content: space-between;
+    &__container{
+        display: flex;
+        align-items: baseline;
+    }
+    &__status{
+        color: $purple;
+        margin-left: 9px;
+        &_small{
+            color: $purple;
+            margin-left: 2px;
+        }
+    }
+
+    &__number{
+        &_small{
+            font-size: 19px;
+        }
+    }
+
+    &__rent-container{
+        display: flex;
+        align-items: baseline;
+        padding-top: 6px;
+        &_small{
+            display: flex;
+            margin-top: 4px;
+        }
+    }
+    
+    &__symbol{
+        font-size: 14px;
+        margin-right: 3px;
+    }
+    &__cost{
+        font-size: 14px;
+        padding-top: 5px;
+        margin-right: 5px;
+        color: $dark-shade-75;
+        &_small{
+            font-size: 14px;
+            padding-top: 5px;
+            margin-right: 2px;
+            color: $dark-shade-75;
+        }
+    }
+
+    &__per{
+        font-size: 12px;
+        &_small{
+            font-size: 12px;
+        }
+    }
+}

@@ -3,12 +3,7 @@ mixin reservation()
     .reservation
         .reservation__inner
             .reservation__info-container
-                .reservation__suite-container
-                    h1.reservation__suite-number #[span.reservation__symbol №]888
-                    h3.reservation__suite-status люкс
-                .reservation__rent-container
-                    h3.reservation__suite-cost 9 990#{ruble} 
-                    p.reservation__suite-per в сутки
+                +suite(24 , "888", "true", "9 990")
             .reservation__datedd-container
                 +date-dropdown("small", ["ui","прибытие"], ["ui","выезд"], "19.08.2019", "23.08.2019", "false")
             .reservation__dropdown-container

@@ -1,4 +1,5 @@
 mixin rate-button(uiText, isUi, starAmount = 5)
+    - var starOff = 5 - starAmount 
     .rate-button
         .rate-button__ui 
             +ui-text(uiText)
@@ -15,4 +16,5 @@ mixin rate-button(uiText, isUi, starAmount = 5)
                 .rate-button__sub-container
                     - for (let i = 0; i < starAmount; i++)
                         div(class="rate-button__star rate-button__star_on" starEnabled = "true")
-                    div(class="rate-button__star rate-button__star_off" starEnabled = "false")
+                    - for (let i = 0; i < starOff; i++)
+                        div(class="rate-button__star rate-button__star_off" starEnabled = "false")

@@ -1,14 +1,15 @@
-mixin card(stars = 5, img, font, room, status, cost)
+mixin card(stars = 5, img, font, room, status, cost, number = "100")
     .card
         .card__bg-container
             .card__slider-container 
                 div(class="card__slider card__slider_left")
+                    span(class="card__arrow card__arrow_left") expand_more
                 div(class="card__slider card__slider_right")
+                    span(class="card__arrow card__arrow_right") expand_more
                     .card__slider-menu 
                         ul.card__list
                             li.card__list-item
             img(class="card__bg" src=require(`${img}`))
-            
         .card__info-container
             .card__info-inner
                 .card__suite-container
@@ -17,4 +18,4 @@ mixin card(stars = 5, img, font, room, status, cost)
                     .card__rating-subcontainer_first
                         +rate-button([""], false,stars)
                     .card__rating-subcontainer_second 
-                        h3.card__review-amount 145 #[span.card__reviews Отзывов]
+                        +rating(number)

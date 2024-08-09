@@ -26,6 +26,7 @@ include ../../components/reservation/reservation.pug
 include ../../components/log-in/log-in.pug
 include ../../components/card/card.pug
 include ../../components/suite/suite.pug
+include ../../components/rating/rating.pug
 block scripts 
     link(href=require('./cards.scss') rel='stylesheet')
 block values 
@@ -58,9 +59,9 @@ block content
                 .cards__mixin_dd
                     +date-dropdown("", dateDropdown1, dateDropdown2, "ДД.ММ.ГГГГ", "19.08.2019", "true")
                 .cards__mixin_card
-                    +card(5, "../../img/card-bg-1.png", 19, "888", "true", "9 990₽")
+                    +card(5, "../../img/card-bg-1.png", 19, "888", "true", "9 990₽", "145")
                 .cards__mixin_card
-                    +card(4, "../../img/card-bg-1.png", 19, "840", "false", "9 900₽")
+                    +card(4, "../../img/card-bg-2.png", 19, "840", "false", "9 900₽", "65")
 block js 
     script
 

@@ -13,12 +13,26 @@
 
     &__bg-container:hover &__slider_left{
         background-image: linear-gradient(to left, rgba(255,0,0,0), $dark-shade-75);
-        transition: 1s all ease-in;
+        transition: 0.15s opacity ease-in;
+        opacity: 1;
+    }
+
+    &__bg-container &__slider_left{
+        background-image: linear-gradient(to left, rgba(255,0,0,0), $dark-shade-75);
+        transition: 0.15s opacity ease-in;
+        opacity: 0;
     }
 
     &__bg-container:hover &__slider_right{
         background-image: linear-gradient(to right, rgba(255,0,0,0), $dark-shade-75);
-        transition: 1s all ease-in;
+        transition: 0.15s opacity ease-in;
+        opacity: 1;
+    }
+
+    &__bg-container &__slider_right{
+        background-image: linear-gradient(to right, rgba(255,0,0,0), $dark-shade-75);
+        transition: 0.15s opacity ease-in;
+        opacity: 0;
     }
 
     &__slider-container{
@@ -33,6 +47,7 @@
         width: 42px;
         height: -webkit-fill-available;
         border-radius: 4px 4px 0px 0px;
+        transition: 1s all ease-in;
         &_left{
             transition: 1s all ease-in;
             background-image: none;
@@ -42,6 +57,41 @@
             transition: 1s all ease-in;
             background-image: none;
         }
+    }
+
+    &__arrow{
+        display: block;
+        font-size: 24px;
+        font-family: "Material Icons";
+        &_left{
+            transform: rotate(90deg) translateX(72px) translateY(-1px);
+            color: white;
+        }
+
+        &_right{
+            transform: rotate(270deg) translateX(-54px) translateY(-1px);
+            color: white;
+        }
+    }
+
+    &__slider_left:hover &__arrow_left{
+        transform: rotate(90deg) translateX(77px) translateY(-1px) scale(1.5);
+        transition: 0.08s transform ease-in;
+    }
+
+    &__slider_left &__arrow_left{
+        transform: rotate(90deg) translateX(72px) translateY(-1px) scale(1);
+        transition: 0.08s transform ease-in;
+    }
+
+    &__slider_right:hover &__arrow_right{
+        transform: rotate(270deg) translateX(-49px) translateY(-1px) scale(1.5);
+        transition: 0.08s transform ease-in;
+    }
+
+    &__slider_right &__arrow_right{
+        transform: rotate(270deg) translateX(-54px) translateY(-1px) scale(1);
+        transition: 0.08s transform ease-in;
     }
 
     &__slider-menu{

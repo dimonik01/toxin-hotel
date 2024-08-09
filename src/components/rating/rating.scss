@@ -1,0 +1,17 @@
+
+.rating{
+    &__review-amount{
+        font-size: 14px;
+        font-weight: bold;
+        color: $dark-shade-75;
+        margin-top: 22px;
+    }
+
+    &__reviews{
+        font-size: 14px;
+        color: $dark-shade-75;
+        font-weight: 400;
+        text-transform: capitalize; 
+    }
+
+}

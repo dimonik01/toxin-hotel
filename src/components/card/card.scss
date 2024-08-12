@@ -162,4 +162,31 @@
         font-weight: 400;
         text-transform: capitalize;
     }
+
+    &__menu-container{
+        display: block;
+        width: 42px;
+        height: 20px;
+        position: absolute;
+        top: 129px;
+        left: 213px;
+    }
+
+    &__menu{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__list-item{
+        width: 8px;
+        height: 8px;
+        border-radius: 45px;
+        border: 1px solid white;
+        box-sizing: border-box;
+        &_active{
+            background-color: white;
+        }
+
+    }
+
 }

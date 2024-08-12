@@ -2,15 +2,14 @@
 @import "../../scss/global/typography.scss";
 
 .navbar{
-    display: grid;
     position: relative;
-    width: 439px;
+    width: 450px;
 }
 
 .list{
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    margin-top: 26px;
 
 
     &__icon::after{
@@ -26,10 +25,13 @@
         top: 7px;
     }
 
-    &list__item{
-        margin-top: 26px;
-        margin-bottom: 26px;
-        flex-shrink: 0;
+    &__item:not(:first-child){
+        margin-left: 21px;
+    }
+
+
+    &__item:first-child &__link{
+        font-weight: 700;
     }
 
 }

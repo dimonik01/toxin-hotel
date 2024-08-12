@@ -1,11 +1,10 @@
 .user{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex-grow: 1;
-
-    &__name{
-
-
-    }
+    margin-bottom: auto;
+    border-left: 1px solid $dark-shade-25;
+    margin-left: 18px;
+    height: 45%;
+    margin-top: auto;
+ &__name{
+    transform: translateX(21px) translateY(3px);
+ }
 }

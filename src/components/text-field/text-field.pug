@@ -1,5 +1,8 @@
-mixin text-field(arrText, defaultValue = "")
+mixin text-field(arrText, defaultValue = "", bold = "false")
     .text-field
         +ui-text(arrText)
         form(class="text-field__form" action="#" method="get")
-            input(class="text-field__input" type="text" placeholder = defaultValue)
+            if (bold == "true")
+                input(class="text-field__input text-field__input_bold" type="text" placeholder = defaultValue)
+            if (bold == "false")
+                input(class="text-field__input" type="text" placeholder = defaultValue)

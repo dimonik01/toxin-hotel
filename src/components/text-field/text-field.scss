@@ -3,7 +3,7 @@
 .text-field{
     width: 319px;
     &__form{
-        @include form(319px, $dark-shade-50);
+        @include form(319px, $dark-shade-75);
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -19,6 +19,13 @@
     &__input{
         @include input(319px, $dark-shade-50);
         width: unset;
+        &_bold{
+            color: $dark-shade-75;
+        }
+
+        &_bold::placeholder{
+            color: $dark-shade-75;
+        }
     }
 
     &__input:focus{

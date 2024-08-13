@@ -1,0 +1,15 @@
+extends ../../layouts/toxin-layout.pug
+include ../../components/header-logged-out/header-logged-out.pug
+include ../../components/header-logged-in/header-logged-in.pug
+include ../../components/footer/footer.pug
+include ../../components/footer-mobile/footer-mobile.pug
+include ../../components/subscription-text-field/subscription-text-field.pug
+include ../../components/ui-text/ui-text.pug
+include ../../components/footer-list/footer-list.pug
+include ../../components/socials/socials.pug
+block scripts 
+    link(href=require('./landing.scss') rel='stylesheet')
+block content
+block js 
+    script
+        include ./landing.js

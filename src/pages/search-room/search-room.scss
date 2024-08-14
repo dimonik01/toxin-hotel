@@ -1,0 +1,75 @@
+@import '../../scss/variables.scss';
+.search-room{
+    background-color: $dark-shade-5;
+    &__sidebar{
+        margin-top: 31px;
+    }
+
+    &__sidebar-container{
+        &_filter{
+
+        }
+
+        &_dd{
+            margin-top: 21px;
+        }
+
+        &_range{
+            margin-top: 24px;
+        }
+
+        &_cbuttons{
+            margin-top: 59px;
+        }
+
+        &_accdd{
+            margin-top: 33px;
+        }
+
+        &_rich{
+            margin-top: 12px;
+        }
+
+        &_cbdd{
+            margin-top: 33px;
+        }
+    }
+
+    &__inner{
+        width: 1160px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__heading-container{
+
+    }
+
+    &__heading{
+
+    }
+
+    &__cards-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 21px;
+    
+    }
+
+    &__card-container{
+        margin-bottom: 20px;
+    }
+
+    &__pagination-container{
+
+    }
+
+    &__cards{
+        width: 834px;
+        margin-top: 30px;
+        
+    }
+}

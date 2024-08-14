@@ -1,4 +1,4 @@
-mixin sign-up()
+mixin sign-up(btnText = "перейти к оплате", production = "false")
     .sign-up
         .sign-up__inner
             .sign-up__heading-container 
@@ -21,9 +21,13 @@ mixin sign-up()
                 .sign-up__toggle-container
                     +toggle(["", false])
             .sign-up__button-container
-                +buttons("default","big", "перейти к оплате")
+                +buttons("default","big", btnText)
             .sign-up__extras-container
                 .sign-up__text-container
                     p.sign-up__text Уже есть аккаунт на Toxin
                 .sign-up__redirect-container
-                    +buttons("hollow","small", "войти")
+                    if (production == "false")
+                        +buttons("hollow","small", "войти")
+                    if (production == "true")
+                        a(class="sign-up__redirect" href="./registration.html")
+                            +buttons("hollow","small", "войти")

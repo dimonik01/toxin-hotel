@@ -1,0 +1,79 @@
+extends ../../layouts/toxin-layout.pug
+include ../../components/header-logged-out/header-logged-out.pug
+include ../../components/header-logged-in/header-logged-in.pug
+include ../../components/footer/footer.pug
+include ../../components/footer-mobile/footer-mobile.pug
+include ../../components/ui-text/ui-text.pug
+include ../../components/filter-date-dropdown/filter-date-dropdown.pug
+include ../../components/dropdown/dropdown.pug
+include ../../components/range/range.pug
+include ../../components/checkbox/checkbox.pug
+include ../../components/checkbox-dropdown/checkbox-dropdown.pug
+include ../../components/check-buttons/check-buttons.pug
+include ../../components/rich-checkbox/rich-checkbox.pug
+include ../../components/rate-button/rate-button.pug
+include ../../components/pagination/pagination.pug
+include ../../components/card/card.pug
+include ../../components/suite/suite.pug
+include ../../components/rating/rating.pug
+
+block scripts 
+    link(href=require('./search-room.scss') rel='stylesheet')
+block content
+    .search-room
+        .search-room__inner 
+            .search-room__sidebar
+                div(class="search-room__sidebar-container search-room__sidebar-container_filter")
+                    +filter-date-dropdown(["ui", "даты пребывания в отеле"])
+                div(class="search-room__sidebar-container search-room__sidebar-container_dd")
+                    +dropdown("",["ui","гости"], "3 гостя, 1 младенец", ["Взрослые", "Дети", "Младенцы"], "medium", "true" ,"true")
+                div(class="search-room__sidebar-container search-room__sidebar-container_range")
+                    +range(["ui", "диапазон цены","5 000₽ - 10 000₽"])
+                div(class="search-room__sidebar-container search-room__sidebar-container_cbuttons")
+                    +cbuttons(["ui","правила дома"], ["Можно курить","Можно с питомцами","Можно пригласить гостей (до 10 человек)"], ["", "checked"," checked"], 14)
+                div(class="search-room__sidebar-container search-room__sidebar-container_accdd")
+                    +rich-checkbox(["ui","доступность"], ["Ширина коридоров в номере не менее 91 см.", "На 1 этаже вас встретит специалист  и проводит до номера."], ["Широкий коридор", "Помошник для инвалидов"], ["",""], 12)
+                div(class="search-room__sidebar-container search-room__sidebar-container_rich")
+                    +dropdown("accomodation",["ui","удобства номера"], "2 спальни, 2 кровати", ["Спальни","Кровати","Ванные комнаты"], "medium", "true" ,"true")
+                div(class="search-room__sidebar-container search-room__sidebar-container_cbdd")
+                    +checkbox-dropdown("medium", ["ui","дополнительные удобства"], ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка","Телевизор","Шампунь"], false, ["","checked","checked","checked","",""], 14)
+            .search-room__cards 
+                .search-room__heading-container
+                    h1.search-room__heading Номера, которые мы для вас подобрали
+                .search-room__cards-container 
+                    .search-room__card-container
+                        +card(5, "../../img/card-bg-1.png", 19, "880", "true", "9 990₽", "145")
+                    .search-room__card-container
+                        +card(4, "../../img/card-bg-2.png", 19, "840", "false", "9 990₽", "65")
+                    .search-room__card-container
+                        +card(3, "../../img/card-bg-3.png", 19, "980", "true", "8 500₽", "35")
+                    .search-room__card-container
+                        +card(5, "../../img/card-bg-4.png", 19, "856", "false", "7 300₽", "19")
+                    .search-room__card-container
+                        +card(4, "../../img/card-bg-5.png", 19, "740", "false", "6 000₽", "44")
+                    .search-room__card-container
+                        +card(3, "../../img/card-bg-6.png", 19, "982", "false", "5 800₽", "56")
+                    .search-room__card-container
+                        +card(5, "../../img/card-bg-7.png", 19, "678", "false", "5 500₽", "45")
+                    .search-room__card-container
+                        +card(4, "../../img/card-bg-8.png", 19, "450", "false", "5 300₽", "39 ")
+                    .search-room__card-container
+                        +card(3, "../../img/card-bg-9.png", 19, "350", "false", "5 000₽", "77")
+                    .search-room__card-container
+                        +card(5, "../../img/card-bg-10.png", 19, "666", "false", "9 990₽", "145")
+                    .search-room__card-container
+                        +card(3, "../../img/card-bg-11.png", 19, "444", "false", "5 000₽", "115")
+                    .search-room__card-container
+                        +card(3, "../../img/card-bg-12.png", 19, "352", "false", "5 000₽", "55")
+                .search-room__pagination-container
+block js 
+    script
+        include ../../components/toggle/toggle.js
+        include ../../components/rate-button/rate-button.js
+        include ../../components/range/range.js
+        include ../../components/pagination/pagination.js
+        include ../../components/dropdown/dropdown.js
+        include ../../components/date-dropdown/date-dropdown.js
+        include ../../components/card/card.js
+        include ../../components/checkbox/checkbox.js
+        include ../../components/like/like.js

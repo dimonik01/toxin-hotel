@@ -15,6 +15,11 @@ module.exports = {
     // define Pug files in entry:
     index: './src/pages/starting-page/starting-page.pug',
     uiKit: './src/pages/ui-kit/ui-kit.pug',
+    toxinRouter: './src/pages/toxin-router/toxin-router.pug',
+    landing: './src/pages/landing/landing.pug',
+    searchRoom: './src/pages/search-room/search-room.pug',
+    roomDetails: './src/pages/room-details/room-details.pug',
+    registration: './src/pages/registration/registration.pug',
     colorsAndType: './src/pages/colors-and-type/colors-and-type.pug',
     formElements: './src/pages/form-elements/form-elements.pug',
     headersAndFooters: './src/pages/headers-and-footers/headers-and-footers.pug',

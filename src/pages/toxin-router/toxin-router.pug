@@ -1,0 +1,9 @@
+extends ../../layouts/ui-kit-layout.pug
+block scripts 
+    link(href=require('./toxin-router.scss') rel='stylesheet')
+    block content
+    .router 
+        a(class="router__link router_first" href="./landing.html") Landing Page
+        a(class="router__link" href="./searchRoom.html") Search Room
+        a(class="router__link" href="./roomDetails.html") Room Details
+        a(class="router__link" href="./registration.html") Registration

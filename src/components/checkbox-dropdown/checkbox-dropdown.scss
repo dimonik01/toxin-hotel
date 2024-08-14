@@ -17,10 +17,10 @@
                 content: "expand_more";
                 font-size: 24px;
                 cursor: pointer;
-                color: rgba(31, 32, 65, 0.4588235294);
-                margin-left: 40px;
-                transform: translateY(-5px);
-                transition: transform 0.1s ease-in 0.05s ;
+                color: $dark-shade-50;
+                margin-right: -40px;
+                transform: translateY(-5px) translateX(25px);
+                transition: transform .1s ease-in .05s;
             }
         }
         &_open{

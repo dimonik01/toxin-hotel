@@ -1,0 +1,41 @@
+.landing{
+    height: 830px;
+    background-image: url("../../img/landing.png");
+    background-size: 100%;
+    background-position-y: 60%;
+    &__inner{
+        width: 1166px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        justify-content: space-between;
+        height: -webkit-fill-available;
+    }
+
+    &__bg{
+        
+        
+    }
+
+    &__column{
+
+    }
+
+    &__column-container{
+        &_first{
+            margin-top: 71px;
+            margin-left: 5px;
+        }
+
+        &_second{
+            width: 260px;
+            margin-top: 761px;
+            margin-right: -5px;
+            text-align: right;
+        }
+    }
+
+    &__text{
+        
+    }
+}

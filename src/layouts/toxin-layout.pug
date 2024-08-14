@@ -4,12 +4,13 @@ html
         block default-scripts
             link(href=require('../index.scss') rel='stylesheet')
         block scripts
-        block values
+        block default-values
             script
                 - let arr1 = ["Навигация","О нас", "Новости", "Служба поддержки", "Услуги"]
                 - let arr2 = ["О нас","О сервисе","Наша команда","Вакансии","Инвесторы"]
                 - let arr3 = ["Служба поддержки","Соглашения","Сообщества","Связь с нами"]
                 - let arr4 = ["Подписка","Получайте специальные предложения и новости сервиса"]
+        block values
     body
         block header 
             .layout-header

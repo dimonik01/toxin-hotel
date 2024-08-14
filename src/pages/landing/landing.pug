@@ -7,9 +7,33 @@ include ../../components/subscription-text-field/subscription-text-field.pug
 include ../../components/ui-text/ui-text.pug
 include ../../components/footer-list/footer-list.pug
 include ../../components/socials/socials.pug
+include ../../components/room-finder/room-finder.pug
+include ../../components/date-dropdown/date-dropdown.pug
+include ../../components/dropdown/dropdown.pug
+include ../../components/buttons/buttons.pug
 block scripts 
     link(href=require('./landing.scss') rel='stylesheet')
+block values
+    - var roomFinderUi = ["ui","Найдём номера под ваши пожелания"]
+    - var dropdownUiArr1 = ["ui","Прибытие",""]
+    - var dropdownUiArr2 = ["ui","Выезд",""]
+    - var dropdownUiArr3 = ["ui","Гости",""]
+    - var roomFinderDropdown = ["small",dropdownUiArr1,dropdownUiArr2,"ДД.ММ.ГГГГ","ДД.ММ.ГГГГ"]
+    - var accomodationParams = ["Взрослые", "Дети", "Младенцы"]
+    - var roomFinderAccomodation = ["", dropdownUiArr3, "Сколько гостей", accomodationParams, "big"]
+    - var roomFinderButtons = ["default","big","Подобрать номер"]
+    - var roomFinderParams = [roomFinderUi, roomFinderDropdown, roomFinderAccomodation, roomFinderButtons]
 block content
+    .landing
+        .landing__inner
+            .landing__column
+                div(class="landing__column-container landing__column-container_first")
+                    +room-finder(roomFinderParams)
+            .landing__column
+                div(class="landing__column-container landing__column-container_second")
+                    p.landing__text Лучшие номера для вашей работы, отдыха и просто вдохновения
 block js 
     script
         include ./landing.js
+        include ../../components/date-dropdown/date-dropdown.js
+        include ../../components/dropdown/dropdown.js

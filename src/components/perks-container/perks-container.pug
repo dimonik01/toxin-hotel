@@ -1,5 +1,7 @@
 include ../perks/perks.pug
-mixin perks-container(perksArr1, perksArr2)
+mixin perks-container(perksArr1, perksArr2, production = "false")
     .perks
         +perks(perksArr1)
         +perks(perksArr2)
+        if(production == "true")
+            +perks(["../../svg/cozy.svg", "Уют", "Номер оснащен камином"])

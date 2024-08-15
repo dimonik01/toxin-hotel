@@ -1,11 +1,11 @@
-mixin commentary(uiText, name, date, text)
+mixin commentary(uiText, name, date, text, image = "murad.png", likeAmount = "12", likeOn = "on")
     .commentary
         .commentary__ui     
             +ui-text(uiText)
         .commentary__container  
             .commentary-user
                 .commentary-user__pfp-container
-                    img(class="commentary-user__pfp" src=require("../../img/murad.png"))
+                    img(class="commentary-user__pfp" src=require(`../../img/${image}`))
                 .commentary-user__container
                     .commentary-user__name-container
                         p.commentary-user__name #{name}
@@ -13,6 +13,6 @@ mixin commentary(uiText, name, date, text)
                         p.commentary-user__date #{date}
             .contents
                 .contents__like
-                    +like("on", 12)
+                    +like(likeOn, likeAmount)
                 .contents__comment-container
                     p.contents__comment #{text}

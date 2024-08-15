@@ -1,0 +1,85 @@
+.room-details{
+    &__room-wrapper{
+        display: flex;
+        justify-content: center;
+
+    }
+
+    &__column{
+
+    }
+
+    &__background{
+        &_first{
+            width: 453px;
+            height: 243px;
+            background-image: url("../../img/room-details-2.png");
+        }
+
+        &_second{
+            width: 453px;
+            height: 242px;
+            background-image: url("../../img/room-details-3.png");
+        }
+
+        &_big{
+            height: 485px;
+            width: 981px;
+            background-image: url("../../img/room-details.png");
+        }
+    }
+
+    &__inner{
+        width: 1165px;
+        margin-left: auto;
+        margin-top: auto;
+    }
+
+    &__inner-column{
+
+    }
+
+    &__inner-row{
+
+    }
+
+    &__perks-container{
+
+    }
+
+    &__review-container{
+
+    }
+
+    &__commentary-wrapper{
+
+    }
+
+    &__commentary-container{
+
+    }
+
+    &__rules-wrapper{
+
+    }
+
+    &__rules-container{
+
+    }
+
+    &__reservation-container{
+
+    }
+
+    &__heading-container{
+
+    }
+
+    &__heading{
+
+    }
+
+    &__subheading{
+        
+    }
+}

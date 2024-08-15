@@ -1,0 +1,54 @@
+extends ../../layouts/toxin-layout.pug
+include ../../components/header-logged-out/header-logged-out.pug
+include ../../components/header-logged-in/header-logged-in.pug
+include ../../components/footer/footer.pug
+include ../../components/footer-mobile/footer-mobile.pug
+include ../../components/ui-text/ui-text.pug
+include ../../components/perks-container/perks-container.pug
+include ../../components/commentary/commentary.pug
+include ../../components/like/like.pug
+include ../../components/bullet-list/bullet-list.pug
+
+block scripts 
+    link(href=require('./room-details.scss') rel='stylesheet')
+block content
+    .room-details 
+        .room-details__room-wrapper 
+            .room-details__column
+                div(class="room-details__background room-details__background_big")
+            .room-details__column
+                div(class="room-details__background room-details__background_first")
+                div(class="room-details__background room-details__background_second")
+        .room-details__inner 
+            .room-details__inner-column
+                .room-details__inner-row
+                    .room-details__perks-container
+                        +perks-container(["../../svg/perk_comfort.svg", "Комфорт", "Шумопоглощающие стены"], ["../../svg/perk_conveniency.svg", "Удобство", "Окно в каждой из спален"], "true")
+                    .room-details__review-container
+                .room-details__commentary-wrapper
+                    .room-details__heading-container 
+                        h2.room-details__heading Отзывы посетителей отеля
+                        p.room-details__subheading 2 отзыва
+                    .room-details__commentary-container
+                        +commentary([""], "Мурад Сарафанов","5 дней назад","Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.", "murad.png", "12", "on")
+                    .room-details__commentary-container
+                        +commentary([""], "Патрисия Стёклышкова","Неделю назад","Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент", "patricia.png", "2", "off")
+                .room-details__rules-wrapper
+                    .room-details__rules-container
+                        .room-details__heading-container
+                            h2.room-details__heading Правила
+                        .room-details__bullet-container 
+                            +bullet-list([""],["Нельзя с питомцами","Без вечеринок и мероприятий","Время прибытия — после 13:00, а выезд до 12:00"])
+                    .room-details__rules-container
+                        .room-details__cancel-container 
+                            .room-details__heading-container
+                                h2.room-details__heading Отмена
+                            .room-details__canceltext-container
+                                p.room-details__cancel Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+
+            .room-details__inner-column
+                .room-details__reservation-container
+             
+block js 
+    script
+        include ../../components/like/like.js

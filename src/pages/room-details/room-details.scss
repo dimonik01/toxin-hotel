@@ -1,11 +1,8 @@
+@import '../../scss/variables.scss';
 .room-details{
     &__room-wrapper{
         display: flex;
         justify-content: center;
-
-    }
-
-    &__column{
 
     }
 
@@ -30,56 +27,141 @@
     }
 
     &__inner{
-        width: 1165px;
+        width: 1332px;
         margin-left: auto;
-        margin-top: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: row;
+    
     }
 
     &__inner-column{
-
+        &_first{
+            width: 775px;
+        }
     }
 
     &__inner-row{
-
-    }
-
-    &__perks-container{
-
+        display: flex;
+        flex-direction: row;
+        margin-top: 70px;
+        margin-left: 5px;
     }
 
     &__review-container{
-
+        margin-left: 84px;
+        width: 320px;
     }
 
     &__commentary-wrapper{
-
+        margin-top: 102px;
+        margin-left: 3px;
+        width: 712px;
     }
+    
 
     &__commentary-container{
+        margin-top: 20px;
+    }
 
+    &__commentary-container:nth-child(3){
+        margin-top: 23px;
     }
 
     &__rules-wrapper{
-
+        margin-top: 33px;
+        display: flex;
+        flex-direction: row;
     }
 
     &__rules-container{
+        margin-left: 4px;
+    }
 
+    &__rules-heading{
+        margin-left: 21px;
+        margin-bottom: 19px;
+        &_second{
+            margin-left: -1px;
+        }
     }
 
     &__reservation-container{
-
+        margin-top: 71px;
+        margin-left: 5px;
     }
 
     &__heading-container{
-
+        display: flex;
+        justify-content: space-between;
     }
 
-    &__heading{
-
+    &__perks{
+        margin-top: 20px;
     }
 
-    &__subheading{
+    &__cancel-container{
+        margin-left: 98px;
+        width: 330px;
+    }
+
+    &__canceltext-container{
+        margin-top: 18px;
+    }
+
+    &__pie-wrapper{
+        display: flex;
+        margin-top: 21px;
+    }
+
+    &__list-container{
+        margin-left: 46px;
+        margin-top: 30px;
+    }
+
+    &__bullet-item{
+        font-family: 'Montserrat';
+        font-size: 14px;
+        position: relative;
         
+        &_first::before{
+            background-image: linear-gradient( #FFE39C, #FFBA9C ) !important;
+        }
+
+        &_second::before{
+            background-image: linear-gradient( #6FCF97, #66D2EA ) !important;
+        }
+
+        &_third::before{
+            background-image: linear-gradient( #BC9CFF, #8BA4F9 ) !important;
+        }
+
+        &_fourth::before{
+            background-image: linear-gradient( #909090, #3D4975 ) !important;
+        }
     }
+
+    &__bullet-item::before{
+        content: "";
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        background-color: aqua;
+        position: absolute;
+        left: -14px;
+        border-radius: 45px;
+        top: 5px;
+    }
+
+    &__bullet-item:not(:first-child){
+        margin-top: 6px;
+    }
+}
+
+.border{
+    width: -webkit-fill-available;
+    border-bottom: 1px solid rgba(31, 32, 65, .2470588235);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 58px;
 }

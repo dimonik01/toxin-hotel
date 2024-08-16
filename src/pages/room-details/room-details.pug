@@ -8,6 +8,11 @@ include ../../components/perks-container/perks-container.pug
 include ../../components/commentary/commentary.pug
 include ../../components/like/like.pug
 include ../../components/bullet-list/bullet-list.pug
+include ../../components/reservation/reservation.pug
+include ../../components/dropdown/dropdown.pug
+include ../../components/date-dropdown/date-dropdown.pug
+include ../../components/suite/suite.pug
+include ../../components/buttons/buttons.pug
 
 block scripts 
     link(href=require('./room-details.scss') rel='stylesheet')
@@ -20,14 +25,28 @@ block content
                 div(class="room-details__background room-details__background_first")
                 div(class="room-details__background room-details__background_second")
         .room-details__inner 
-            .room-details__inner-column
+            div(class="room-details__inner-column room-details__inner-column_first")
                 .room-details__inner-row
                     .room-details__perks-container
-                        +perks-container(["../../svg/perk_comfort.svg", "Комфорт", "Шумопоглощающие стены"], ["../../svg/perk_conveniency.svg", "Удобство", "Окно в каждой из спален"], "true")
+                        .room-details__heading-container 
+                            h2.room-details__heading Сведения о номере
+                        .room-details__perks
+                            +perks-container(["../../svg/perk_comfort.svg", "Комфорт", "Шумопоглощающие стены"], ["../../svg/perk_conveniency.svg", "Удобство", "Окно в каждой из спален"], "true")
                     .room-details__review-container
+                        .room-details__heading-container 
+                            h2.room-details__heading Впечатления от номера
+                        .room-details__pie-wrapper
+                            .room-details__pie-container
+                                img(class="room-details__pie" src=require("../../svg/Pie.svg"))
+                            .room-details__list-container
+                                ul.room-details__bullet-list 
+                                    li(class="room-details__bullet-item room-details__bullet-item_first") Великолепно
+                                    li(class="room-details__bullet-item room-details__bullet-item_second") Хорошо
+                                    li(class="room-details__bullet-item room-details__bullet-item_third") Удовлетворительно
+                                    li(class="room-details__bullet-item room-details__bullet-item_fourth") Разочарован
                 .room-details__commentary-wrapper
                     .room-details__heading-container 
-                        h2.room-details__heading Отзывы посетителей отеля
+                        h2.room-details__heading Отзывы посетителей номера
                         p.room-details__subheading 2 отзыва
                     .room-details__commentary-container
                         +commentary([""], "Мурад Сарафанов","5 дней назад","Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.", "murad.png", "12", "on")
@@ -35,20 +54,26 @@ block content
                         +commentary([""], "Патрисия Стёклышкова","Неделю назад","Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент", "patricia.png", "2", "off")
                 .room-details__rules-wrapper
                     .room-details__rules-container
-                        .room-details__heading-container
+                        .room-details__rules-heading
                             h2.room-details__heading Правила
                         .room-details__bullet-container 
                             +bullet-list([""],["Нельзя с питомцами","Без вечеринок и мероприятий","Время прибытия — после 13:00, а выезд до 12:00"])
                     .room-details__rules-container
                         .room-details__cancel-container 
-                            .room-details__heading-container
+                            div(class="room-details__rules-heading room-details__rules-heading_second")
                                 h2.room-details__heading Отмена
                             .room-details__canceltext-container
                                 p.room-details__cancel Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
 
-            .room-details__inner-column
+            div(class="room-details__inner-column room-details__inner-column_second")
                 .room-details__reservation-container
+                    +reservation()
+    .border
              
 block js 
     script
         include ../../components/like/like.js
+        include ../../components/date-dropdown/date-dropdown.js
+        include ../../components/dropdown/dropdown.js
+        include ../../components/toggle/toggle.js
+        include ../../components/card/card.js

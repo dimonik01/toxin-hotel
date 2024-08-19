@@ -2,7 +2,7 @@
 @import '../../scss/mixins/_form.scss';
 .substext{
     &__form{
-        @include form($form-m, $dark-shade-50);
+        @include form($form-m, $dark-shade-25);
         margin: 0px;
         display:flex;
         box-sizing: border-box;

@@ -15,4 +15,5 @@ mixin log-in()
                 .log-in__text-container
                     p.log-in__text Нет аккаунта на Toxin?
                 .log-in__redirect-container
-                    +buttons("hollow","small", "создать")
+                    a(class="log-in__redirect" href="./registration.html")
+                        +buttons("hollow","small", "создать")

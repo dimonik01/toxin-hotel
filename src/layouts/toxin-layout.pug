@@ -18,5 +18,9 @@ html
         block content
         block footer
             .layout-footer 
-                +footer(arr1,arr2,arr3,arr4)  
+                +footer(arr1,arr2,arr3,arr4)
+        block default js
+            script 
+                include ../components/header-logged-out/header-logged-out.js 
         block js
+            

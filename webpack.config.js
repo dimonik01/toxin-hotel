@@ -24,7 +24,8 @@ module.exports = {
     formElements: './src/pages/form-elements/form-elements.pug',
     headersAndFooters: './src/pages/headers-and-footers/headers-and-footers.pug',
     cards: './src/pages/cards/cards.pug',
-    landing: './src/pages/landing/landing.pug'
+    landing: './src/pages/landing/landing.pug',
+    signIn: './src/pages/sign-in/sign-in.pug'
     // ...
   },
 

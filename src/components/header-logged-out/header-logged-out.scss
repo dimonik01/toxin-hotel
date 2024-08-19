@@ -1,6 +1,69 @@
 .header-logged-out{
     display: flex;
     justify-content: center;
+    &__mobile{
+        margin-right: 10%;
+        margin-top: 33px;
+        position: relative;
+        display: none;
+        &::after{
+            @media (max-width: 1000px){
+                content: "";
+                position: absolute;
+                display: block;
+                top: 20px;
+                width: 50px;
+                height: 1px;
+                background-color: $dark-shade-50;
+            }
+        }
+
+        &::before{
+            @media (max-width: 1000px){
+                content: "";
+                position: absolute;
+                top: -20px;
+                display: block;
+                width: 50px;
+                height: 1px;
+                background-color: $dark-shade-50;
+            } 
+        }
+        @media (max-width: 1000px){
+            display: block;
+            width: 50px;
+            height: 1px;
+            background-color: $dark-shade-50;
+        }
+        &_inactive{
+
+        }
+    }
+
+    &__menu{
+        &_inactive{
+            @media (max-width:1000px) {
+                margin-right: 10%;
+                z-index: 10;
+            }
+            
+        }
+        
+    }
+
+    &__mobile-menu{
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background-color: #e5e5e5;
+        z-index: 5;
+        &_inactive{
+            display: none;
+        }
+        &_active{
+            display: block;
+        }
+    }
 
     &__container{
         display: grid;
@@ -8,8 +71,21 @@
         width: 391px + 439px + 328px;
         height: 70px;
         background-color:#FFFFFF;
-        ;
+        @media (max-width: 1400px){
+            display: flex;
+            justify-content: space-around;
+        }
+
+        @media (max-width: 1050px){
+            display: flex;
+            justify-content: space-between;
+        }
     }
 
+    
+
 }
+
+
+
 

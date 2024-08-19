@@ -20,21 +20,21 @@
 
     &__form{
         &_s{
-            @include form($form-s, $dark-shade-50);
+            @include form($form-s, $dark-shade-25);
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin: 0px;
         }
         &_m{
-            @include form($form-m, $dark-shade-50);
+            @include form($form-m, $dark-shade-25);
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin: 0px;
         }
         &_b{
-            @include form(319px, $dark-shade-50);
+            @include form(319px, $dark-shade-25);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -43,19 +43,19 @@
     }
 
     &__input_m{
-        @include input($form-m, $dark-shade-50);
+        @include input($form-m, $dark-shade-25);
         display: flex;
         align-items: center;
         height: 41px
     }
     &__input_b{
-        @include input($form-b, $dark-shade-50);
+        @include input($form-b, $dark-shade-25);
         display: flex;
         align-items: center;;
     }
 
     &__input_s{
-        @include input($form-s, $dark-shade-50);
+        @include input($form-s, $dark-shade-25);
         display: flex;
         align-items: center;
           

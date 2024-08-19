@@ -1,12 +1,17 @@
 include ../logo/logo.pug
 include ../navbar/navbar.pug
 include ../unauthed/unauthed.pug
+include ../header-mobile/header-mobile.pug
 mixin header-logged-out
     .header-logged-out
         .header-logged-out__container
             +logo("header")
             +navbar
             +unauthed
+            a(class="header-logged-out__menu_inactive")
+                div(class="header-logged-out__mobile header-logged-out__mobile_inactive")
+            div(class="header-logged-out__mobile-menu header-logged-out__mobile-menu_inactive")
+                +header-mobile()
                 
                      
                             

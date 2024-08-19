@@ -1,0 +1,15 @@
+include ../navbar/navbar.pug
+include ../unauthed/unauthed.pug
+mixin header-mobile()
+    .mobile
+        .mobile__inner
+            .mobile__container
+                +navbar()
+                ul.mobile__list 
+                    li.mobile__list-item 1
+                    li.mobile__list-item 1
+                    li.mobile__list-item 1
+
+                    li.mobile__list-item 1
+            .mobile__container
+                +unauthed()

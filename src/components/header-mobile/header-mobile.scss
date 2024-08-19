@@ -1,0 +1,14 @@
+.mobile{
+    height: 1000px;
+    width: 1000px;
+    &_inner{
+        width: 1000px;
+        margin-left: auto;
+        margin-right:auto;
+    }
+
+    &__container{
+        display: block;
+    }
+
+}

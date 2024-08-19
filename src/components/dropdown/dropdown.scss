@@ -30,7 +30,7 @@
     &__input{
         height: 42px;
         border-radius:3px 3px 0 0;
-        border: 1px solid $dark-shade-50;
+        border: 1px solid $dark-shade-25;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -49,6 +49,7 @@
         font-size: 24px;
         cursor: pointer;
         display: block;
+        color: $dark-shade-50;
 
     }
 
@@ -62,7 +63,7 @@
     &__select{
         height: 0;
         visibility: hidden;
-        border: 1px solid rgba(31, 32, 65, .3137254902);
+        border: 1px solid $dark-shade-25;
         width: inherit;
         border-radius: 0 0 3px 3px;
         transform: translateY(-120px);
@@ -70,7 +71,7 @@
         background-color: white;
         &_expanded{
             height: 115px;
-            border: 1px solid rgba(31, 32, 65, .3137254902);
+            border: 1px solid $dark-shade-25;
             border-radius: 0 0 3px 3px;
             transform: translateY(0px);
             opacity: 1;
@@ -83,7 +84,7 @@
         &_big{
             height: 0;
             visibility: hidden;
-            border: 1px solid rgba(31, 32, 65, .3137254902);
+            border: 1px solid $dark-shade-25;
             width: inherit;
             border-radius: 0 0 3px 3px;
             transform: translateY(-120px);
@@ -92,7 +93,7 @@
 
         &_big-expanded{
             height: 156px;
-            border: 1px solid rgba(31, 32, 65, .3137254902);
+            border: 1px solid $dark-shade-25;
             border-radius: 0 0 3px 3px;
             transform: translateY(0px);
             opacity: 1;

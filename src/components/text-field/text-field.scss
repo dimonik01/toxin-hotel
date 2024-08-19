@@ -3,7 +3,7 @@
 .text-field{
     width: 319px;
     &__form{
-        @include form(319px, $dark-shade-75);
+        @include form(319px, $dark-shade-25);
         display: flex;
         justify-content: center;
         flex-direction: column;

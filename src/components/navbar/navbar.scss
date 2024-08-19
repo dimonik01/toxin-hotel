@@ -4,6 +4,9 @@
 .navbar{
     position: relative;
     width: 450px;
+    @media (max-width: 1000px) {
+        display: none;
+    }
 }
 
 .list{
@@ -33,5 +36,10 @@
     &__item:first-child &__link{
         font-weight: 700;
     }
+
+    @media (max-width: 1000px) {
+        display: none;
+    }
+
 
 }

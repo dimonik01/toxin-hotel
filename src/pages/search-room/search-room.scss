@@ -3,13 +3,17 @@
     background-color: $dark-shade-5;
     &__sidebar{
         margin-top: 31px;
+        @media (max-width:1250px) {
+            position: fixed;
+            margin-left: 5%;
+        }
+
+        @media (max-width:1050px) {
+            display: none;
+        }
     }
 
     &__sidebar-container{
-        &_filter{
-
-        }
-
         &_dd{
             margin-top: 21px;
         }
@@ -41,10 +45,17 @@
         margin-right: auto;
         display: flex;
         justify-content: space-between;
+        @media (max-width:1050px) {
+            justify-content: center;
+            width: 100vw;
+        }
     }
 
     &__heading-container{
-
+        @media (max-width:1050px ) {
+            display: none;
+            
+        }
     }
 
     &__heading{
@@ -67,9 +78,42 @@
 
     }
 
+    &__placeholder{
+        @media (max-width:1250px) {
+            width: 266px;
+        }
+        @media (max-width:1050px) {
+            display: none;
+        }
+    }
+
     &__cards{
         width: 834px;
         margin-top: 30px;
+
+        @media (max-width:1250px) {
+            width: 560px;
+            margin-right: 150px;
+        }
+        @media (max-width:1050px) {
+            margin-right: 0px
+        }
         
     }
+
+    &__mobile-container{
+        display: none;
+        @media (max-width:1050px) {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            padding-top: 10px;
+        }
+    }
+
+    &__mobile-text{
+        text-align: center;
+        line-height: 1.7em;
+    }
 }
+

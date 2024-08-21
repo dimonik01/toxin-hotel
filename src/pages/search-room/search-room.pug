@@ -21,7 +21,10 @@ block scripts
     link(href=require('./search-room.scss') rel='stylesheet')
 block content
     .search-room
+        .search-room__mobile-container  
+            h1.search-room__mobile-text Номера, которые мы для вас подобрали
         .search-room__inner 
+            .search-room__placeholder
             .search-room__sidebar
                 div(class="search-room__sidebar-container search-room__sidebar-container_filter")
                     +filter-date-dropdown(["ui", "даты пребывания в отеле"])

@@ -53,15 +53,18 @@
 
     &__mobile-menu{
         position: fixed;
-        width: 100vw;
-        height: 100vh;
         background-color: #e5e5e5;
         z-index: 5;
         &_inactive{
-            display: none;
+            width: 0vw;
+            height: 0vh;
+            transition: all 0.12s ease-in;
         }
         &_active{
             display: block;
+            width: 100vw;
+            height: 100vh;
+            transition: all 0.12s ease-in;
         }
     }
 

@@ -1,15 +1,13 @@
 include ../navbar/navbar.pug
 include ../unauthed/unauthed.pug
 mixin header-mobile()
-    .mobile
+    .mobile_hidden
         .mobile__inner
             .mobile__container
-                +navbar()
-                ul.mobile__list 
-                    li.mobile__list-item 1
-                    li.mobile__list-item 1
-                    li.mobile__list-item 1
-
-                    li.mobile__list-item 1
+                ul.mobile__list_hidden
+                    li.mobile__list-item О нас
+                    li(class="mobile__list-item mobile__sublist") Услуги
+                    li.mobile__list-item Вакансии
+                    li.mobile__list-item Новости
+                    li(class="mobile__list-item mobile__sublist") Соглашения
             .mobile__container
-                +unauthed()

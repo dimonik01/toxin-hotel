@@ -2,6 +2,7 @@ include ../footer-list/footer-list.pug
 include ../socials/socials.pug
 include ../logo/logo.pug
 include ../subscription-text-field/subscription-text-field.pug
+include ../footer-mobile/footer-mobile.pug
 mixin footer(arr1, arr2 ,arr3, arr4)
     .footer 
         .footer__wrapper
@@ -16,7 +17,6 @@ mixin footer(arr1, arr2 ,arr3, arr4)
                 +footer-list(arr3)
             div(class="footer__container footer__container_fifth")
                 +footer-list(arr4)
-
                 .footer__text-field
                     +subscription-text-field("blank","")
         .footer__copy-wrapper
@@ -26,4 +26,5 @@ mixin footer(arr1, arr2 ,arr3, arr4)
                     .footer__copy-blank 
                     .footer__copy-socials
                         +socials
+    +footer-mobile
 

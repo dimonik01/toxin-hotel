@@ -68,6 +68,11 @@
         margin-top: 30px;
         margin-left: 3px;
     }
+
+    @media (max-width:1200px) {
+        display: none;
+        
+    }
 }
 
 

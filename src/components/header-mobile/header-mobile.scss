@@ -1,14 +1,60 @@
 .mobile{
-    height: 1000px;
-    width: 1000px;
-    &_inner{
-        width: 1000px;
+    height: 100vh;
+    width: 100vw;
+    opacity: 1;
+    transition: opacity 0.15s ease-in;
+    &__inner{
+        width: 400px;
         margin-left: auto;
         margin-right:auto;
     }
 
     &__container{
-        display: block;
+        margin-top: 200px;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__list{
+        visibility: visible;
+        &_hidden{
+            visibility: hidden;
+        }
+    }
+
+    &__list-item{
+        position: relative;
+        font-family: 'Montserrat';
+        font-size: 20px;
+        margin-bottom: 35px;
+    }
+
+    &__list-item:nth-child(2)::after{
+        position: absolute;
+        content: "expand_more";
+        font-family: 'Material Icons';
+        display: inline-block;
+        color: $dark-shade-50;
+        top: 3px;
+        left: 72px;
+    }
+
+    &__list-item:nth-child(5)::after{
+        position: absolute;
+        content: "expand_more";
+        font-family: 'Material Icons';
+        display: inline-block;
+        color: $dark-shade-50;
+        top: 3px;
+        left: 132px;
+    }
+
+    &_hidden{
+        transition: opacity 0.15s ease-in;
+        width: 0px;
+        height: 0px;
+        opacity: 0;
+        display: none;
     }
 
 }

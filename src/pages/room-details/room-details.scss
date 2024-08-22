@@ -3,26 +3,74 @@
     &__room-wrapper{
         display: flex;
         justify-content: center;
-
+        @media (max-width:1450px) {
+            flex-direction: column;
+            align-items: center;
+        }
     }
+    &__column:nth-child(2){
+        @media (max-width:1450px) {
+            display: flex;
+            width: 906px;
+        }
+        @media (max-width:1000px) {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+        &__column:first-child{
+            @media (max-width:1000px) {
+                display: flex;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                height: 224px;
+            }
+        
+        }
 
     &__background{
         &_first{
             width: 453px;
             height: 243px;
             background-image: url("../../img/room-details-2.png");
+            @media (max-width:1450px) {
+                width: 491px;
+            }
+            @media (max-width:1000px) {
+                width: 453px;
+            }
         }
 
         &_second{
             width: 453px;
             height: 242px;
             background-image: url("../../img/room-details-3.png");
+            @media (max-width:1450px) {
+                width: 490px;
+            }
+            @media (max-width:1000px) {
+                width: 453px;
+            }
         }
 
         &_big{
             height: 485px;
-            width: 981px;
+            width: 906px;
             background-image: url("../../img/room-details.png");
+            @media (max-width:1000px) {
+                height: 242px;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+        @media (max-width:1000px) {
+            width: 453px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            flex-shrink: 0;
         }
     }
 
@@ -32,6 +80,11 @@
         margin-right: auto;
         display: flex;
         flex-direction: row;
+        @media (max-width:1450px){
+            flex-direction: column; 
+            align-items: center;
+            width: 0px;
+        }
     
     }
 
@@ -46,6 +99,10 @@
         flex-direction: row;
         margin-top: 70px;
         margin-left: 5px;
+        @media (max-width:1000px) {
+            display: flex;
+            
+        }
     }
 
     &__review-container{

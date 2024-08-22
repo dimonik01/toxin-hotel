@@ -23,6 +23,24 @@ block content
     .search-room
         .search-room__mobile-container  
             h1.search-room__mobile-text Номера, которые мы для вас подобрали
+        div(class="search-room__pop-up search-room__mobile_pop-up_closed")
+        aside(class="search-room__side-menu search-room__side-menu_closed")
+            .search-room__sidebar_mobile
+                .search-room__sidebar-inner
+                    div(class="search-room__sidebar-container search-room__sidebar-container_filter")
+                        +filter-date-dropdown(["ui", "даты пребывания в отеле"])
+                    div(class="search-room__sidebar-container search-room__sidebar-container_dd")
+                        +dropdown("",["ui","гости"], "3 гостя, 1 младенец", ["Взрослые", "Дети", "Младенцы"], "medium", "true" ,"true")
+                    div(class="search-room__sidebar-container search-room__sidebar-container_range")
+                        +range(["ui", "диапазон цены","5 000₽ - 10 000₽"])
+                    div(class="search-room__sidebar-container search-room__sidebar-container_cbuttons")
+                        +cbuttons(["ui","правила дома"], ["Можно курить","Можно с питомцами","Можно пригласить гостей (до 10 человек)"], ["", "checked"," checked"], 14)
+                    div(class="search-room__sidebar-container search-room__sidebar-container_accdd")
+                        +rich-checkbox(["ui","доступность"], ["Ширина коридоров в номере не менее 91 см.", "На 1 этаже вас встретит специалист  и проводит до номера."], ["Широкий коридор", "Помошник для инвалидов"], ["",""], 12)
+                    div(class="search-room__sidebar-container search-room__sidebar-container_rich")
+                        +dropdown("accomodation",["ui","удобства номера"], "2 спальни, 2 кровати", ["Спальни","Кровати","Ванные комнаты"], "medium", "true" ,"true")
+                    div(class="search-room__sidebar-container search-room__sidebar-container_cbdd")
+                        +checkbox-dropdown("medium", ["ui","дополнительные удобства"], ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка","Телевизор","Шампунь"], false, ["","checked","checked","checked","",""], 14)
         .search-room__inner 
             .search-room__placeholder
             .search-room__sidebar
@@ -80,3 +98,4 @@ block js
         include ../../components/card/card.js
         include ../../components/checkbox/checkbox.js
         include ../../components/like/like.js
+        include ../../pages/search-room/search-room.js
